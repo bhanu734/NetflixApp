@@ -6,6 +6,10 @@
 //
 
 import UIKit
+protocol RegisterViewDelegate {
+    func registerTapped(email: String?, password: String?, Confirm_password: String?, Dateofbirth: String?)
+    func siginTapped()
+}
 
 class RegisterView: UIView {
     @IBOutlet weak var stackview: UIStackView!
@@ -23,6 +27,8 @@ class RegisterView: UIView {
     @IBOutlet weak var signinbutton: UIButton!
     @IBOutlet weak var infolabel: UILabel!
     @IBOutlet weak var stackandview : UIView!
+    
+    var delegate: RegisterViewDelegate?
     
     func setupUI() {
         
@@ -50,7 +56,7 @@ class RegisterView: UIView {
         textfield.textColor = Colors.shared.whiteTextcolor
         textfield.backgroundColor = Colors.shared.darkgreycolor
         textfield.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-        textfield.font = Font.shared.medium2
+        textfield.font = Font.shared.medium4
         textfield.tintColor = Colors.shared.whiteTextcolor
         textview.backgroundColor = Colors.shared.darkgreycolor
         textview.layer.cornerRadius = 10.0
@@ -82,9 +88,9 @@ class RegisterView: UIView {
     }
     
     @IBAction func registerTapped() {
-        
+        delegate?.registerTapped(email: emailtextfield.text, password: passwordtextfield.text, Confirm_password: confirmpasswordtextfield.text, Dateofbirth: dateofbirthtextfield.text)
     }
     @IBAction func siginTapped() {
-        
+        delegate?.siginTapped()
     }
 }

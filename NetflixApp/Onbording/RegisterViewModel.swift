@@ -6,7 +6,109 @@
 //
 
 import UIKit
-
+protocol RegisterViewModelDelgate {
+    func showAlert(title: String, message: String)
+}
 class RegisterViewModel {
+    var delegate: RegisterViewModelDelgate?
     
+    func registerTapped(email: String?, password: String?, Confirm_password: String?, Dateofbirth: String?) {
+        if let email = email, let password = password ,let  Confirm_password = Confirm_password,let Dateofbirth = Dateofbirth {
+            if email.replacingOccurrences(of: " ", with: "") != "" {
+                if password.replacingOccurrences(of: " ", with: "") != "" {
+                    if Confirm_password.replacingOccurrences(of: " ", with: "") != "" {
+                        if Dateofbirth.replacingOccurrences(of: " ", with: "") != "" {
+                            if isValidEmail(email) {
+                                if password == Confirm_password {
+                                    if isValidDate(dateString: Dateofbirth) {
+                                        registeruser(email: email, password: password, dob: Dateofbirth)
+                                        print("user registered sucessfull")
+                                    }else {
+                                        print("enter vallid Dob")
+                                        delegate?.showAlert(title: Strings.shared.doberrortitle, message: Strings.shared.doberrormessage)
+                                    }
+                                }else {
+                                    print("password & confirmpassword doesn't match")
+                                }
+                            }else {
+                                print("enter vallid email")
+                            }
+                        } else {
+                            print("enter Dob")
+                        }
+                        
+                    } else {
+                        print("enter confirm password")
+                    }
+                } else {
+                    print("enter Password")
+                }
+            } else {
+                print("enter email")
+            }
+            
+        } else {
+            print("Some thing went wrong")
+        }
+    }
+    func registeruser(email:String, password:String, dob: String) {
+        let urlString = "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/register?type=email"
+        guard let url = URL(string: urlString) else { return }
+        
+        var urlrequest = URLRequest(url: url)
+            urlrequest.httpMethod = "POST"
+        
+        let headers: [String: String] = ["Content-Type" : "application/json"]
+        urlrequest.allHTTPHeaderFields = headers
+        
+        var bodyparameters: [String: Any] = [:]
+        bodyparameters["email"] = email
+        bodyparameters["password"] = password
+        bodyparameters["dob"] = dob
+        
+        do{
+            let bodydata = try JSONSerialization.data(withJSONObject: bodyparameters, options: .fragmentsAllowed)
+            urlrequest.httpBody = bodydata
+            
+            URLSession.shared.dataTask(with: urlrequest) { data , response , error in
+                if let data = data {
+                    do {
+                       if let jsonresponse = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String: Any] {
+                        if let status = jsonresponse["statusCode"] as? Int {
+                            if status == 200 {
+                                print("Registation success")
+                            }else {
+                                print(jsonresponse["data"] as? String)
+                            }
+                        }
+                        }
+                    } catch {
+                        print("Register response error ", error.localizedDescription)
+                    }
+                }
+            }.resume()
+        }catch {
+            print("Register body error ", error.localizedDescription)
+        }
+        
+    }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    func isValidDate(dateString: String) -> Bool {
+       let dateFormatterGet = DateFormatter()
+       dateFormatterGet.dateFormat = "dd-MM-yyyy"
+       if let _ = dateFormatterGet.date(from: dateString) {
+           //date parsing succeeded, if you need to do additional logic, replace _ with some variable name i.e date
+           return true
+       } else {
+           // Invalid date
+           return false
+       }
+   }
 }

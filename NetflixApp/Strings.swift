@@ -21,4 +21,6 @@ class Strings {
     let Dob = "Date of Birth (Ex: 10-11-2022)"
     let getstarted = "GET STARTED"
     let infolabeltext = "Sign in is protrcted by Google reCAPTCHA to ensure  you're not a bot Learn more"
+    let doberrortitle = "Error in Dob"
+    let doberrormessage = "Enter Dob in Correct Format Ex: 10-10-2020"
 }

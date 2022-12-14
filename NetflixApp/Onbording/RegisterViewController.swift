@@ -14,10 +14,31 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        registerviewmodel.delegate = self
+        registerview.delegate = self
         registerview.setupUI()
     }
     
+    func showAlert(title: String, message: String) {
+        let alertcontroller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okaction = UIAlertAction(title: "ok", style: .default)
+        alertcontroller.addAction(okaction)
+        present(alertcontroller, animated: true)
+        
+    }
 
-
+}
+extension RegisterViewController : RegisterViewDelegate{
+    func registerTapped(email: String?, password: String?, Confirm_password: String?, Dateofbirth: String?) {
+        registerviewmodel.registerTapped(email: email, password: password, Confirm_password: Confirm_password, Dateofbirth: Dateofbirth)
+    }
+    
+    func siginTapped() {
+        
+    }
+    
+    
+}
+extension RegisterViewController: RegisterViewModelDelgate {
+    
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040F1E7A29483910006A9334 /* sample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040F1E7929483910006A9334 /* sample.storyboard */; };
 		0462F4392944A15A00D013AD /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462F4382944A15A00D013AD /* UIView + Extension.swift */; };
 		04D0F4A8294710A60015D482 /* Onbording.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D0F4A7294710A60015D482 /* Onbording.storyboard */; };
 		04D0F4AB29471BC10015D482 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0F4AA29471BC10015D482 /* RegisterViewController.swift */; };
@@ -27,7 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		040F1E7929483910006A9334 /* sample.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = sample.storyboard; sourceTree = "<group>"; };
 		0462F4382944A15A00D013AD /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		04D0F4A7294710A60015D482 /* Onbording.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onbording.storyboard; sourceTree = "<group>"; };
 		04D0F4AA29471BC10015D482 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				04DA1D3C29438107002F988A /* Strings.swift */,
 				04DA1D3E29438143002F988A /* WelcomeViewController.swift */,
 				04DA1D40294381B4002F988A /* WelcomeView.swift */,
-				040F1E7929483910006A9334 /* sample.storyboard */,
 				04D0F4A929471B870015D482 /* Onbording */,
 				04DA1D2B29437F4F002F988A /* Assets.xcassets */,
 				04DA1D2D29437F4F002F988A /* LaunchScreen.storyboard */,
@@ -166,7 +163,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DA1D2F29437F4F002F988A /* LaunchScreen.storyboard in Resources */,
-				040F1E7A29483910006A9334 /* sample.storyboard in Resources */,
 				04D0F4A8294710A60015D482 /* Onbording.storyboard in Resources */,
 				04DA1D2C29437F4F002F988A /* Assets.xcassets in Resources */,
 				04DA1D2A29437F3D002F988A /* Main.storyboard in Resources */,
