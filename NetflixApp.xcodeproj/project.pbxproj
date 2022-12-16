@@ -13,6 +13,8 @@
 		04639A5C294AED250086BD9F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04639A5B294AED250086BD9F /* LoginView.swift */; };
 		04639A5E294AF2C50086BD9F /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04639A5D294AF2C50086BD9F /* LoginModel.swift */; };
 		0470942F294C597A00D990E4 /* NetworkAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470942E294C597A00D990E4 /* NetworkAdaptor.swift */; };
+		04709432294CA3F600D990E4 /* Urlhandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04709431294CA3F600D990E4 /* Urlhandler.swift */; };
+		04709434294CA8E600D990E4 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04709433294CA8E600D990E4 /* Controller.swift */; };
 		04D0F4A8294710A60015D482 /* Onbording.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D0F4A7294710A60015D482 /* Onbording.storyboard */; };
 		04D0F4AB29471BC10015D482 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0F4AA29471BC10015D482 /* RegisterViewController.swift */; };
 		04D0F4AF29471C100015D482 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0F4AE29471C100015D482 /* RegisterViewModel.swift */; };
@@ -37,6 +39,8 @@
 		04639A5B294AED250086BD9F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		04639A5D294AF2C50086BD9F /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		0470942E294C597A00D990E4 /* NetworkAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdaptor.swift; sourceTree = "<group>"; };
+		04709431294CA3F600D990E4 /* Urlhandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urlhandler.swift; sourceTree = "<group>"; };
+		04709433294CA8E600D990E4 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		04D0F4A7294710A60015D482 /* Onbording.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onbording.storyboard; sourceTree = "<group>"; };
 		04D0F4AA29471BC10015D482 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		04D0F4AE29471C100015D482 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				04D0F4A7294710A60015D482 /* Onbording.storyboard */,
 				0462F4382944A15A00D013AD /* UIView + Extension.swift */,
 				0470942E294C597A00D990E4 /* NetworkAdaptor.swift */,
+				04709431294CA3F600D990E4 /* Urlhandler.swift */,
+				04709433294CA8E600D990E4 /* Controller.swift */,
 				04DA1D36294380A9002F988A /* Font.swift */,
 				04DA1D38294380D2002F988A /* Images.swift */,
 				04DA1D3A294380E3002F988A /* Colors.swift */,
@@ -203,6 +209,7 @@
 				04D0F4AB29471BC10015D482 /* RegisterViewController.swift in Sources */,
 				04DA1D3F29438143002F988A /* WelcomeViewController.swift in Sources */,
 				04639A5C294AED250086BD9F /* LoginView.swift in Sources */,
+				04709432294CA3F600D990E4 /* Urlhandler.swift in Sources */,
 				04DA1D3B294380E3002F988A /* Colors.swift in Sources */,
 				04639A5E294AF2C50086BD9F /* LoginModel.swift in Sources */,
 				04DA1D41294381B4002F988A /* WelcomeView.swift in Sources */,
@@ -212,6 +219,7 @@
 				04D0F4AF29471C100015D482 /* RegisterViewModel.swift in Sources */,
 				04DA1D2329437F3D002F988A /* AppDelegate.swift in Sources */,
 				04DA1D2529437F3D002F988A /* SceneDelegate.swift in Sources */,
+				04709434294CA8E600D990E4 /* Controller.swift in Sources */,
 				04D0F4B129471C6A0015D482 /* RegisterView.swift in Sources */,
 				04DA1D3D29438107002F988A /* Strings.swift in Sources */,
 				04639A58294AECA20086BD9F /* LoginViewController.swift in Sources */,

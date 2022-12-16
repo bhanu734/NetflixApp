@@ -104,7 +104,7 @@ class RegisterViewModel {
 //            self.delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.something_error_message)
 //        }
         
-        let urlString = "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/register?type=email"
+        let urlString = Url.register.getUrl()
         let headers: [String: String] = ["Content-Type" : "application/json"]
         var bodyparameters: [String: Any] = [:]
         bodyparameters["email"] = email

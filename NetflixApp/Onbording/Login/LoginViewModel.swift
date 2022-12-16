@@ -92,7 +92,7 @@ class LoginViewModel {
 //
 //            self.delegate?.showalert(title: Strings.shared.error_title, message: Strings.shared.something_error_message)
 //        }
-        let urlstring = "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/login?type=email"
+        let urlstring = Url.login.getUrl()
         let headers : [String: String] = ["Content-Type" : "application/json"]
         var bodyparameters: [String: Any] = [:]
             bodyparameters["email"] = email

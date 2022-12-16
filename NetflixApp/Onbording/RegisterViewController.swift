@@ -37,7 +37,8 @@ extension RegisterViewController : RegisterViewDelegate{
     }
     
     func siginTapped() {
-            let contorller = UIStoryboard(name: "Onbording", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+        let contorller = Controller.register.getController()
+      
             navigationController?.pushViewController(contorller, animated: true)
         
     }

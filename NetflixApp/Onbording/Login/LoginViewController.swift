@@ -34,7 +34,8 @@ extension LoginViewController: LoginViewDelegate {
         loginviewmodel.siginTapped(email: email, password: password)
     }
     func registerTapped() {
-        let contorller = UIStoryboard(name: "Onbording", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
+        let contorller = Controller.login.getController()
+        
         navigationController?.pushViewController(contorller, animated: true)
         
     }
