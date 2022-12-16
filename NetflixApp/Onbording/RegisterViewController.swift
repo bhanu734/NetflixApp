@@ -14,16 +14,19 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         registerviewmodel.delegate = self
         registerview.delegate = self
         registerview.setupUI()
     }
     
     func showAlert(title: String, message: String) {
-        let alertcontroller = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okaction = UIAlertAction(title: "ok", style: .default)
-        alertcontroller.addAction(okaction)
-        present(alertcontroller, animated: true)
+        DispatchQueue.main.async {
+            let alertcontroller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okaction = UIAlertAction(title: "ok", style: .default)
+            alertcontroller.addAction(okaction)
+            self.present(alertcontroller, animated: true)
+        }
         
     }
 
@@ -34,6 +37,8 @@ extension RegisterViewController : RegisterViewDelegate{
     }
     
     func siginTapped() {
+            let contorller = UIStoryboard(name: "Onbording", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+            navigationController?.pushViewController(contorller, animated: true)
         
     }
     

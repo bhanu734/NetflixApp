@@ -1,17 +1,19 @@
 //
-//  RegisterView.swift
+//  LoginView.swift
 //  NetflixApp
 //
-//  Created by Mac on 12/12/22.
+//  Created by Mac on 14/12/22.
 //
 
 import UIKit
-protocol RegisterViewDelegate {
-    func registerTapped(email: String?, password: String?, Confirm_password: String?, Dateofbirth: String?)
-    func siginTapped()
+protocol LoginViewDelegate {
+    func siginTapped(email: String?, password: String?)
+    func registerTapped()
 }
+class LoginView: UIView {
 
-class RegisterView: UIView {
+    var delegate: LoginViewDelegate?
+    
     @IBOutlet weak var stackview: UIStackView!
     @IBOutlet weak var backview: UIView!
     @IBOutlet weak var logoimage: UIImageView!
@@ -19,16 +21,10 @@ class RegisterView: UIView {
     @IBOutlet weak var emailtextfield: UITextField!
     @IBOutlet weak var passwordtextview: UIView!
     @IBOutlet weak var passwordtextfield: UITextField!
-    @IBOutlet weak var confirmpasswordtextview: UIView!
-    @IBOutlet weak var confirmpasswordtextfield: UITextField!
-    @IBOutlet weak var dateofbirthtextview: UIView!
-    @IBOutlet weak var dateofbirthtextfield: UITextField!
     @IBOutlet weak var registerbutton: UIButton!
     @IBOutlet weak var signinbutton: UIButton!
     @IBOutlet weak var infolabel: UILabel!
     @IBOutlet weak var stackandview : UIView!
-    
-    var delegate: RegisterViewDelegate?
     
     func setupUI() {
         
@@ -43,9 +39,6 @@ class RegisterView: UIView {
         labeltext()
         setupTextfeild(textfield: emailtextfield, textview: emailtextview, placeholder: Strings.shared.email)
         setupTextfeild(textfield: passwordtextfield, textview: passwordtextview, placeholder: Strings.shared.password)
-        setupTextfeild(textfield: confirmpasswordtextfield, textview: confirmpasswordtextview, placeholder: Strings.shared.confirmpassword)
-        setupTextfeild(textfield: dateofbirthtextfield, textview: dateofbirthtextview, placeholder: Strings.shared.Dob)
-        
     }
     
     func setupTextfeild(textfield: UITextField, textview: UIView, placeholder: String) {
@@ -58,22 +51,22 @@ class RegisterView: UIView {
         textview.backgroundColor = Colors.shared.darkgreycolor
         textview.layer.cornerRadius = 10.0
     }
-    func register() {
-        registerbutton.setTitleColor(Colors.shared.whiteTextcolor, for: .normal)
-        registerbutton.titleLabel?.font = Font.shared.bold5
-        registerbutton.layer.cornerRadius = 10.0
-        registerbutton.setTitle(Strings.shared.register, for: .normal)
-        registerbutton.backgroundColor = Colors.shared.redbuttoncolor
-        
-    }
     func signin() {
         signinbutton.setTitleColor(Colors.shared.whiteTextcolor, for: .normal)
         signinbutton.titleLabel?.font = Font.shared.bold5
-        signinbutton.setTitle(Strings.shared.regsignin, for: .normal)
-        signinbutton.backgroundColor = .clear
         signinbutton.layer.cornerRadius = 10.0
-        signinbutton.layer.borderWidth = 2.0
-        signinbutton.layer.borderColor = Colors.shared.redbordercolor
+        signinbutton.setTitle(Strings.shared.regsignin, for: .normal)
+        signinbutton.backgroundColor = Colors.shared.redbuttoncolor
+        
+    }
+    func register() {
+        registerbutton.setTitleColor(Colors.shared.whiteTextcolor, for: .normal)
+        registerbutton.titleLabel?.font = Font.shared.bold5
+        registerbutton.setTitle(Strings.shared.register, for: .normal)
+        registerbutton.backgroundColor = .clear
+        registerbutton.layer.cornerRadius = 10.0
+        registerbutton.layer.borderWidth = 2.0
+        registerbutton.layer.borderColor = Colors.shared.redbordercolor
         
     }
     func labeltext(){
@@ -83,11 +76,11 @@ class RegisterView: UIView {
         infolabel.textColor = Colors.shared.whiteTextcolor
         infolabel.text = Strings.shared.infolabeltext
     }
-    
+
     @IBAction func registerTapped() {
-        delegate?.registerTapped(email: emailtextfield.text, password: passwordtextfield.text, Confirm_password: confirmpasswordtextfield.text, Dateofbirth: dateofbirthtextfield.text)
+        delegate?.registerTapped()
     }
     @IBAction func siginTapped() {
-        delegate?.siginTapped()
+        delegate?.siginTapped(email: emailtextfield.text, password: passwordtextfield.text)
     }
 }

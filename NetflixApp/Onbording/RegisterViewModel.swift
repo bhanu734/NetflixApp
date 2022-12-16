@@ -29,68 +29,111 @@ class RegisterViewModel {
                                     }
                                 }else {
                                     print("password & confirmpassword doesn't match")
+                                    delegate?.showAlert(title: Strings.shared.password_confirmpassword_error_title, message: Strings.shared.password_confirmpassword_error_message)
                                 }
                             }else {
                                 print("enter vallid email")
+                                delegate?.showAlert(title: Strings.shared.email_error_title, message: Strings.shared.email_error_message)
                             }
                         } else {
                             print("enter Dob")
+                            delegate?.showAlert(title: Strings.shared.doberrortitle, message: Strings.shared.doberrormessage)
                         }
                         
                     } else {
                         print("enter confirm password")
+                        delegate?.showAlert(title: Strings.shared.confirmpassword_error_title, message: Strings.shared.confirmpassword_error_message)
                     }
                 } else {
                     print("enter Password")
+                    delegate?.showAlert(title: Strings.shared.password_error_title, message: Strings.shared.password_error_message)
                 }
             } else {
                 print("enter email")
+                delegate?.showAlert(title: Strings.shared.email_error_title, message: Strings.shared.email_error_message)
             }
             
         } else {
-            print("Some thing went wrong")
+            
+            delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.something_error_message)
         }
     }
     func registeruser(email:String, password:String, dob: String) {
+//        let urlString = "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/register?type=email"
+//        guard let url = URL(string: urlString) else { return }
+//
+//        var urlrequest = URLRequest(url: url)
+//            urlrequest.httpMethod = "POST"
+//
+//        let headers: [String: String] = ["Content-Type" : "application/json"]
+//        urlrequest.allHTTPHeaderFields = headers
+//
+//        var bodyparameters: [String: Any] = [:]
+//        bodyparameters["email"] = email
+//        bodyparameters["password"] = password
+//        bodyparameters["dob"] = dob
+
+//        do{
+//            let bodydata = try JSONSerialization.data(withJSONObject: bodyparameters, options: .prettyPrinted)
+//            urlrequest.httpBody = bodydata
+//
+//            URLSession.shared.dataTask(with: urlrequest) { data , response , error in
+//                if let data = data {
+//                    do {
+//                       if let jsonresponse = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String: Any] {
+//                        if let status = jsonresponse["statusCode"] as? Int {
+//                            if status == 200 {
+//                                print("show success alert redirect login screen")
+//                            }else {
+//                                if let  errormessage = jsonresponse["data"] as? String {
+//                                    print(errormessage)
+//                                self.delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.registration_failed)
+//                                } else {
+//                                    self.delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.something_error_message)
+//                                }
+//                            }
+//                        }
+//                        }
+//                    } catch {
+//
+//                        self.delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.something_error_message)
+//                    }
+//                }
+//            }.resume()
+//        }catch {
+//            self.delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.something_error_message)
+//        }
+        
         let urlString = "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/register?type=email"
-        guard let url = URL(string: urlString) else { return }
-        
-        var urlrequest = URLRequest(url: url)
-            urlrequest.httpMethod = "POST"
-        
         let headers: [String: String] = ["Content-Type" : "application/json"]
-        urlrequest.allHTTPHeaderFields = headers
-        
         var bodyparameters: [String: Any] = [:]
         bodyparameters["email"] = email
         bodyparameters["password"] = password
         bodyparameters["dob"] = dob
-        
-        do{
-            let bodydata = try JSONSerialization.data(withJSONObject: bodyparameters, options: .fragmentsAllowed)
-            urlrequest.httpBody = bodydata
-            
-            URLSession.shared.dataTask(with: urlrequest) { data , response , error in
-                if let data = data {
-                    do {
-                       if let jsonresponse = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String: Any] {
-                        if let status = jsonresponse["statusCode"] as? Int {
-                            if status == 200 {
-                                print("Registation success")
-                            }else {
-                                print(jsonresponse["data"] as? String)
+
+        NetworkAdaptor.urlRequest(urlstring: urlString, method: "POST", urlparameters: nil, bodyparameters: bodyparameters, headers: headers) { data, response , error in
+            if let data = data {
+                do {
+                   if let jsonresponse = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String: Any] {
+                    if let status = jsonresponse["statusCode"] as? Int {
+                        if status == 200 {
+                            print("show success alert redirect login screen")
+                        }else {
+                            if let  errormessage = jsonresponse["data"] as? String {
+                                print(errormessage)
+                            self.delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.registration_failed)
+                            } else {
+                                self.delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.something_error_message)
                             }
                         }
-                        }
-                    } catch {
-                        print("Register response error ", error.localizedDescription)
                     }
+                    }
+                } catch {
+
+                    self.delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.something_error_message)
                 }
-            }.resume()
-        }catch {
-            print("Register body error ", error.localizedDescription)
+            }
         }
-        
     }
     
     func isValidEmail(_ email: String) -> Bool {
