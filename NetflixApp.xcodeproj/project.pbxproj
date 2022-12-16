@@ -15,6 +15,12 @@
 		0470942F294C597A00D990E4 /* NetworkAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470942E294C597A00D990E4 /* NetworkAdaptor.swift */; };
 		04709432294CA3F600D990E4 /* Urlhandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04709431294CA3F600D990E4 /* Urlhandler.swift */; };
 		04709434294CA8E600D990E4 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04709433294CA8E600D990E4 /* Controller.swift */; };
+		04709439294D007200D990E4 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04709438294D007200D990E4 /* ForgotPasswordViewController.swift */; };
+		0470943B294D009B00D990E4 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470943A294D009B00D990E4 /* ForgotPasswordView.swift */; };
+		0470943D294D00F500D990E4 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470943C294D00F500D990E4 /* ForgotPasswordViewModel.swift */; };
+		0470943F294D01A700D990E4 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470943E294D01A700D990E4 /* ResetPasswordView.swift */; };
+		04709441294D01E300D990E4 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04709440294D01E300D990E4 /* ResetPasswordViewController.swift */; };
+		04709443294D028A00D990E4 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04709442294D028A00D990E4 /* ResetPasswordViewModel.swift */; };
 		04D0F4A8294710A60015D482 /* Onbording.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D0F4A7294710A60015D482 /* Onbording.storyboard */; };
 		04D0F4AB29471BC10015D482 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0F4AA29471BC10015D482 /* RegisterViewController.swift */; };
 		04D0F4AF29471C100015D482 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0F4AE29471C100015D482 /* RegisterViewModel.swift */; };
@@ -41,6 +47,12 @@
 		0470942E294C597A00D990E4 /* NetworkAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdaptor.swift; sourceTree = "<group>"; };
 		04709431294CA3F600D990E4 /* Urlhandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urlhandler.swift; sourceTree = "<group>"; };
 		04709433294CA8E600D990E4 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		04709438294D007200D990E4 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		0470943A294D009B00D990E4 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		0470943C294D00F500D990E4 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		0470943E294D01A700D990E4 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		04709440294D01E300D990E4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		04709442294D028A00D990E4 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		04D0F4A7294710A60015D482 /* Onbording.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onbording.storyboard; sourceTree = "<group>"; };
 		04D0F4AA29471BC10015D482 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		04D0F4AE29471C100015D482 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -82,12 +94,42 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		04709435294CFF4400D990E4 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				04D0F4B029471C6A0015D482 /* RegisterView.swift */,
+				04D0F4AA29471BC10015D482 /* RegisterViewController.swift */,
+				04D0F4AE29471C100015D482 /* RegisterViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		04709436294CFFAA00D990E4 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				04709438294D007200D990E4 /* ForgotPasswordViewController.swift */,
+				0470943A294D009B00D990E4 /* ForgotPasswordView.swift */,
+				0470943C294D00F500D990E4 /* ForgotPasswordViewModel.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		04709437294CFFC300D990E4 /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				0470943E294D01A700D990E4 /* ResetPasswordView.swift */,
+				04709442294D028A00D990E4 /* ResetPasswordViewModel.swift */,
+				04709440294D01E300D990E4 /* ResetPasswordViewController.swift */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
 		04D0F4A929471B870015D482 /* Onbording */ = {
 			isa = PBXGroup;
 			children = (
-				04D0F4AA29471BC10015D482 /* RegisterViewController.swift */,
-				04D0F4B029471C6A0015D482 /* RegisterView.swift */,
-				04D0F4AE29471C100015D482 /* RegisterViewModel.swift */,
+				04709437294CFFC300D990E4 /* ResetPassword */,
+				04709436294CFFAA00D990E4 /* ForgotPassword */,
+				04709435294CFF4400D990E4 /* Register */,
 				04639A56294AEC4E0086BD9F /* Login */,
 			);
 			path = Onbording;
@@ -206,10 +248,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DA1D37294380A9002F988A /* Font.swift in Sources */,
+				0470943B294D009B00D990E4 /* ForgotPasswordView.swift in Sources */,
 				04D0F4AB29471BC10015D482 /* RegisterViewController.swift in Sources */,
+				04709441294D01E300D990E4 /* ResetPasswordViewController.swift in Sources */,
 				04DA1D3F29438143002F988A /* WelcomeViewController.swift in Sources */,
+				04709443294D028A00D990E4 /* ResetPasswordViewModel.swift in Sources */,
 				04639A5C294AED250086BD9F /* LoginView.swift in Sources */,
 				04709432294CA3F600D990E4 /* Urlhandler.swift in Sources */,
+				0470943D294D00F500D990E4 /* ForgotPasswordViewModel.swift in Sources */,
 				04DA1D3B294380E3002F988A /* Colors.swift in Sources */,
 				04639A5E294AF2C50086BD9F /* LoginModel.swift in Sources */,
 				04DA1D41294381B4002F988A /* WelcomeView.swift in Sources */,
@@ -221,7 +267,9 @@
 				04DA1D2529437F3D002F988A /* SceneDelegate.swift in Sources */,
 				04709434294CA8E600D990E4 /* Controller.swift in Sources */,
 				04D0F4B129471C6A0015D482 /* RegisterView.swift in Sources */,
+				04709439294D007200D990E4 /* ForgotPasswordViewController.swift in Sources */,
 				04DA1D3D29438107002F988A /* Strings.swift in Sources */,
+				0470943F294D01A700D990E4 /* ResetPasswordView.swift in Sources */,
 				04639A58294AECA20086BD9F /* LoginViewController.swift in Sources */,
 				0462F4392944A15A00D013AD /* UIView + Extension.swift in Sources */,
 			);
