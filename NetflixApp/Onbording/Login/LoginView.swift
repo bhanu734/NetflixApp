@@ -9,6 +9,8 @@ import UIKit
 protocol LoginViewDelegate {
     func siginTapped(email: String?, password: String?)
     func registerTapped()
+    func forgotpasswordTapped()
+    
 }
 class LoginView: UIView {
 
@@ -22,6 +24,7 @@ class LoginView: UIView {
     @IBOutlet weak var passwordtextview: UIView!
     @IBOutlet weak var passwordtextfield: UITextField!
     @IBOutlet weak var registerbutton: UIButton!
+    @IBOutlet weak var forgotpasswordbutton: UIButton!
     @IBOutlet weak var signinbutton: UIButton!
     @IBOutlet weak var infolabel: UILabel!
     @IBOutlet weak var stackandview : UIView!
@@ -36,6 +39,7 @@ class LoginView: UIView {
  
         register()
         signin()
+        forgotpassword()
         labeltext()
         setupTextfeild(textfield: emailtextfield, textview: emailtextview, placeholder: Strings.shared.email)
         setupTextfeild(textfield: passwordtextfield, textview: passwordtextview, placeholder: Strings.shared.password)
@@ -50,6 +54,13 @@ class LoginView: UIView {
         textfield.tintColor = Colors.shared.whiteTextcolor
         textview.backgroundColor = Colors.shared.darkgreycolor
         textview.layer.cornerRadius = 10.0
+    }
+    func forgotpassword() {
+        forgotpasswordbutton.setTitleColor(Colors.shared.redbuttoncolor, for: .normal)
+        forgotpasswordbutton.titleLabel?.font = Font.shared.medium3
+        forgotpasswordbutton.setTitle(Strings.shared.forgot_password, for: .normal)
+        forgotpasswordbutton.backgroundColor = Colors.shared.blackcolor
+        
     }
     func signin() {
         signinbutton.setTitleColor(Colors.shared.whiteTextcolor, for: .normal)
@@ -82,5 +93,8 @@ class LoginView: UIView {
     }
     @IBAction func siginTapped() {
         delegate?.siginTapped(email: emailtextfield.text, password: passwordtextfield.text)
+    }
+    @IBAction func forgotpasswordTapped() {
+        delegate?.forgotpasswordTapped()
     }
 }

@@ -14,6 +14,7 @@ class Strings {
     let signin = "SIGN IN"
     let register = "Register"
     let regsignin = "Sign In"
+    let forgot_password = "Forgot Password"
     let login = "Login"
     let email = "Email"
     let password = "Enter Password"

@@ -30,6 +30,10 @@ class LoginViewController: UIViewController {
     }
 }
 extension LoginViewController: LoginViewDelegate {
+    func forgotpasswordTapped() {
+      
+    }
+    
     func siginTapped(email: String?, password: String?) {
         loginviewmodel.siginTapped(email: email, password: password)
     }
@@ -39,6 +43,7 @@ extension LoginViewController: LoginViewDelegate {
         navigationController?.pushViewController(contorller, animated: true)
         
     }
+    
 }
 extension LoginViewController: LoginViewModelDelegate {
     
