@@ -351,7 +351,7 @@
         <scene sceneID="5UX-nY-mNc">
             <objects>
                 <viewController storyboardIdentifier="ForgotPasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KXj-jF-2QS" customClass="ForgotPasswordViewController" customModule="NetflixApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7nW-Jj-RPN">
+                    <view key="view" contentMode="scaleToFill" id="7nW-Jj-RPN" customClass="ForgotPasswordView" customModule="NetflixApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -412,6 +412,7 @@
                                                         <connections>
                                                             <action selector="registerTapped" destination="5EZ-qb-Rvc" eventType="touchUpInside" id="ZTo-hh-RUO"/>
                                                             <action selector="siginTapped" destination="BLL-jR-pbZ" eventType="touchUpInside" id="iIX-jB-70I"/>
+                                                            <action selector="submitTapped" destination="7nW-Jj-RPN" eventType="touchUpInside" id="5ny-Zv-OJo"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -427,14 +428,17 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G6M-9W-4A4">
-                                        <rect key="frame" x="30" y="60" width="45" height="45"/>
+                                        <rect key="frame" x="30" y="67.5" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="Du4-pU-T2b"/>
+                                            <constraint firstAttribute="height" constant="30" id="Du4-pU-T2b"/>
                                             <constraint firstAttribute="width" secondItem="G6M-9W-4A4" secondAttribute="height" multiplier="1:1" id="VOS-Hd-Tql"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edb-a9-LfP">
-                                        <rect key="frame" x="37.5" y="67.5" width="30" height="30"/>
+                                        <rect key="frame" x="35" y="72.5" width="20" height="20"/>
+                                        <connections>
+                                            <action selector="backTapped" destination="7nW-Jj-RPN" eventType="touchUpInside" id="qdz-Iy-72U"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -462,7 +466,23 @@
                             <constraint firstItem="cYs-jL-WtV" firstAttribute="leading" secondItem="p6s-jN-vA6" secondAttribute="leading" id="flL-FL-7bu"/>
                             <constraint firstItem="cYs-jL-WtV" firstAttribute="top" secondItem="7nW-Jj-RPN" secondAttribute="top" id="w57-b8-leC"/>
                         </constraints>
+                        <connections>
+                            <outlet property="backbutton" destination="Edb-a9-LfP" id="UVB-WS-KkU"/>
+                            <outlet property="backbuttonimageview" destination="G6M-9W-4A4" id="MEj-FJ-xBZ"/>
+                            <outlet property="backview" destination="cYs-jL-WtV" id="XkT-4Y-uMV"/>
+                            <outlet property="dateofbirthtextfield" destination="YFm-GS-mr9" id="MDQ-WT-8Jc"/>
+                            <outlet property="dateofbirthtextview" destination="Adx-y7-Oyn" id="J5X-AE-x2U"/>
+                            <outlet property="emailtextfield" destination="VEk-Dh-B3M" id="3VW-d2-5fQ"/>
+                            <outlet property="emailtextview" destination="onV-wM-VqN" id="aWA-He-bfV"/>
+                            <outlet property="logoimage" destination="k1r-eC-tcb" id="wNE-6o-Kfy"/>
+                            <outlet property="stackandview" destination="7tk-uh-cWz" id="GV5-7D-3Dq"/>
+                            <outlet property="stackview" destination="Chj-gq-uRA" id="Cla-b6-mfP"/>
+                            <outlet property="submitbutton" destination="zjV-Ag-nCW" id="mBy-lN-O2O"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="forgotpasswordview" destination="7nW-Jj-RPN" id="5Kf-Ji-VsD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i49-PT-CAo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -472,7 +492,7 @@
         <scene sceneID="tbR-8q-lFL">
             <objects>
                 <viewController storyboardIdentifier="ResetPasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="op1-pb-eLr" customClass="ResetPasswordViewController" customModule="NetflixApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CQ3-QB-Nl9">
+                    <view key="view" contentMode="scaleToFill" id="CQ3-QB-Nl9" customClass="ResetPasswordView" customModule="NetflixApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -533,6 +553,7 @@
                                                         <connections>
                                                             <action selector="registerTapped" destination="5EZ-qb-Rvc" eventType="touchUpInside" id="cX0-5z-gnH"/>
                                                             <action selector="siginTapped" destination="BLL-jR-pbZ" eventType="touchUpInside" id="Uy1-Tw-wiA"/>
+                                                            <action selector="submitTapped" destination="CQ3-QB-Nl9" eventType="touchUpInside" id="DDR-2Q-Bvd"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -548,14 +569,17 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GdB-PL-McJ">
-                                        <rect key="frame" x="30" y="60" width="45" height="45"/>
+                                        <rect key="frame" x="30" y="67.5" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="75M-6p-VbR"/>
+                                            <constraint firstAttribute="height" constant="30" id="75M-6p-VbR"/>
                                             <constraint firstAttribute="width" secondItem="GdB-PL-McJ" secondAttribute="height" multiplier="1:1" id="JRa-BD-K6z"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGL-Yg-i3s">
-                                        <rect key="frame" x="37.5" y="67.5" width="30" height="30"/>
+                                        <rect key="frame" x="35" y="72.5" width="20" height="20"/>
+                                        <connections>
+                                            <action selector="backTapped" destination="CQ3-QB-Nl9" eventType="touchUpInside" id="2it-DV-OOc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -583,7 +607,23 @@
                             <constraint firstItem="ujF-Ah-K0S" firstAttribute="leading" secondItem="dRF-IY-q5V" secondAttribute="leading" id="ef2-dy-qRP"/>
                             <constraint firstItem="ujF-Ah-K0S" firstAttribute="top" secondItem="CQ3-QB-Nl9" secondAttribute="top" id="k5W-L6-nMU"/>
                         </constraints>
+                        <connections>
+                            <outlet property="backbutton" destination="RGL-Yg-i3s" id="0aa-TW-FBw"/>
+                            <outlet property="backbuttonimageview" destination="GdB-PL-McJ" id="yNG-LR-K0H"/>
+                            <outlet property="backview" destination="ujF-Ah-K0S" id="mz6-Dz-Dmq"/>
+                            <outlet property="confirmpasswordtextfield" destination="Tsg-s4-iga" id="DSN-BD-iIR"/>
+                            <outlet property="confirmpasswordtextview" destination="j4X-ra-kde" id="NeM-5h-3wS"/>
+                            <outlet property="logoimage" destination="8t1-M3-KnL" id="Y99-UH-Y8k"/>
+                            <outlet property="newpasswordtextfield" destination="Nrt-h9-q8O" id="iz4-8s-1Cz"/>
+                            <outlet property="newpasswordtextview" destination="i02-91-HPC" id="Yhx-QM-XDf"/>
+                            <outlet property="stackandview" destination="G7C-aa-nVZ" id="OlB-fP-3si"/>
+                            <outlet property="stackview" destination="3Bn-Sg-xSE" id="plw-wC-9yp"/>
+                            <outlet property="submitbutton" destination="Aba-gY-SEQ" id="Cda-6M-B3z"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="resetpasswordview" destination="CQ3-QB-Nl9" id="Hae-En-E1P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="boo-4s-UII" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -31,7 +31,9 @@ class LoginViewController: UIViewController {
 }
 extension LoginViewController: LoginViewDelegate {
     func forgotpasswordTapped() {
-      
+        let contorller = Controller.forgotpassword.getController()
+        
+        navigationController?.pushViewController(contorller, animated: true)
     }
     
     func siginTapped(email: String?, password: String?) {
