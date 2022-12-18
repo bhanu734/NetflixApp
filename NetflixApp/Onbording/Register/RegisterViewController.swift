@@ -31,7 +31,7 @@ class RegisterViewController: UIViewController {
     }
 
 }
-extension RegisterViewController : RegisterViewDelegate{
+extension RegisterViewController : RegisterViewDelegate {
     func registerTapped(email: String?, password: String?, Confirm_password: String?, Dateofbirth: String?) {
         registerviewmodel.registerTapped(email: email, password: password, Confirm_password: Confirm_password, Dateofbirth: Dateofbirth)
     }

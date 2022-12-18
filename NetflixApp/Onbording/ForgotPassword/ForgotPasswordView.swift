@@ -8,7 +8,7 @@
 import UIKit
 protocol ForgotPasswordViewDelegate {
     func backTapped()
-    func submitTapped()
+    func submitTapped(email: String?, dob: String?)
 }
 
 class ForgotPasswordView: UIView {
@@ -65,7 +65,7 @@ class ForgotPasswordView: UIView {
         backbuttonimageview.backgroundColor = Colors.shared.blackcolor
     }
     @IBAction func submitTapped() {
-        delegate?.submitTapped()
+        delegate?.submitTapped(email: emailtextfield.text, dob: dateofbirthtextfield.text)
     }
     @IBAction func backTapped() {
         delegate?.backTapped()

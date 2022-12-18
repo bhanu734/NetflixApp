@@ -42,4 +42,8 @@ class Strings {
     let login_failure_message = "Check Email & Password"
     let login_Wrongpassword = "Password Incorrect"
     let cheveronback = "chevron.left"
+    let success = "Success"
+    let Dobverified = "Successfully Verified Date of Birth"
+    let dob_mismatch = "DoB Does not Match"
+    let not_a_vallid_user = "User Not Registered"
 }

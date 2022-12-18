@@ -107,8 +107,8 @@
 		04709436294CFFAA00D990E4 /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
-				04709438294D007200D990E4 /* ForgotPasswordViewController.swift */,
 				0470943A294D009B00D990E4 /* ForgotPasswordView.swift */,
+				04709438294D007200D990E4 /* ForgotPasswordViewController.swift */,
 				0470943C294D00F500D990E4 /* ForgotPasswordViewModel.swift */,
 			);
 			path = ForgotPassword;

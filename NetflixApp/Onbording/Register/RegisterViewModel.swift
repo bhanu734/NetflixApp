@@ -117,7 +117,7 @@ class RegisterViewModel {
                    if let jsonresponse = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String: Any] {
                     if let status = jsonresponse["statusCode"] as? Int {
                         if status == 200 {
-                            print("show success alert redirect login screen")
+                            print("show success alert redirect to login screen")
                         }else {
                             if let  errormessage = jsonresponse["data"] as? String {
                                 print(errormessage)
@@ -126,7 +126,7 @@ class RegisterViewModel {
                                 self.delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.something_error_message)
                             }
                         }
-                    }
+                      }
                     }
                 } catch {
 
