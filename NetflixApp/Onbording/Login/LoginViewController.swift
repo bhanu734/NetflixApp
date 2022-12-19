@@ -41,9 +41,6 @@ extension LoginViewController: LoginViewDelegate {
     
 }
 extension LoginViewController: LoginViewModelDelegate {
-    func showalert(title: String, message: String) {
-        
-    }
     
     
 }

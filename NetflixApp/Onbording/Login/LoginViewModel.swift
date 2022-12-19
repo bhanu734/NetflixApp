@@ -7,7 +7,7 @@
 
 import UIKit
 protocol LoginViewModelDelegate {
-    func showalert(title: String, message: String)
+    func showAlert(title: String, message: String)
 }
 class LoginViewModel {
     var delegate: LoginViewModelDelegate?
@@ -23,11 +23,11 @@ class LoginViewModel {
                     }
                 } else {
                     
-                    delegate?.showalert(title: Strings.shared.password_error_title, message: Strings.shared.password_error_message)
+                    delegate?.showAlert(title: Strings.shared.password_error_title, message: Strings.shared.password_error_message)
                 }
             }else {
                 
-                delegate?.showalert(title: Strings.shared.email, message: Strings.shared.email_error_message)
+                delegate?.showAlert(title: Strings.shared.email, message: Strings.shared.email_error_message)
             }
         }
     }
@@ -103,14 +103,14 @@ class LoginViewModel {
              do {
                  if  let decodedata = try JSONDecoder().decode(LoginModelData?.self, from: data) {
                  print("Decode Done showing data :", decodedata.data)
-                         self.delegate?.showalert(title: Strings.shared.login_success, message: Strings.shared.login_sucess_message )
+                         self.delegate?.showAlert(title: Strings.shared.login_success, message: Strings.shared.login_sucess_message )
                  }
 //                    if (try JSONDecoder().decode(LoginModelData.self, from: data)) != nil {
 //                        print("decode data" )
 //                    }
              } catch {
                  print("decode not done invalid id password", error.localizedDescription)
-                self.delegate?.showalert(title: Strings.shared.error_title, message: Strings.shared.login_failure_message )
+                self.delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.login_failure_message )
                  
                          do {
                             if let jsonresponse = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String: Any] {
@@ -123,7 +123,7 @@ class LoginViewModel {
                              }
                              }
                          } catch {
-                             self.delegate?.showalert(title: Strings.shared.error_title, message: Strings.shared.something_error_message)
+                             self.delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.something_error_message)
                          }
                      
                  }
