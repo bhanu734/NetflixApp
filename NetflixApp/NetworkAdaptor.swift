@@ -7,8 +7,14 @@
 
 import UIKit
 
+enum Httpmethod: String {
+    case get = "GET"
+    case put = "PUT"
+    case post = "POST"
+    case pull = "PULL"
+}
 class NetworkAdaptor {
-   static func urlRequest(urlstring: String, method: String = "GET", urlparameters: [String:String]? = nil, bodyparameters: [String:Any]? = nil, headers: [String:String]? = nil , completion: @escaping ((Data?, URLResponse?, Error?) -> ()) ) {
+    static func urlRequest(urlstring: String, method: Httpmethod = .get, urlparameters: [String:String]? = nil, bodyparameters: [String:Any]? = nil, headers: [String:String]? = nil , completion: @escaping ((Data?, URLResponse?, Error?) -> ()) ) {
         
         guard let url = URL(string: urlstring) else {
             completion(nil, nil, nil )
@@ -18,7 +24,7 @@ class NetworkAdaptor {
         }
         
         var urlrequest = URLRequest(url: url)
-        urlrequest.httpMethod = method
+        urlrequest.httpMethod = method.rawValue
         if let headers = headers {
             urlrequest.allHTTPHeaderFields = headers
         }

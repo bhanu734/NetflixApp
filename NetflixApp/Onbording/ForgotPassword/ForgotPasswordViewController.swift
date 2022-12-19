@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ForgotPasswordViewController: UIViewController {
+class ForgotPasswordViewController: BaseViewController {
 
     @IBOutlet weak var forgotpasswordview: ForgotPasswordView!
     var forgotpasswordviewmodel: ForgotPasswordViewModel = ForgotPasswordViewModel()
@@ -20,17 +20,7 @@ class ForgotPasswordViewController: UIViewController {
         forgotpasswordview.setupUI()
     }
     
-    func showAlert(title: String, message: String) {
-        DispatchQueue.main.async {
-            let alertcontroller = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okaction = UIAlertAction(title: "ok", style: .default)
-            alertcontroller.addAction(okaction)
-            
-            self.present(alertcontroller, animated: true)
-        }
-        
-    }
-
+   
 }
 extension ForgotPasswordViewController: ForgotPasswordViewDelegate {
 

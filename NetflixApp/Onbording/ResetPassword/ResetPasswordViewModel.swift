@@ -43,7 +43,7 @@ class ResetPasswordViewModel {
         bodyparameters["email"] = email
         bodyparameters["password"] = password
 
-        NetworkAdaptor.urlRequest(urlstring: urlString, method: "PUT", urlparameters: nil, bodyparameters: bodyparameters, headers: headers) { data, response, error in
+        NetworkAdaptor.urlRequest(urlstring: urlString, method: .put, urlparameters: nil, bodyparameters: bodyparameters, headers: headers) { data, response, error in
             if let data = data {
                 do{
                    if let Jsonrespone = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String: Any] {

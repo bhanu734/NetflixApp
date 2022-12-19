@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: BaseViewController {
 
     @IBOutlet weak var registerview: RegisterView!
     var registerviewmodel: RegisterViewModel = RegisterViewModel()
@@ -20,15 +20,6 @@ class RegisterViewController: UIViewController {
         registerview.setupUI()
     }
     
-    func showAlert(title: String, message: String) {
-        DispatchQueue.main.async {
-            let alertcontroller = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okaction = UIAlertAction(title: "ok", style: .default)
-            alertcontroller.addAction(okaction)
-            self.present(alertcontroller, animated: true)
-        }
-        
-    }
     func showAlert_vc(title: String, message: String) {
         DispatchQueue.main.async {
             let alertcontroller = UIAlertController(title: title, message: message, preferredStyle: .alert)

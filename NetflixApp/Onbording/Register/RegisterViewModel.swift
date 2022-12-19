@@ -112,7 +112,7 @@ class RegisterViewModel {
         bodyparameters["password"] = password
         bodyparameters["dob"] = dob
 
-        NetworkAdaptor.urlRequest(urlstring: urlString, method: "POST", urlparameters: nil, bodyparameters: bodyparameters, headers: headers) { data, response , error in
+        NetworkAdaptor.urlRequest(urlstring: urlString, method: .post, urlparameters: nil, bodyparameters: bodyparameters, headers: headers) { data, response , error in
             if let data = data {
                 do {
                    if let jsonresponse = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String: Any] {

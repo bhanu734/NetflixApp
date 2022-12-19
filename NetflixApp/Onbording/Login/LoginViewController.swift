@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
 
     @IBOutlet weak var loginview : LoginView!
     var loginviewmodel: LoginViewModel = LoginViewModel()
@@ -20,14 +20,7 @@ class LoginViewController: UIViewController {
         loginview.setupUI()
     }
    
-    func showalert(title: String, message: String) {
-        DispatchQueue.main.async {
-            let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okaction = UIAlertAction(title: "ok", style: .default)
-            controller.addAction(okaction)
-            self.present(controller, animated: true, completion: nil)
-        }
-    }
+   
 }
 extension LoginViewController: LoginViewDelegate {
     func forgotpasswordTapped() {
@@ -48,5 +41,9 @@ extension LoginViewController: LoginViewDelegate {
     
 }
 extension LoginViewController: LoginViewModelDelegate {
+    func showalert(title: String, message: String) {
+        
+    }
+    
     
 }

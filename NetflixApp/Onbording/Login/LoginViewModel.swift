@@ -98,7 +98,7 @@ class LoginViewModel {
             bodyparameters["email"] = email
             bodyparameters["password"] = password
 
-        NetworkAdaptor.urlRequest(urlstring: urlstring, method: "POST", urlparameters: nil, bodyparameters: bodyparameters, headers: headers) { data, response , error in
+        NetworkAdaptor.urlRequest(urlstring: urlstring, method: .post, urlparameters: nil, bodyparameters: bodyparameters, headers: headers) { data, response , error in
             if let data = data {
              do {
                  if  let decodedata = try JSONDecoder().decode(LoginModelData?.self, from: data) {
