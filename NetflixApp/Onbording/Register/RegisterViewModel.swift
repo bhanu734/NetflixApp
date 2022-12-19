@@ -8,6 +8,7 @@
 import UIKit
 protocol RegisterViewModelDelgate {
     func showAlert(title: String, message: String)
+    func showAlert_vc(title: String, message: String)
 }
 class RegisterViewModel {
     var delegate: RegisterViewModelDelgate?
@@ -118,6 +119,7 @@ class RegisterViewModel {
                     if let status = jsonresponse["statusCode"] as? Int {
                         if status == 200 {
                             print("show success alert redirect to login screen")
+                            self.delegate?.showAlert_vc(title: Strings.shared.success_Registration_title, message: Strings.shared.success_Registration_message)
                         }else {
                             if let  errormessage = jsonresponse["data"] as? String {
                                 print(errormessage)

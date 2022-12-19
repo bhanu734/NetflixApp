@@ -46,4 +46,9 @@ class Strings {
     let Dobverified = "Successfully Verified Date of Birth"
     let dob_mismatch = "DoB Does not Match"
     let not_a_vallid_user = "User Not Registered"
+    let success_Registration_title = "User Details registered"
+    let success_Registration_message = "Login with your email & password"
+    let update_newpassword = "New Password updated"
+    let email_verified = "Email id Found update new details"
+    
 }

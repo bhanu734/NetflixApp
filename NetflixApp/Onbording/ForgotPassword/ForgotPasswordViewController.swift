@@ -25,6 +25,7 @@ class ForgotPasswordViewController: UIViewController {
             let alertcontroller = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let okaction = UIAlertAction(title: "ok", style: .default)
             alertcontroller.addAction(okaction)
+            
             self.present(alertcontroller, animated: true)
         }
         
@@ -32,10 +33,7 @@ class ForgotPasswordViewController: UIViewController {
 
 }
 extension ForgotPasswordViewController: ForgotPasswordViewDelegate {
-//    func submitTapped() {
-//        let controller = Controller.resetpassword.getController()
-//        navigationController?.pushViewController(controller, animated: true)
-//    }
+
     func submitTapped(email: String?, dob: String?) {
         forgotpasswordviewmodel.submitTapped(email: email, dob: dob)
     
@@ -47,5 +45,13 @@ extension ForgotPasswordViewController: ForgotPasswordViewDelegate {
    
 }
 extension ForgotPasswordViewController: ForgotPasswordViewModelDelegate{
-    
+    func goto_resetpassword_vc(email: String) {
+        DispatchQueue.main.async {
+            if let controller = Controller.resetpassword.getController() as? ResetPasswordViewController  {
+                controller.resetpasswordviewmodel.email = email
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+        }
+   }
+   
 }

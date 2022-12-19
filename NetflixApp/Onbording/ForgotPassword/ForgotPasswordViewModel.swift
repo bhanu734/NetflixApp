@@ -8,6 +8,7 @@
 import UIKit
 protocol ForgotPasswordViewModelDelegate {
     func showAlert(title: String, message: String)
+    func goto_resetpassword_vc(email: String)
 }
 class ForgotPasswordViewModel {
     
@@ -53,7 +54,7 @@ class ForgotPasswordViewModel {
                         if let status = Jsonresponse["statusCode"] as? Int {
                             if status == 200 {
                                  print("show success alert redirect reset-password screen")
-                                self.delegate?.showAlert(title: Strings.shared.success, message: Strings.shared.Dobverified)
+                                self.delegate?.goto_resetpassword_vc(email: email)
                             }else {
                                     if let errormessage = Jsonresponse["data"] as? String {
                                         print("response 5:", errormessage)

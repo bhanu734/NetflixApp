@@ -7,7 +7,7 @@
 
 import UIKit
 protocol ResetPasswordViewDelegate {
-    func submitTapped()
+    func submitTapped(password: String?, confirmpassword: String?)
     func backTapped()
 }
 class ResetPasswordView: UIView {
@@ -65,7 +65,7 @@ class ResetPasswordView: UIView {
     }
     
     @IBAction func submitTapped() {
-        delegate?.submitTapped()
+        delegate?.submitTapped(password: newpasswordtextfield.text, confirmpassword: confirmpasswordtextfield.text)
     }
     @IBAction func backTapped() {
         delegate?.backTapped()
