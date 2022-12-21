@@ -9,6 +9,7 @@ import UIKit
 protocol ResetPasswordViewModelDelegate {
     func showAlert(title: String, message: String)
     func showAlert_vc(title: String, message: String)
+    func gotoLogin_vc()
 }
 
 class ResetPasswordViewModel {
@@ -50,7 +51,8 @@ class ResetPasswordViewModel {
                     if let status = Jsonrespone["statusCode"] as? Int {
                         if status == 200 {
                             print("update newpassword: ", status)
-                            self.delegate?.showAlert_vc(title: Strings.shared.success, message: Strings.shared.update_newpassword)
+//                            self.delegate?.showAlert_vc(title: Strings.shared.success, message: Strings.shared.update_newpassword)
+                            self.delegate?.gotoLogin_vc()
                         }else {
                             if let errormessage = Jsonrespone["body"] as? String {
                                 print("response:",errormessage)

@@ -43,5 +43,9 @@ extension ForgotPasswordViewController: ForgotPasswordViewModelDelegate{
             }
         }
    }
-   
+    func showAlert(title: String, message: String) {
+        showAlert(title: "", message: "") {
+            
+        }
+    }
 }

@@ -13,4 +13,5 @@ class Images {
     
     let welcomeBG = UIImage(named: "welcomeBG")
     let netflixlogo = UIImage(named: "netflix")
+    let editimage = UIImage(systemName: "pencil.circle")
 }

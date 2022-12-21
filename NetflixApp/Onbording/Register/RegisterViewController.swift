@@ -51,5 +51,9 @@ extension RegisterViewController : RegisterViewDelegate {
     
 }
 extension RegisterViewController: RegisterViewModelDelgate {
-    
+    func showAlert(title: String, message: String) {
+        showAlert(title: "", message: "") {
+            
+        }
+    }
 }

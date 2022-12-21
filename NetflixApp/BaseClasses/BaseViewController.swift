@@ -14,10 +14,12 @@ class BaseViewController: UIViewController {
 
         
     }
-    func showAlert(title: String, message: String) {
+    func showAlert(title: String, message: String, completion: @escaping (() -> ())) {
         DispatchQueue.main.async {
             let alertcontroller = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okaction = UIAlertAction(title: "ok", style: .default)
+            let okaction = UIAlertAction(title: "ok", style: .default) {action in
+                completion()
+            }
             alertcontroller.addAction(okaction)
             self.present(alertcontroller, animated: true)
         }

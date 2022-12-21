@@ -11,6 +11,7 @@ class Colors {
     static let shared: Colors = Colors()
     
     let whiteTextcolor = UIColor.white
+    let whiteimagecolor = UIColor.white
     let redbuttoncolor = UIColor.red
     let blackgradient = UIColor.black.cgColor
     let lightgreycolor = UIColor.lightGray

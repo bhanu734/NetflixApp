@@ -22,17 +22,17 @@ class ResetPasswordViewController: BaseViewController {
     
   
     func showAlert_vc(title: String, message: String) {
-        DispatchQueue.main.async {
-            let alertcontroller = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okaction = UIAlertAction(title: "ok", style: .default){ Action in
-                let controller = Controller.register.getController()
-                self.navigationController?.pushViewController(controller, animated: true)
-            }
-            
-            alertcontroller.addAction(okaction)
-            
-            self.present(alertcontroller, animated: true)
-        }
+//        DispatchQueue.main.async {
+//            let alertcontroller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//            let okaction = UIAlertAction(title: "ok", style: .default){ Action in
+//                let controller = Controller.register.getController()
+//                self.navigationController?.pushViewController(controller, animated: true)
+//            }
+//
+//            alertcontroller.addAction(okaction)
+//
+//            self.present(alertcontroller, animated: true)
+//        }
         
     }
 }
@@ -48,5 +48,15 @@ extension ResetPasswordViewController: ResetPasswordViewDelegate {
    
 }
 extension ResetPasswordViewController: ResetPasswordViewModelDelegate{
-    
+    func gotoLogin_vc() {
+        showAlert(title: "Succes", message: "New Password Updated") {
+            let controller = Controller.register.getController()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    func showAlert(title: String, message: String) {
+        showAlert(title: "raw", message: "raw") {
+            
+        }
+    }
 }

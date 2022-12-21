@@ -13,6 +13,8 @@ enum Controller {
     case register
     case forgotpassword
     case resetpassword
+    case createprofile
+    case profileimages
     
     func getController() -> UIViewController {
         switch self {
@@ -26,6 +28,10 @@ enum Controller {
             return UIStoryboard(name: "Onbording", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordViewController")
         case .resetpassword:
             return UIStoryboard(name: "Onbording", bundle: nil).instantiateViewController(withIdentifier: "ResetPasswordViewController")
+        case .createprofile:
+            return UIStoryboard(name: "Onbording", bundle: nil).instantiateViewController(withIdentifier: "CreateProfileViewController")
+        case .profileimages:
+            return UIStoryboard(name: "Onbording", bundle: nil).instantiateViewController(withIdentifier: "ProfileImageViewController")
         }
     }
 }
