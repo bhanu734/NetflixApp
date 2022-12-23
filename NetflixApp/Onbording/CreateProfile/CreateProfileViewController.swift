@@ -7,12 +7,16 @@
 
 import UIKit
 
+protocol CreateProfileViewControllerDelegate {
+    
+}
 
-class CreateProfileViewController: UIViewController {
+class CreateProfileViewController: UIViewController, CreateProfileViewControllerDelegate {
 
     @IBOutlet weak var createprofileview: CreateProfileView!
     var createprofileviewmodel: CreateProfileViewModel = CreateProfileViewModel()
     
+    var delegate: CreateProfileViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +27,23 @@ class CreateProfileViewController: UIViewController {
     }
 
 }
-extension CreateProfileViewController: CreateProfileViewDelegate{
+extension CreateProfileViewController: CreateProfileViewDelegate {
+    func createbuttonTapped(profilename: String?, profileimage: String?) {
+        
+    }
+    
     func ProfileImageTapped() {
-        let controller = Controller.profileimages.getController()
-        controller.modalPresentationStyle = .overFullScreen
-        present(controller, animated: true, completion: nil)
+       if let controller = Controller.profileimages.getController() as? ProfileImageViewController {
+            controller.modalPresentationStyle = .overFullScreen
+        controller.delegate = self
+            present(controller, animated: true, completion: nil)
+        }
+        
+    }
+}
+extension CreateProfileViewController: ProfileImageViewControllerDelegate {
+    func sendSelectedimage(image: String) {
+        createprofileview.updateUI(image: image)
     }
     
     

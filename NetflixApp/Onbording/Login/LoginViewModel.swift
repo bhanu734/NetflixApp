@@ -8,6 +8,8 @@
 import UIKit
 protocol LoginViewModelDelegate {
     func showAlert(title: String, message: String)
+    func gotoprofileselectionScreen()
+    func gotoCreateprofilescreen()
 }
 class LoginViewModel {
     var delegate: LoginViewModelDelegate?
@@ -103,11 +105,28 @@ class LoginViewModel {
              do {
                  if  let decodedata = try JSONDecoder().decode(LoginModelData?.self, from: data) {
                  print("Decode Done showing data :", decodedata.data)
-                         self.delegate?.showAlert(title: Strings.shared.login_success, message: Strings.shared.login_sucess_message )
+//                         self.delegate?.showAlert(title: Strings.shared.login_success, message: Strings.shared.login_sucess_message )
+                    if let status = decodedata.statusCode {
+                        if status == 200 {
+                            if let userdetailsdata = decodedata.data {
+                                User.shared.userdetails = userdetailsdata
+                                if let profiles = userdetailsdata.profiles, profiles.count >= 1{
+                                    print("Go to profile selection screen")
+                                    self.delegate?.gotoprofileselectionScreen()
+                                   
+                                } else {
+                                    print(" go to create ptofile screen")
+                                    self.delegate?.gotoCreateprofilescreen()
+                                }
+                            } else {
+                                print("something went wrong")
+                            }
+                        }else {
+                            print("something went wrong")
+                        }
+                    }
+                  
                  }
-//                    if (try JSONDecoder().decode(LoginModelData.self, from: data)) != nil {
-//                        print("decode data" )
-//                    }
              } catch {
                  print("decode not done invalid id password", error.localizedDescription)
                 self.delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.login_failure_message )

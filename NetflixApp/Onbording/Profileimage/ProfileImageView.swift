@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol ProfileImageViewDelegate {
+    func closebuttontapped()
+    func selectedImage(image:String)
+}
+
 class ProfileImageView: UIView {
 
     @IBOutlet weak var navbarview: UIView!
@@ -15,6 +20,7 @@ class ProfileImageView: UIView {
     @IBOutlet weak var collectionview : UICollectionView!
     
     var images : [String] = []
+    var delegate:ProfileImageViewDelegate?
     
     func setupUI() {
         backgroundColor = Colors.shared.blackcolor
@@ -28,13 +34,20 @@ class ProfileImageView: UIView {
         logoimage.image = Images.shared.netflixlogo
         logoimage.contentMode = .scaleAspectFill
         
-        closebutton.setImage(Images.shared.editimage, for: .normal)
+        closebutton.setImage(Images.shared.crossimage, for: .normal)
         closebutton.tintColor = Colors.shared.whiteimagecolor
+    }
+    
+    @IBAction func closebuttontapped() {
+        delegate?.closebuttontapped()
     }
     
 }
 extension ProfileImageView: UICollectionViewDelegate {
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let imageselected = images[indexPath.row]
+        delegate?.selectedImage(image: imageselected)
+    }
 }
 extension ProfileImageView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

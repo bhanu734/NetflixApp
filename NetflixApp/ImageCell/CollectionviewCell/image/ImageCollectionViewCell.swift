@@ -20,4 +20,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
         imageview.image = UIImage(named: imageName)
         imageview.backgroundColor = Colors.shared.darkgreycolor
     }
+    
+    func Profile_selection_configUI() {
+        imageview.image = UIImage(systemName: "xmark.circle")
+        imageview.backgroundColor = Colors.shared.darkgreycolor
+    }
 }

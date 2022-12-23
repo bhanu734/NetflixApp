@@ -10,11 +10,11 @@ import UIKit
     // MARK: - Login
     struct LoginModelData: Codable {
         let statusCode: Int?
-        let data: DataClass?
+        let data: UserDetails?
     }
 
     // MARK: - DataClass
-    struct DataClass: Codable {
+    struct UserDetails: Codable {
         let password, email: String?
         let profiles: [Profile]?
         let userid, dob: String?

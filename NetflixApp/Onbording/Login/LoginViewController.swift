@@ -41,6 +41,22 @@ extension LoginViewController: LoginViewDelegate {
     
 }
 extension LoginViewController: LoginViewModelDelegate {
+    func gotoprofileselectionScreen() {
+        DispatchQueue.main.async {
+            let controller = Controller.profileselection.getController()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+        
+    }
+    
+    func gotoCreateprofilescreen() {
+        DispatchQueue.main.async {
+            let controller = Controller.createprofile.getController()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+        
+    }
+    
     func showAlert(title: String, message: String) {
         showAlert(title: "", message: "") {
             

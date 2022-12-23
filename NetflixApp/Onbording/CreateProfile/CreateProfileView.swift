@@ -9,6 +9,7 @@ import UIKit
 
 protocol CreateProfileViewDelegate {
     func ProfileImageTapped()
+    func createbuttonTapped(profilename: String?, profileimage: String?)
 }
 
 class CreateProfileView: UIView {
@@ -67,6 +68,10 @@ class CreateProfileView: UIView {
         profilelabel.font = Font.shared.bold4
         profilelabel.textColor = Colors.shared.whiteTextcolor
         profilelabel.text = Strings.shared.create_profile_label
+    }
+    
+    func updateUI(image: String) {
+        profile_image.image = UIImage(named: image)
     }
     
     @IBAction func ProfileImageTapped() {

@@ -53,5 +53,6 @@ class Strings {
     let success_Registration_message = "Login with your email & password"
     let update_newpassword = "New Password updated"
     let email_verified = "Email id Found update new details"
-    
+    let Who_is_watching = "Who's Watching?"
+    let edit = "Edit"
 }
