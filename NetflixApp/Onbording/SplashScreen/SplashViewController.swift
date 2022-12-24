@@ -15,7 +15,9 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-     
+        splashview.setupUI()
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        splashview.animateGifimage()
+    }
 }
