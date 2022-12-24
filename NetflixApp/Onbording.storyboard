@@ -904,9 +904,9 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qQT-mX-l3e">
-                                <rect key="frame" x="0.0" y="104" width="414" height="792"/>
+                                <rect key="frame" x="40" y="134" width="334" height="732"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bio-o2-wpN">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bio-o2-wpN">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -918,13 +918,13 @@
                         <viewLayoutGuide key="safeArea" id="a9I-a2-L7K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="qQT-mX-l3e" firstAttribute="leading" secondItem="a9I-a2-L7K" secondAttribute="leading" id="Blo-jj-EsH"/>
+                            <constraint firstItem="qQT-mX-l3e" firstAttribute="leading" secondItem="a9I-a2-L7K" secondAttribute="leading" constant="40" id="Blo-jj-EsH"/>
                             <constraint firstItem="a9I-a2-L7K" firstAttribute="trailing" secondItem="lhw-zR-Yhy" secondAttribute="trailing" id="HGG-uL-qN5"/>
                             <constraint firstItem="lhw-zR-Yhy" firstAttribute="leading" secondItem="a9I-a2-L7K" secondAttribute="leading" id="Hpg-sU-spd"/>
-                            <constraint firstItem="a9I-a2-L7K" firstAttribute="trailing" secondItem="qQT-mX-l3e" secondAttribute="trailing" id="W8S-eI-R0T"/>
-                            <constraint firstAttribute="bottom" secondItem="qQT-mX-l3e" secondAttribute="bottom" id="YcZ-RJ-X7J"/>
+                            <constraint firstItem="a9I-a2-L7K" firstAttribute="trailing" secondItem="qQT-mX-l3e" secondAttribute="trailing" constant="40" id="W8S-eI-R0T"/>
+                            <constraint firstAttribute="bottom" secondItem="qQT-mX-l3e" secondAttribute="bottom" constant="30" id="YcZ-RJ-X7J"/>
                             <constraint firstItem="lhw-zR-Yhy" firstAttribute="top" secondItem="a9I-a2-L7K" secondAttribute="top" id="ctl-Go-UXc"/>
-                            <constraint firstItem="qQT-mX-l3e" firstAttribute="top" secondItem="lhw-zR-Yhy" secondAttribute="bottom" id="x8n-x1-339"/>
+                            <constraint firstItem="qQT-mX-l3e" firstAttribute="top" secondItem="lhw-zR-Yhy" secondAttribute="bottom" constant="30" id="x8n-x1-339"/>
                         </constraints>
                         <connections>
                             <outlet property="ButtonImageview" destination="KYC-wR-pW2" id="p0o-xY-dHL"/>

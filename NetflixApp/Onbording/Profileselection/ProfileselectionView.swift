@@ -20,7 +20,7 @@ class ProfileselectionView: UIView {
     
     func setupUI() {
         
-        Collectionview.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
+        Collectionview.register(UINib(nibName: "ProfilesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProfilesCollectionViewCell")
         Collectionview.delegate = self
         Collectionview.dataSource = self
         
@@ -45,14 +45,28 @@ class ProfileselectionView: UIView {
 
 extension ProfileselectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return profiles.count
+
+        if profiles.count < 5 {
+            return profiles.count + 1
+        }else {
+            return profiles.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = Collectionview.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell {
-            
-            return cell
+        if indexPath.row < profiles.count {
+            if let cell = Collectionview.dequeueReusableCell(withReuseIdentifier: "ProfilesCollectionViewCell", for: indexPath) as? ProfilesCollectionViewCell {
+                cell.configureUI(profile: profiles[indexPath.row])
+                return cell
+            }
+        }else {
+            if let cell = Collectionview.dequeueReusableCell(withReuseIdentifier: "ProfilesCollectionViewCell", for: indexPath) as? ProfilesCollectionViewCell {
+                cell.configureUI()
+                return cell
+            }
         }
+        
+        
         return UICollectionViewCell()
     }
     
@@ -62,6 +76,6 @@ extension ProfileselectionView: UICollectionViewDelegate{
 }
 extension ProfileselectionView: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (Collectionview.frame.width-20)/2, height: (Collectionview.frame.width-20)/2)
+        return CGSize(width: (Collectionview.frame.width-20)/2, height: ((Collectionview.frame.width-20)/2) + 20)
     }
 }

@@ -9,4 +9,7 @@ import UIKit
 
 class ProfileSelectionViewModel {
     
+    var  profiles : [Profile] {
+        return User.shared.userdetails?.profiles ?? []
+    }
 }

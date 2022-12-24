@@ -15,4 +15,5 @@ class Images {
     let netflixlogo = UIImage(named: "netflix")
     let editimage = UIImage(systemName: "pencil.circle")
     let crossimage = UIImage(systemName: "xmark.circle")
+    let pluscircle = UIImage(systemName: "plus.circle")
 }

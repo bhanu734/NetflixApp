@@ -14,7 +14,8 @@ class ProfileSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        profileselectionview.profiles = profileselectionviewmodel.profiles
         profileselectionview.setupUI()
     }
     
