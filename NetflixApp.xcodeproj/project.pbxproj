@@ -12,6 +12,7 @@
 		04627E752956CABD008AAD7C /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627E742956CABD008AAD7C /* SplashViewModel.swift */; };
 		04627E772956CCE6008AAD7C /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627E762956CCE5008AAD7C /* Extension+UIImage.swift */; };
 		04627E792956CD9A008AAD7C /* netflixGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04627E782956CD99008AAD7C /* netflixGif.gif */; };
+		04627E7B2957006D008AAD7C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627E7A2957006D008AAD7C /* Constants.swift */; };
 		0462F4392944A15A00D013AD /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462F4382944A15A00D013AD /* UIView + Extension.swift */; };
 		04639A58294AECA20086BD9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04639A57294AECA20086BD9F /* LoginViewController.swift */; };
 		04639A5A294AECE80086BD9F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04639A59294AECE80086BD9F /* LoginViewModel.swift */; };
@@ -64,6 +65,7 @@
 		04627E742956CABD008AAD7C /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		04627E762956CCE5008AAD7C /* Extension+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extension+UIImage.swift"; path = "../../ott-app-b3/OTT-App-B3/Helpers/Extension+UIImage.swift"; sourceTree = "<group>"; };
 		04627E782956CD99008AAD7C /* netflixGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = netflixGif.gif; sourceTree = "<group>"; };
+		04627E7A2957006D008AAD7C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0462F4382944A15A00D013AD /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		04639A57294AECA20086BD9F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04639A59294AECE80086BD9F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -131,6 +133,15 @@
 				04627E742956CABD008AAD7C /* SplashViewModel.swift */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		04627E7C29570515008AAD7C /* Welcome screen */ = {
+			isa = PBXGroup;
+			children = (
+				04DA1D40294381B4002F988A /* WelcomeView.swift */,
+				04DA1D3E29438143002F988A /* WelcomeViewController.swift */,
+			);
+			path = "Welcome screen";
 			sourceTree = "<group>";
 		};
 		04639A56294AEC4E0086BD9F /* Login */ = {
@@ -204,6 +215,7 @@
 		04D0F4A929471B870015D482 /* Onbording */ = {
 			isa = PBXGroup;
 			children = (
+				04627E7C29570515008AAD7C /* Welcome screen */,
 				04627E6F2956CA13008AAD7C /* SplashScreen */,
 				04902B582954784D000E139F /* Profileselection */,
 				04DC9B1A2951E787000FEBD3 /* Profileimage */,
@@ -249,8 +261,7 @@
 				04DA1D3A294380E3002F988A /* Colors.swift */,
 				04DA1D3C29438107002F988A /* Strings.swift */,
 				048B194B29559CEC0095FF02 /* User.swift */,
-				04DA1D3E29438143002F988A /* WelcomeViewController.swift */,
-				04DA1D40294381B4002F988A /* WelcomeView.swift */,
+				04627E7A2957006D008AAD7C /* Constants.swift */,
 				04DC9B1B2951E7A1000FEBD3 /* ImageCell */,
 				04C99E8A2950978D00FA4FFA /* BaseClasses */,
 				04D0F4A929471B870015D482 /* Onbording */,
@@ -398,6 +409,7 @@
 				04D0F4AB29471BC10015D482 /* RegisterViewController.swift in Sources */,
 				04627E712956CA71008AAD7C /* SplashViewController.swift in Sources */,
 				04709441294D01E300D990E4 /* ResetPasswordViewController.swift in Sources */,
+				04627E7B2957006D008AAD7C /* Constants.swift in Sources */,
 				04DA1D3F29438143002F988A /* WelcomeViewController.swift in Sources */,
 				04709443294D028A00D990E4 /* ResetPasswordViewModel.swift in Sources */,
 				04639A5C294AED250086BD9F /* LoginView.swift in Sources */,

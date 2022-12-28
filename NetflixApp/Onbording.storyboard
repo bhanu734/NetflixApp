@@ -755,6 +755,7 @@
                             <outlet property="createbutton" destination="dBm-Gx-1k0" id="JGR-co-bz1"/>
                             <outlet property="createprofileBg" destination="laM-pv-R06" id="O5I-Kh-6tz"/>
                             <outlet property="logoimage" destination="fzJ-2c-wnv" id="sGn-PM-H4F"/>
+                            <outlet property="profile_button" destination="ZBW-cf-EOQ" id="GR3-Ee-E4a"/>
                             <outlet property="profile_image" destination="NhJ-GE-UWI" id="Wwi-T4-u1W"/>
                             <outlet property="profile_imageview" destination="eM2-7q-hxV" id="Toh-2x-3lS"/>
                             <outlet property="profile_tick_imageview" destination="KBb-ky-fS9" id="HE2-FE-HSL"/>

@@ -24,7 +24,7 @@ enum Controller {
         case .register:
             return UIStoryboard(name: "Onbording", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
         case .welcome:
-            return UIStoryboard(name: "main", bundle: nil).instantiateViewController(withIdentifier: "WelcomeViewController")
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WelcomeViewController")
         case .forgotpassword:
             return UIStoryboard(name: "Onbording", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordViewController")
         case .resetpassword:

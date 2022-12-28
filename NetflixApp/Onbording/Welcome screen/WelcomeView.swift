@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol WelcomeViewDelegate {
+    func signinTapped()
+    func getstartedTapped()
+    func privacyTapped()
+}
+
 class WelcomeView: UIView {
     
     @IBOutlet weak var backgroundimage: UIImageView!
@@ -15,6 +21,8 @@ class WelcomeView: UIView {
     @IBOutlet weak var getstartedbutton: UIButton!
     @IBOutlet weak var stackBG: UIView!
     @IBOutlet weak var getstartedBG: UIView!
+    
+    var delegate: WelcomeViewDelegate?
     
     func setupUI() {
         backgroundimage.image = Images.shared.welcomeBG
@@ -39,12 +47,12 @@ class WelcomeView: UIView {
         
     }
     @IBAction func privacyTapped() {
-        
+        delegate?.privacyTapped()
     }
     @IBAction func signinTapped() {
-        
+        delegate?.signinTapped()
     }
     @IBAction func getstartedTapped() {
-        
+        delegate?.getstartedTapped()
     }
 }

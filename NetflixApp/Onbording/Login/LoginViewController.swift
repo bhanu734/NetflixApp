@@ -25,7 +25,6 @@ class LoginViewController: BaseViewController {
 extension LoginViewController: LoginViewDelegate {
     func forgotpasswordTapped() {
         let contorller = Controller.forgotpassword.getController()
-        
         navigationController?.pushViewController(contorller, animated: true)
     }
     
@@ -34,7 +33,6 @@ extension LoginViewController: LoginViewDelegate {
     }
     func registerTapped() {
         let contorller = Controller.login.getController()
-        
         navigationController?.pushViewController(contorller, animated: true)
         
     }

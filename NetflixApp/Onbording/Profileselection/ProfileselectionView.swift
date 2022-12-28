@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ProfileselectionViewDelegate {
+    func profile_selected(profile: Profile)
+}
+
 class ProfileselectionView: UIView {
 
     @IBOutlet weak var navbarview: UIView!
@@ -17,6 +21,7 @@ class ProfileselectionView: UIView {
 
     
     var profiles : [Profile] = []
+    var delegate: ProfileselectionViewDelegate?
     
     func setupUI() {
         
@@ -72,7 +77,9 @@ extension ProfileselectionView: UICollectionViewDataSource {
     
 }
 extension ProfileselectionView: UICollectionViewDelegate{
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.profile_selected(profile: profiles[indexPath.row])
+    }
 }
 extension ProfileselectionView: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

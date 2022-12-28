@@ -6,12 +6,21 @@
 //
 
 import UIKit
+protocol SplashViewDelegate {
+    func goto_Welcome_Screen()
+    func animation_Completed()
+   
+}
 
 class SplashView: UIView {
 
     @IBOutlet weak var NetflixGifimage: UIImageView!
     @IBOutlet weak var gifwidth: NSLayoutConstraint!
     @IBOutlet weak var gifleading: NSLayoutConstraint!
+    
+    var delegate: SplashViewDelegate?
+    
+    
     
     func setupUI() {
         NetflixGifimage.image = UIImage.gifImageWithName("netflixGif")
@@ -27,7 +36,12 @@ class SplashView: UIView {
             self.layoutSubviews()
         } completion: { Bool in
             self.NetflixGifimage.image = Images.shared.netfliximage
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.2) {
+                self.delegate?.animation_Completed()
+            }
+        
         }
 
     }
+    
 }

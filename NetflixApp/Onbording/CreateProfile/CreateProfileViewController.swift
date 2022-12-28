@@ -21,21 +21,25 @@ class CreateProfileViewController: UIViewController, CreateProfileViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        createprofileview.delegate = self
+        createprofileviewmodel.delegate = self
         createprofileview.setupUI()
         createprofileview.backgroundColor = UIColor.black
-        createprofileview.delegate = self
+        
     }
 
 }
 extension CreateProfileViewController: CreateProfileViewDelegate {
-    func createbuttonTapped(profilename: String?, profileimage: String?) {
-        
+    func createbuttonTapped(profilename: String?, profileimage: String) {
+        createprofileviewmodel.CreateProfile(profileName: profilename, profileImage: profileimage)
     }
+    
+    
     
     func ProfileImageTapped() {
        if let controller = Controller.profileimages.getController() as? ProfileImageViewController {
             controller.modalPresentationStyle = .overFullScreen
-        controller.delegate = self
+            controller.delegate = self
             present(controller, animated: true, completion: nil)
         }
         
@@ -46,5 +50,20 @@ extension CreateProfileViewController: ProfileImageViewControllerDelegate {
         createprofileview.updateUI(image: image)
     }
     
+    
+}
+extension CreateProfileViewController: CreateProfileViewModelDelegate {
+    func GotoProfilesscreen() {
+        DispatchQueue.main.async {
+            let controller = Controller.profileselection.getController()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
+    func goToPreviousVc() {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
     
 }

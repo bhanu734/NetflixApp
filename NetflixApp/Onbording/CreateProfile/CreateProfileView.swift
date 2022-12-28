@@ -9,7 +9,7 @@ import UIKit
 
 protocol CreateProfileViewDelegate {
     func ProfileImageTapped()
-    func createbuttonTapped(profilename: String?, profileimage: String?)
+    func createbuttonTapped(profilename: String?, profileimage: String)
 }
 
 class CreateProfileView: UIView {
@@ -26,7 +26,8 @@ class CreateProfileView: UIView {
     @IBOutlet weak var createprofileBg: UIView!
 
     var delegate: CreateProfileViewDelegate?
-    
+    var profileImageName: String = ""
+
     func setupUI() {
         
         logoimage.image = Images.shared.netflixlogo
@@ -79,6 +80,6 @@ class CreateProfileView: UIView {
     }
     
     @IBAction func CreateButtonTapped() {
-        
+        delegate?.createbuttonTapped(profilename: profilename_textfield.text, profileimage: profileImageName )
     }
 }
