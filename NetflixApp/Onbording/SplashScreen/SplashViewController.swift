@@ -34,12 +34,18 @@ extension SplashViewController: SplashViewModelDelegate{
     func data_fetch_completed() {
         datafetchComplete = true
         if animationComplete {
-            if User.shared.userdetails?.profiles?.count ?? 0 > 0{
-                let controller = Controller.profileselection.getController()
-                self.navigationController?.pushViewController(controller, animated: true)
+            print("data fetch if called")
+            if User.shared.userdetails?.profiles?.count ?? 1 >= 1 {
+                DispatchQueue.main.async {
+                    let controller = Controller.profileselection.getController()
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }
             }else {
-                let controller = Controller.createprofile.getController()
-                self.navigationController?.pushViewController(controller, animated: true)
+                DispatchQueue.main.async {
+                    print("data fetch else called")
+                    let controller = Controller.createprofile.getController()
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }
             }
         }
             
@@ -61,8 +67,9 @@ extension SplashViewController: SplashViewDelegate{
     func animation_Completed() {
         animationComplete = true
         if datafetchComplete {
-            if User.shared.isLoggedIn {
+            if User.shared.isLogin {
                 data_fetch_completed()
+                
             } else {
                 goto_Login_vc()
             }
