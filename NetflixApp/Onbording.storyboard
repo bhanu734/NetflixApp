@@ -879,6 +879,9 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ki-gc-OKi">
                                                 <rect key="frame" x="14" y="-3" width="30" height="30"/>
+                                                <connections>
+                                                    <action selector="editTapped" destination="v0V-Bl-cyN" eventType="touchUpInside" id="e2m-rG-l6c"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

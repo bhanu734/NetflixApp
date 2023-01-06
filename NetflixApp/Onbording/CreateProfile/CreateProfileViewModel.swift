@@ -20,10 +20,10 @@ class CreateProfileViewModel {
             if let profileName = profileName {
                 if profileName.replacingOccurrences(of: " ", with: "") != "" {
                     if let profileImage = profileImage {
-                        if profileImage.replacingOccurrences(of: " ", with: "") != "" {
+                        
                             updateUser(profileName: profileName, profileImage: profileImage)
-                        }
-                        print("profile image error")
+                        
+                        print("profile created")
                     }
                 }else {
 //                    delegate?.showAlert(title: Strings.shared.error, message: Strings.shared.profileNameIsMandarory)

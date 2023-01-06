@@ -9,6 +9,10 @@ import UIKit
 
 protocol ProfileselectionViewDelegate {
     func profile_selected(profile: Profile)
+    func deleteProfile(profile: Profile)
+    func showAlert(title: String, message: String)
+    func goto_create_profile()
+    
 }
 
 class ProfileselectionView: UIView {
@@ -21,6 +25,7 @@ class ProfileselectionView: UIView {
 
     
     var profiles : [Profile] = []
+    var isEditing: Bool = false
     var delegate: ProfileselectionViewDelegate?
     
     func setupUI() {
@@ -28,7 +33,7 @@ class ProfileselectionView: UIView {
         Collectionview.register(UINib(nibName: "ProfilesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProfilesCollectionViewCell")
         Collectionview.delegate = self
         Collectionview.dataSource = self
-        
+        Collectionview.reloadData()
         
         backgroundColor = Colors.shared.blackcolor
         navbarview.backgroundColor = Colors.shared.blackcolor
@@ -44,17 +49,31 @@ class ProfileselectionView: UIView {
         EditButton.backgroundColor = Colors.shared.blackcolor
         EditButton.titleLabel?.font = Font.shared.bold3
         ButtonImageview.backgroundColor = Colors.shared.blackcolor
-       
+        updateProfilesUI()
+    }
+    
+    @IBAction func editTapped() {
+        isEditing = !isEditing
+        updateProfilesUI()
+    }
+    
+    func updateProfilesUI() {
+        DispatchQueue.main.async {
+            self.Collectionview.reloadData()
+        }
     }
 }
 
 extension ProfileselectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        if profiles.count < 5 {
-            return profiles.count + 1
-        }else {
+        if profiles.count >= 5 {
             return profiles.count
+        }else {
+            if isEditing {
+                return profiles.count
+            }
+            return profiles.count + 1
         }
     }
     
@@ -62,11 +81,13 @@ extension ProfileselectionView: UICollectionViewDataSource {
         if indexPath.row < profiles.count {
             if let cell = Collectionview.dequeueReusableCell(withReuseIdentifier: "ProfilesCollectionViewCell", for: indexPath) as? ProfilesCollectionViewCell {
                 cell.configureUI(profile: profiles[indexPath.row])
+                cell.deleteview.isHidden = !isEditing
                 return cell
             }
         }else {
             if let cell = Collectionview.dequeueReusableCell(withReuseIdentifier: "ProfilesCollectionViewCell", for: indexPath) as? ProfilesCollectionViewCell {
                 cell.configureUI()
+                cell.deleteview.isHidden = !isEditing
                 return cell
             }
         }
@@ -78,7 +99,24 @@ extension ProfileselectionView: UICollectionViewDataSource {
 }
 extension ProfileselectionView: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.profile_selected(profile: profiles[indexPath.row])
+        if indexPath.row < profiles.count {
+            if isEditing {
+                if profiles.count > 1 {
+                    delegate?.deleteProfile(profile: profiles[indexPath.row])
+                    profiles.remove(at: indexPath.row)
+                }else {
+                    print("minimum one profile nedded")
+                    delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.minimum_one_profile_must)
+                }
+            }else {
+                
+                print("go to home")
+            }
+//            delegate?.goto_create_profile()
+            print("next proceed")
+        }
+        print("forwarded to next")
+//        delegate?.goto_create_profile()
     }
 }
 extension ProfileselectionView: UICollectionViewDelegateFlowLayout{

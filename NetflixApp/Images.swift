@@ -17,5 +17,6 @@ class Images {
     let crossimage = UIImage(systemName: "xmark.circle")
     let pluscircle = UIImage(systemName: "plus.circle")
     let netfliximage = UIImage(named: "netfliximage")
+    let del_image = UIImage(systemName: "multiply")
     
 }

@@ -54,5 +54,6 @@ class Strings {
     let update_newpassword = "New Password updated"
     let email_verified = "Email id Found update new details"
     let Who_is_watching = "Who's Watching?"
+    let minimum_one_profile_must = "Minimum one profile is needed"
     let edit = "Edit"
 }

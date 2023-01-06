@@ -37,7 +37,8 @@ class CreateProfileView: UIView {
         
         profile_imageview.backgroundColor = Colors.shared.darkgreycolor
         profile_imageview.layer.cornerRadius = 5.0
-        profile_image.image = UIImage(named: "profile1")
+//        profile_image.image = UIImage(named: "profile1")
+        updateUI(image: "profile1")
         
         profile_tick_imageview.image = Images.shared.editimage
         profile_tick_imageview.tintColor = Colors.shared.whiteimagecolor
@@ -73,6 +74,7 @@ class CreateProfileView: UIView {
     
     func updateUI(image: String) {
         profile_image.image = UIImage(named: image)
+        profileImageName = image
     }
     
     @IBAction func ProfileImageTapped() {

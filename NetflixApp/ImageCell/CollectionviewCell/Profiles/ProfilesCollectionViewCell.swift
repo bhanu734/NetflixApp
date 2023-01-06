@@ -12,6 +12,8 @@ class ProfilesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var profileBG: UIView!
     @IBOutlet weak var profileimage: UIImageView!
     @IBOutlet weak var profilename: UILabel!
+    @IBOutlet weak var deleteview: UIView!
+    @IBOutlet weak var deleteimage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +28,11 @@ class ProfilesCollectionViewCell: UICollectionViewCell {
         
         profilename.textColor = Colors.shared.whiteTextcolor
         profilename.font = Font.shared.semibold2
+
+        deleteimage.image = Images.shared.del_image
+        deleteimage.tintColor = Colors.shared.redbuttoncolor
+        deleteview.backgroundColor = Colors.shared.blackcolor.withAlphaComponent(0.6)
+        
         
     }
     

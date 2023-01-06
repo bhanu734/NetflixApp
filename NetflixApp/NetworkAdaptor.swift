@@ -12,6 +12,7 @@ enum Httpmethod: String {
     case put = "PUT"
     case post = "POST"
     case pull = "PULL"
+    case delete = "DELETE"
 }
 class NetworkAdaptor {
     static func urlRequest(urlstring: String, method: Httpmethod = .get, urlparameters: [String:String]? = nil, bodyparameters: [String:Any]? = nil, headers: [String:String]? = nil , completion: @escaping ((Data?, URLResponse?, Error?) -> ()) ) {
