@@ -17,9 +17,6 @@ class ProfileSelectionViewModel {
         return User.shared.userdetails?.profiles ?? []
     }
     
-    func updateprofiles() {
-        
-    }
     
     func deleteProfile(profile: Profile) {
         
@@ -36,9 +33,10 @@ class ProfileSelectionViewModel {
                 do {
                     let Jsonresponse = try JSONSerialization.jsonObject(with: data , options: .fragmentsAllowed) as? [String : Any]
                     
-                    if let statuscode = Jsonresponse?["statusCode"] as? Int, let statusdata = Jsonresponse?["data"] as? Int {
+                    if let statuscode = Jsonresponse?["statusCode"] as? Int {
                         if statuscode == 200 {
                             self.getUserDetails()
+                            
                         } else {
                             let errormessage = Jsonresponse?["data"] as? String
                             print("error" ,errormessage)
@@ -52,7 +50,7 @@ class ProfileSelectionViewModel {
                 
                 
             } else {
-                print("error", error )
+                print("error", error?.localizedDescription )
             }
         }
                     
@@ -61,7 +59,7 @@ class ProfileSelectionViewModel {
     func getUserDetails() {
         if let email = User.shared.email {
             let baseUrl = Url.Userdetails.getUrl()
-            let urlString = baseUrl
+            let urlString = baseUrl + email
 
             let headers: [String: String] = ["Content-Type": "application/json"]
 
@@ -70,7 +68,7 @@ class ProfileSelectionViewModel {
                     do {
                         let jsonResponse = try JSONDecoder().decode(LoginModelData.self, from: data)
                         User.shared.userdetails = jsonResponse.data
-                        
+                        print("data ",jsonResponse)
                         print("user details updated")
                     }catch{
                     print("something wrong in userdetails psvc")

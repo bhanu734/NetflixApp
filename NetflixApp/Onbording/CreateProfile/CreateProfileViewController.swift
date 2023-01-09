@@ -32,6 +32,7 @@ class CreateProfileViewController: UIViewController, CreateProfileViewController
 extension CreateProfileViewController: CreateProfileViewDelegate {
     func createbuttonTapped(profilename: String?, profileimage: String) {
         createprofileviewmodel.CreateProfile(profileName: profilename, profileImage: profileimage)
+        
     }
     
     
@@ -57,6 +58,7 @@ extension CreateProfileViewController: CreateProfileViewModelDelegate {
         DispatchQueue.main.async {
             let controller = Controller.profileselection.getController()
             self.navigationController?.pushViewController(controller, animated: true)
+            
         }
     }
     

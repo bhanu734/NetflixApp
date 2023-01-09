@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044D313E2968554600AAF2CE /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D313D2968554500AAF2CE /* Extension+UIImage.swift */; };
 		04627E712956CA71008AAD7C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627E702956CA70008AAD7C /* SplashViewController.swift */; };
 		04627E732956CA96008AAD7C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627E722956CA95008AAD7C /* SplashView.swift */; };
 		04627E752956CABD008AAD7C /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627E742956CABD008AAD7C /* SplashViewModel.swift */; };
-		04627E772956CCE6008AAD7C /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627E762956CCE5008AAD7C /* Extension+UIImage.swift */; };
 		04627E792956CD9A008AAD7C /* netflixGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04627E782956CD99008AAD7C /* netflixGif.gif */; };
 		04627E7B2957006D008AAD7C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627E7A2957006D008AAD7C /* Constants.swift */; };
 		0462F4392944A15A00D013AD /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462F4382944A15A00D013AD /* UIView + Extension.swift */; };
@@ -62,10 +62,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		044D313C2968550C00AAF2CE /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
+		044D313D2968554500AAF2CE /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+UIImage.swift"; path = "../../../ott-app-b3/OTT-App-B3/Helpers/Extension+UIImage.swift"; sourceTree = "<group>"; };
 		04627E702956CA70008AAD7C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		04627E722956CA95008AAD7C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		04627E742956CABD008AAD7C /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
-		04627E762956CCE5008AAD7C /* Extension+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extension+UIImage.swift"; path = "../../ott-app-b3/OTT-App-B3/Helpers/Extension+UIImage.swift"; sourceTree = "<group>"; };
 		04627E782956CD99008AAD7C /* netflixGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = netflixGif.gif; sourceTree = "<group>"; };
 		04627E7A2957006D008AAD7C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0462F4382944A15A00D013AD /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
@@ -129,6 +130,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		044D313B2968538200AAF2CE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				044D313D2968554500AAF2CE /* Extension+UIImage.swift */,
+				0462F4382944A15A00D013AD /* UIView + Extension.swift */,
+				044D313C2968550C00AAF2CE /* Extension+UIImage.swift */,
+				0470942E294C597A00D990E4 /* NetworkAdaptor.swift */,
+				04709431294CA3F600D990E4 /* Urlhandler.swift */,
+				04709433294CA8E600D990E4 /* Controller.swift */,
+				04DA1D36294380A9002F988A /* Font.swift */,
+				04DA1D38294380D2002F988A /* Images.swift */,
+				04DA1D3A294380E3002F988A /* Colors.swift */,
+				04DA1D3C29438107002F988A /* Strings.swift */,
+				048B194B29559CEC0095FF02 /* User.swift */,
+				04627E7A2957006D008AAD7C /* Constants.swift */,
+				047FC0C3295C85FD00CCD036 /* HomeData.swift */,
+				047FC0C5295CC13B00CCD036 /* AppData.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		04627E6F2956CA13008AAD7C /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,19 +277,7 @@
 				04DA1D2429437F3D002F988A /* SceneDelegate.swift */,
 				04DA1D2829437F3D002F988A /* Main.storyboard */,
 				04D0F4A7294710A60015D482 /* Onbording.storyboard */,
-				0462F4382944A15A00D013AD /* UIView + Extension.swift */,
-				04627E762956CCE5008AAD7C /* Extension+UIImage.swift */,
-				0470942E294C597A00D990E4 /* NetworkAdaptor.swift */,
-				04709431294CA3F600D990E4 /* Urlhandler.swift */,
-				04709433294CA8E600D990E4 /* Controller.swift */,
-				04DA1D36294380A9002F988A /* Font.swift */,
-				04DA1D38294380D2002F988A /* Images.swift */,
-				04DA1D3A294380E3002F988A /* Colors.swift */,
-				04DA1D3C29438107002F988A /* Strings.swift */,
-				048B194B29559CEC0095FF02 /* User.swift */,
-				04627E7A2957006D008AAD7C /* Constants.swift */,
-				047FC0C3295C85FD00CCD036 /* HomeData.swift */,
-				047FC0C5295CC13B00CCD036 /* AppData.swift */,
+				044D313B2968538200AAF2CE /* Helper */,
 				04DC9B1B2951E7A1000FEBD3 /* ImageCell */,
 				04C99E8A2950978D00FA4FFA /* BaseClasses */,
 				04D0F4A929471B870015D482 /* Onbording */,
@@ -412,6 +422,7 @@
 				04DA1D37294380A9002F988A /* Font.swift in Sources */,
 				0470943B294D009B00D990E4 /* ForgotPasswordView.swift in Sources */,
 				048B1944295564310095FF02 /* ProfileselectionView.swift in Sources */,
+				044D313E2968554600AAF2CE /* Extension+UIImage.swift in Sources */,
 				04D0F4AB29471BC10015D482 /* RegisterViewController.swift in Sources */,
 				04627E712956CA71008AAD7C /* SplashViewController.swift in Sources */,
 				04709441294D01E300D990E4 /* ResetPasswordViewController.swift in Sources */,
@@ -429,7 +440,6 @@
 				04DC9B1D2951E807000FEBD3 /* ProfileImageViewController.swift in Sources */,
 				0470942F294C597A00D990E4 /* NetworkAdaptor.swift in Sources */,
 				04DC9B1F2951E846000FEBD3 /* ProfileImageViewModel.swift in Sources */,
-				04627E772956CCE6008AAD7C /* Extension+UIImage.swift in Sources */,
 				04C99E8C295097F900FA4FFA /* BaseViewController.swift in Sources */,
 				04DA1D39294380D2002F988A /* Images.swift in Sources */,
 				04627E752956CABD008AAD7C /* SplashViewModel.swift in Sources */,

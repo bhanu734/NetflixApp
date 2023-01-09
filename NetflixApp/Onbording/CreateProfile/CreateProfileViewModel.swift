@@ -9,7 +9,8 @@ import UIKit
 
 protocol CreateProfileViewModelDelegate {
    func GotoProfilesscreen()
-    func goToPreviousVc() 
+    func goToPreviousVc()
+    
 }
 
 class CreateProfileViewModel {
@@ -48,8 +49,9 @@ class CreateProfileViewModel {
                             if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String:Any] {
                                 if let statuscode = jsonResponse["statusCode"] as? Int {
                                     if statuscode == 200 {
-                                        self.getUserDetails()
+                                        
                                         self.delegate?.GotoProfilesscreen()
+                                        self.getUserDetails()
                                     }else{
                                         if let errorMessage = jsonResponse["body"] as? String {
 //                                            self.delegate?.showAlert(title: Strings.shared.error, message: errorMessage)
@@ -72,7 +74,7 @@ class CreateProfileViewModel {
         func getUserDetails() {
             if let email = User.shared.email {
                 let baseUrl = Url.Userdetails.getUrl()
-                let urlString = baseUrl 
+                let urlString = baseUrl + email
 
                 let headers: [String: String] = ["Content-Type": "application/json"]
 
@@ -81,15 +83,18 @@ class CreateProfileViewModel {
                         do {
                             let jsonResponse = try JSONDecoder().decode(LoginModelData.self, from: data)
                             User.shared.userdetails = jsonResponse.data
+                            print("decode done profiles saved")
                         }catch{
-
+                            print("error" , error.localizedDescription)
                         }
 //                        self.delegate?.hideLoader()?
-                        if let profiles = User.shared.userdetails?.profiles, profiles.count > 1 {
-                            self.delegate?.goToPreviousVc()
-                        }else {
-                            self.delegate?.GotoProfilesscreen()
-                        }
+//                        if let profiles = User.shared.userdetails?.profiles, profiles.count > 1 {
+//                            self.delegate?.goToPreviousVc()
+//                        }else {
+//                            self.delegate?.GotoProfilesscreen()
+//                        }
+                    } else {
+                        print("decode not done")
                     }
                 }
             }

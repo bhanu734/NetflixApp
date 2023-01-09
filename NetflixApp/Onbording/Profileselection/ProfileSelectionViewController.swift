@@ -25,6 +25,7 @@ class ProfileSelectionViewController: UIViewController {
         
         profileselectionview.profiles = profileselectionviewmodel.profiles
         profileselectionview.setupUI()
+       
     }
     
 
@@ -48,6 +49,10 @@ extension ProfileSelectionViewController: ProfileSelectionViewModelDelegate {
 }
 
 extension ProfileSelectionViewController: ProfileselectionViewDelegate {
+    func updateUI() {
+        
+    }
+    
     func profile_selected(profile: Profile) {
         print(" Go to home")
     }

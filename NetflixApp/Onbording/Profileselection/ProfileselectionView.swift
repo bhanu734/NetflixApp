@@ -12,7 +12,7 @@ protocol ProfileselectionViewDelegate {
     func deleteProfile(profile: Profile)
     func showAlert(title: String, message: String)
     func goto_create_profile()
-    
+    func updateUI()
 }
 
 class ProfileselectionView: UIView {
@@ -67,13 +67,16 @@ class ProfileselectionView: UIView {
 extension ProfileselectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        if profiles.count >= 5 {
+        if profiles.count >= 6 {
             return profiles.count
+            
         }else {
             if isEditing {
                 return profiles.count
+                
             }
             return profiles.count + 1
+            
         }
     }
     
@@ -87,7 +90,7 @@ extension ProfileselectionView: UICollectionViewDataSource {
         }else {
             if let cell = Collectionview.dequeueReusableCell(withReuseIdentifier: "ProfilesCollectionViewCell", for: indexPath) as? ProfilesCollectionViewCell {
                 cell.configureUI()
-                cell.deleteview.isHidden = !isEditing
+                cell.deleteview.isHidden = true
                 return cell
             }
         }
@@ -104,6 +107,7 @@ extension ProfileselectionView: UICollectionViewDelegate{
                 if profiles.count > 1 {
                     delegate?.deleteProfile(profile: profiles[indexPath.row])
                     profiles.remove(at: indexPath.row)
+                    updateProfilesUI()
                 }else {
                     print("minimum one profile nedded")
                     delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.minimum_one_profile_must)
@@ -112,11 +116,12 @@ extension ProfileselectionView: UICollectionViewDelegate{
                 
                 print("go to home")
             }
-//            delegate?.goto_create_profile()
-            print("next proceed")
+            
+        } else {
+            delegate?.goto_create_profile()
+            print("go to create profile next proceed")
         }
-        print("forwarded to next")
-//        delegate?.goto_create_profile()
+       
     }
 }
 extension ProfileselectionView: UICollectionViewDelegateFlowLayout{

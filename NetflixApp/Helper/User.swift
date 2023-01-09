@@ -18,7 +18,7 @@ class User {
     
 //    let email = UserDefaults.standard.value(forKey: email_UD)?
     
-    var isLogin: Bool {
+    var isLogin : Bool {
         if let _ = UserDefaults.standard.value(forKey: email_UD) as? String {
             
             return true

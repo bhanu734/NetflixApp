@@ -32,7 +32,7 @@ enum Url {
         case.createprofiles:
             return "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/update-user"
         case.Userdetails:
-            return "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/user-details?"
+            return "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/user-details?email="
         case .Home:
             return "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/home"
         case .tvShowCategories:
