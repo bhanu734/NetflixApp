@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProfileSelectionViewModelDelegate {
     func showAlert(title: String, message: String)
+    func updateui()
 }
 class ProfileSelectionViewModel {
     
@@ -35,8 +36,8 @@ class ProfileSelectionViewModel {
                     
                     if let statuscode = Jsonresponse?["statusCode"] as? Int {
                         if statuscode == 200 {
+                      
                             self.getUserDetails()
-                            
                         } else {
                             let errormessage = Jsonresponse?["data"] as? String
                             print("error" ,errormessage)
@@ -68,17 +69,12 @@ class ProfileSelectionViewModel {
                     do {
                         let jsonResponse = try JSONDecoder().decode(LoginModelData.self, from: data)
                         User.shared.userdetails = jsonResponse.data
-                        print("data ",jsonResponse)
+                        self.delegate?.updateui()
+                        
                         print("user details updated")
                     }catch{
                     print("something wrong in userdetails psvc")
                     }
-//                        self.delegate?.hideLoader()?
-//                    if let profiles = User.shared.userdetails?.profiles, profiles.count > 1 {
-//                        self.delegate?.goToPreviousVc()
-//                    }else {
-//                        self.delegate?.GotoProfilesscreen()
-//                    }
                 }else {
                     
                 }

@@ -13,6 +13,7 @@ protocol ProfileselectionViewDelegate {
     func showAlert(title: String, message: String)
     func goto_create_profile()
     func updateUI()
+    func goto_homeScreen()
 }
 
 class ProfileselectionView: UIView {
@@ -67,7 +68,7 @@ class ProfileselectionView: UIView {
 extension ProfileselectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        if profiles.count >= 6 {
+        if profiles.count >= 5 {
             return profiles.count
             
         }else {
@@ -106,14 +107,14 @@ extension ProfileselectionView: UICollectionViewDelegate{
             if isEditing {
                 if profiles.count > 1 {
                     delegate?.deleteProfile(profile: profiles[indexPath.row])
-                    profiles.remove(at: indexPath.row)
+                    
                     updateProfilesUI()
                 }else {
                     print("minimum one profile nedded")
                     delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.minimum_one_profile_must)
                 }
             }else {
-                
+                delegate?.goto_homeScreen()
                 print("go to home")
             }
             

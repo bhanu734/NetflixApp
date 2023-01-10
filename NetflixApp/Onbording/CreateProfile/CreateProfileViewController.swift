@@ -64,7 +64,7 @@ extension CreateProfileViewController: CreateProfileViewModelDelegate {
     
     func goToPreviousVc() {
         DispatchQueue.main.async {
-//            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
             print("go to backscreen")
         }
     }

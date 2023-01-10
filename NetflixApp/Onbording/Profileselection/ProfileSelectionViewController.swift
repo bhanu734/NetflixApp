@@ -31,6 +31,11 @@ class ProfileSelectionViewController: UIViewController {
 
 }
 extension ProfileSelectionViewController: ProfileSelectionViewModelDelegate {
+    func updateui() {
+        profileselectionview.profiles = profileselectionviewmodel.profiles
+       
+        profileselectionview.editTapped()
+    }
     
     func showAlert(title: String, message: String) {
         DispatchQueue.main.async {
@@ -49,6 +54,10 @@ extension ProfileSelectionViewController: ProfileSelectionViewModelDelegate {
 }
 
 extension ProfileSelectionViewController: ProfileselectionViewDelegate {
+    func goto_homeScreen() {
+        
+    }
+    
     func updateUI() {
         
     }
