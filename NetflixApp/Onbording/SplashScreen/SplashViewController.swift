@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+class SplashViewController: BaseViewController {
 
     @IBOutlet weak var splashview: SplashView!
     var splashviewmodel: SplashViewModel = SplashViewModel()

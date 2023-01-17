@@ -11,7 +11,7 @@ protocol CreateProfileViewControllerDelegate {
     
 }
 
-class CreateProfileViewController: UIViewController, CreateProfileViewControllerDelegate {
+class CreateProfileViewController: BaseViewController, CreateProfileViewControllerDelegate {
 
     @IBOutlet weak var createprofileview: CreateProfileView!
     var createprofileviewmodel: CreateProfileViewModel = CreateProfileViewModel()
@@ -54,6 +54,7 @@ extension CreateProfileViewController: ProfileImageViewControllerDelegate {
     
 }
 extension CreateProfileViewController: CreateProfileViewModelDelegate {
+  
     func GotoProfilesscreen() {
         DispatchQueue.main.async {
             let controller = Controller.profileselection.getController()
@@ -65,7 +66,7 @@ extension CreateProfileViewController: CreateProfileViewModelDelegate {
     func goToPreviousVc() {
         DispatchQueue.main.async {
             self.navigationController?.popViewController(animated: true)
-            print("go to backscreen")
+            
         }
     }
     

@@ -10,6 +10,8 @@ import UIKit
 protocol SplashViewModelDelegate {
     func goto_Login_vc()
     func data_fetch_completed()
+    func showLoader()
+    func hideLoader()
 }
 
 class SplashViewModel {

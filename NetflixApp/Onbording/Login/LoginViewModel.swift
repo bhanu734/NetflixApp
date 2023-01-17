@@ -10,6 +10,9 @@ protocol LoginViewModelDelegate {
     func showAlert(title: String, message: String)
     func gotoprofileselectionScreen()
     func gotoCreateprofilescreen()
+    func showLoader()
+    func hideLoader()
+    
 }
 class LoginViewModel {
     var delegate: LoginViewModelDelegate?
@@ -37,7 +40,7 @@ class LoginViewModel {
 
     
     func Loginuser(email:String, password: String) {
-
+        delegate?.showLoader()
         let urlstring = Url.login.getUrl()
         let headers : [String: String] = ["Content-Type" : "application/json"]
         var bodyparameters: [String: Any] = [:]
@@ -91,7 +94,7 @@ class LoginViewModel {
                          }
                      
                  }
-             
+                self.delegate?.hideLoader()
              }
         }
     }

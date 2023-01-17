@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileSelectionViewController: UIViewController {
+class ProfileSelectionViewController: BaseViewController {
 
     @IBOutlet weak var profileselectionview: ProfileselectionView!
     var profileselectionviewmodel: ProfileSelectionViewModel = ProfileSelectionViewModel()

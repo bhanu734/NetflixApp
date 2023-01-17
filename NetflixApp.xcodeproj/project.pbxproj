@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		044D313E2968554600AAF2CE /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D313D2968554500AAF2CE /* Extension+UIImage.swift */; };
+		04603667296DA3D400C6639B /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04603666296DA3D400C6639B /* TabBar.storyboard */; };
+		0460366A296DA46E00C6639B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04603669296DA46E00C6639B /* HomeViewModel.swift */; };
+		0460366C296DA4C800C6639B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460366B296DA4C800C6639B /* HomeView.swift */; };
+		0460366E296DA57E00C6639B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460366D296DA57E00C6639B /* HomeViewController.swift */; };
+		04603672296DC59F00C6639B /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04603671296DC59F00C6639B /* Loader.swift */; };
 		04627E712956CA71008AAD7C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627E702956CA70008AAD7C /* SplashViewController.swift */; };
 		04627E732956CA96008AAD7C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627E722956CA95008AAD7C /* SplashView.swift */; };
 		04627E752956CABD008AAD7C /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627E742956CABD008AAD7C /* SplashViewModel.swift */; };
@@ -64,6 +69,11 @@
 /* Begin PBXFileReference section */
 		044D313C2968550C00AAF2CE /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 		044D313D2968554500AAF2CE /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+UIImage.swift"; path = "../../../ott-app-b3/OTT-App-B3/Helpers/Extension+UIImage.swift"; sourceTree = "<group>"; };
+		04603666296DA3D400C6639B /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		04603669296DA46E00C6639B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		0460366B296DA4C800C6639B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0460366D296DA57E00C6639B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		04603671296DC59F00C6639B /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		04627E702956CA70008AAD7C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		04627E722956CA95008AAD7C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		04627E742956CABD008AAD7C /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
@@ -149,6 +159,24 @@
 				047FC0C5295CC13B00CCD036 /* AppData.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		04603668296DA3FE00C6639B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				04603669296DA46E00C6639B /* HomeViewModel.swift */,
+				0460366B296DA4C800C6639B /* HomeView.swift */,
+				0460366D296DA57E00C6639B /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		04603670296DC50E00C6639B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04603671296DC59F00C6639B /* Loader.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		04627E6F2956CA13008AAD7C /* SplashScreen */ = {
@@ -241,6 +269,7 @@
 		04D0F4A929471B870015D482 /* Onbording */ = {
 			isa = PBXGroup;
 			children = (
+				04603668296DA3FE00C6639B /* Home */,
 				04627E7C29570515008AAD7C /* Welcome screen */,
 				04627E6F2956CA13008AAD7C /* SplashScreen */,
 				04902B582954784D000E139F /* Profileselection */,
@@ -277,6 +306,8 @@
 				04DA1D2429437F3D002F988A /* SceneDelegate.swift */,
 				04DA1D2829437F3D002F988A /* Main.storyboard */,
 				04D0F4A7294710A60015D482 /* Onbording.storyboard */,
+				04603666296DA3D400C6639B /* TabBar.storyboard */,
+				04603670296DC50E00C6639B /* Views */,
 				044D313B2968538200AAF2CE /* Helper */,
 				04DC9B1B2951E7A1000FEBD3 /* ImageCell */,
 				04C99E8A2950978D00FA4FFA /* BaseClasses */,
@@ -404,6 +435,7 @@
 				04D0F4A8294710A60015D482 /* Onbording.storyboard in Resources */,
 				04DA1D2C29437F4F002F988A /* Assets.xcassets in Resources */,
 				04DA1D2A29437F3D002F988A /* Main.storyboard in Resources */,
+				04603667296DA3D400C6639B /* TabBar.storyboard in Resources */,
 				04627E792956CD9A008AAD7C /* netflixGif.gif in Resources */,
 				048B19512955EC080095FF02 /* ProfilesCollectionViewCell.xib in Resources */,
 				04DC9B292951EAEE000FEBD3 /* ImageCollectionViewCell.xib in Resources */,
@@ -422,11 +454,13 @@
 				04DA1D37294380A9002F988A /* Font.swift in Sources */,
 				0470943B294D009B00D990E4 /* ForgotPasswordView.swift in Sources */,
 				048B1944295564310095FF02 /* ProfileselectionView.swift in Sources */,
+				0460366A296DA46E00C6639B /* HomeViewModel.swift in Sources */,
 				044D313E2968554600AAF2CE /* Extension+UIImage.swift in Sources */,
 				04D0F4AB29471BC10015D482 /* RegisterViewController.swift in Sources */,
 				04627E712956CA71008AAD7C /* SplashViewController.swift in Sources */,
 				04709441294D01E300D990E4 /* ResetPasswordViewController.swift in Sources */,
 				04627E7B2957006D008AAD7C /* Constants.swift in Sources */,
+				0460366E296DA57E00C6639B /* HomeViewController.swift in Sources */,
 				04DA1D3F29438143002F988A /* WelcomeViewController.swift in Sources */,
 				04709443294D028A00D990E4 /* ResetPasswordViewModel.swift in Sources */,
 				04639A5C294AED250086BD9F /* LoginView.swift in Sources */,
@@ -443,6 +477,7 @@
 				04C99E8C295097F900FA4FFA /* BaseViewController.swift in Sources */,
 				04DA1D39294380D2002F988A /* Images.swift in Sources */,
 				04627E752956CABD008AAD7C /* SplashViewModel.swift in Sources */,
+				0460366C296DA4C800C6639B /* HomeView.swift in Sources */,
 				04639A5A294AECE80086BD9F /* LoginViewModel.swift in Sources */,
 				04D0F4AF29471C100015D482 /* RegisterViewModel.swift in Sources */,
 				04DA1D2329437F3D002F988A /* AppDelegate.swift in Sources */,
@@ -454,6 +489,7 @@
 				04D0F4B129471C6A0015D482 /* RegisterView.swift in Sources */,
 				04DC9B1529518A6B000FEBD3 /* CreateProfileView.swift in Sources */,
 				04709439294D007200D990E4 /* ForgotPasswordViewController.swift in Sources */,
+				04603672296DC59F00C6639B /* Loader.swift in Sources */,
 				04DA1D3D29438107002F988A /* Strings.swift in Sources */,
 				0470943F294D01A700D990E4 /* ResetPasswordView.swift in Sources */,
 				04639A58294AECA20086BD9F /* LoginViewController.swift in Sources */,

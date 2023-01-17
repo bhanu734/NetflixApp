@@ -10,6 +10,8 @@ import UIKit
 protocol ProfileSelectionViewModelDelegate {
     func showAlert(title: String, message: String)
     func updateui()
+    func showLoader()
+    func hideLoader()
 }
 class ProfileSelectionViewModel {
     
@@ -20,7 +22,7 @@ class ProfileSelectionViewModel {
     
     
     func deleteProfile(profile: Profile) {
-        
+        delegate?.showLoader()
         let urlstring = Url.deleteprofile.getUrl()
         let headers : [String: String] = ["Content-Type" : "application/json"]
         var bodyparameters: [String: Any] = [:]
@@ -70,11 +72,12 @@ class ProfileSelectionViewModel {
                         let jsonResponse = try JSONDecoder().decode(LoginModelData.self, from: data)
                         User.shared.userdetails = jsonResponse.data
                         self.delegate?.updateui()
-                        
-                        print("user details updated")
+//                        print("data ",jsonResponse)
+//                        print("user details updated")
                     }catch{
                     print("something wrong in userdetails psvc")
                     }
+                    self.delegate?.hideLoader()
                 }else {
                     
                 }

@@ -10,7 +10,8 @@ import UIKit
 protocol CreateProfileViewModelDelegate {
    func GotoProfilesscreen()
     func goToPreviousVc()
-    
+    func showLoader()
+    func hideLoader()
 }
 
 class CreateProfileViewModel {
@@ -37,6 +38,7 @@ class CreateProfileViewModel {
         func updateUser(profileName:String, profileImage:String) {
             if let email = User.shared.email {
                
+                delegate?.showLoader()
                 
                 let urlString = Url.createprofiles.getUrl()
                 let headers: [String: String] = ["Content-Type": "application/json"]
@@ -89,7 +91,7 @@ class CreateProfileViewModel {
                         }catch{
                             print("error" , error.localizedDescription)
                         }
-//                        self.delegate?.hideLoader()?
+                        self.delegate?.hideLoader()
                         if let profiles = User.shared.userdetails?.profiles, profiles.count > 1 {
                             self.delegate?.goToPreviousVc()
                         }else {
