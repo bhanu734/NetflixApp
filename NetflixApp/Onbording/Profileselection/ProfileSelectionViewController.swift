@@ -55,6 +55,10 @@ extension ProfileSelectionViewController: ProfileSelectionViewModelDelegate {
 
 extension ProfileSelectionViewController: ProfileselectionViewDelegate {
     func goto_homeScreen() {
+        DispatchQueue.main.async {
+            let controller = Controller.homeTab.getController()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
         
     }
     
@@ -64,6 +68,7 @@ extension ProfileSelectionViewController: ProfileselectionViewDelegate {
     
     func profile_selected(profile: Profile) {
         print(" Go to home")
+        
     }
     
     func deleteProfile(profile: Profile) {

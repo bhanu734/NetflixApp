@@ -740,18 +740,39 @@
                                     <constraint firstAttribute="bottom" secondItem="dBm-Gx-1k0" secondAttribute="bottom" constant="10" id="tAR-Hf-OWy"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hPP-hq-80I">
+                                <rect key="frame" x="349" y="139" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hPP-hq-80I" secondAttribute="height" multiplier="1:1" id="Mzu-KC-UZv"/>
+                                    <constraint firstAttribute="height" constant="35" id="mKw-uc-3sk"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Llo-gf-DSR">
+                                <rect key="frame" x="348.5" y="145" width="36" height="23"/>
+                                <connections>
+                                    <action selector="CloseButtonTapped" destination="gyv-cd-Pdd" eventType="touchUpInside" id="kO5-Bv-lM8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dmg-Bt-9aO"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Llo-gf-DSR" firstAttribute="height" secondItem="hPP-hq-80I" secondAttribute="height" multiplier="0.666667" id="59B-li-Qr8"/>
                             <constraint firstItem="laM-pv-R06" firstAttribute="leading" secondItem="dmg-Bt-9aO" secondAttribute="leading" constant="30" id="8zn-cA-ydF"/>
                             <constraint firstItem="fzJ-2c-wnv" firstAttribute="centerX" secondItem="gyv-cd-Pdd" secondAttribute="centerX" id="BEb-gC-llW"/>
                             <constraint firstItem="fzJ-2c-wnv" firstAttribute="top" secondItem="dmg-Bt-9aO" secondAttribute="top" constant="20" id="IQV-uC-RVc"/>
                             <constraint firstItem="fzJ-2c-wnv" firstAttribute="width" secondItem="fzJ-2c-wnv" secondAttribute="height" multiplier="3:1" id="M0w-A8-akW"/>
                             <constraint firstItem="dmg-Bt-9aO" firstAttribute="trailing" secondItem="laM-pv-R06" secondAttribute="trailing" constant="30" id="NYF-FB-ZK1"/>
+                            <constraint firstItem="dmg-Bt-9aO" firstAttribute="trailing" secondItem="hPP-hq-80I" secondAttribute="trailing" constant="30" id="RZ2-Xc-5UY"/>
+                            <constraint firstItem="Llo-gf-DSR" firstAttribute="centerY" secondItem="hPP-hq-80I" secondAttribute="centerY" id="XaH-fj-Rvp"/>
+                            <constraint firstItem="Llo-gf-DSR" firstAttribute="centerX" secondItem="hPP-hq-80I" secondAttribute="centerX" id="gli-b5-v6k"/>
+                            <constraint firstItem="hPP-hq-80I" firstAttribute="top" secondItem="fzJ-2c-wnv" secondAttribute="bottom" constant="30" id="oSp-Oo-j5R"/>
+                            <constraint firstItem="Llo-gf-DSR" firstAttribute="width" secondItem="hPP-hq-80I" secondAttribute="width" multiplier="1.02222" id="qmS-3H-jMZ"/>
                             <constraint firstItem="laM-pv-R06" firstAttribute="centerY" secondItem="gyv-cd-Pdd" secondAttribute="centerY" id="v8Q-8r-Zve"/>
                         </constraints>
                         <connections>
+                            <outlet property="close_button" destination="Llo-gf-DSR" id="6St-SN-6rg"/>
+                            <outlet property="closebutton_imageview" destination="hPP-hq-80I" id="FWO-fz-LLk"/>
                             <outlet property="createbutton" destination="dBm-Gx-1k0" id="JGR-co-bz1"/>
                             <outlet property="createprofileBg" destination="laM-pv-R06" id="O5I-Kh-6tz"/>
                             <outlet property="logoimage" destination="fzJ-2c-wnv" id="sGn-PM-H4F"/>

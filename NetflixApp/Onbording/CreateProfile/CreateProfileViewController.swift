@@ -30,6 +30,14 @@ class CreateProfileViewController: BaseViewController, CreateProfileViewControll
 
 }
 extension CreateProfileViewController: CreateProfileViewDelegate {
+    func closebuttonTapped() {
+        DispatchQueue.main.async {
+//            let controller = Controller.profileselection.getController()
+            self.navigationController?.popViewController(animated: true)
+            
+        }
+    }
+    
     func createbuttonTapped(profilename: String?, profileimage: String) {
         createprofileviewmodel.CreateProfile(profileName: profilename, profileImage: profileimage)
         

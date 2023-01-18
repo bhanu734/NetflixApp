@@ -115,7 +115,7 @@ extension ProfileselectionView: UICollectionViewDelegate{
                 }
             }else {
                 delegate?.goto_homeScreen()
-                print("go to home")
+                print("profile tapped go to home")
             }
             
         } else {
