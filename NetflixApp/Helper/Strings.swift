@@ -56,4 +56,8 @@ class Strings {
     let Who_is_watching = "Who's Watching?"
     let minimum_one_profile_must = "Minimum one profile is needed"
     let edit = "Edit"
+    let mylistlabel = "My List"
+    let play = "PLay"
+    let info = "Info"
 }
+ 

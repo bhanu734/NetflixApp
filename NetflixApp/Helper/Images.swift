@@ -19,5 +19,8 @@ class Images {
     let netfliximage = UIImage(named: "netfliximage")
     let del_image = UIImage(systemName: "multiply")
     let netflix_logo = UIImage(named: "netfliximage")
+    let plus = UIImage(systemName: "plus")
+    let play = UIImage(systemName: "play")
+    let info = UIImage(systemName: "info.circle")
     
 }

@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,8 +14,40 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc" customClass="HomeView" customModule="NetflixApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YCz-hJ-BJA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="S4I-IH-SZo">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3G-ia-ThP" customClass="MenuView" customModule="NetflixApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="RHO-wg-ne8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YCz-hJ-BJA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8Th-ER-2aq"/>
+                            <constraint firstItem="i3G-ia-ThP" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="NBa-kL-w34"/>
+                            <constraint firstAttribute="bottom" secondItem="YCz-hJ-BJA" secondAttribute="bottom" id="ZT8-20-DO0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="i3G-ia-ThP" secondAttribute="trailing" id="bZP-Mr-zzW"/>
+                            <constraint firstItem="i3G-ia-ThP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gEi-Vh-bVc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YCz-hJ-BJA" secondAttribute="trailing" id="rPP-yy-uMP"/>
+                            <constraint firstItem="YCz-hJ-BJA" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="uWx-9V-Qmu"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="homecollectionview" destination="YCz-hJ-BJA" id="2XS-K8-rBu"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="homeview" destination="5EZ-qb-Rvc" id="amG-OC-3nk"/>
@@ -27,9 +58,4 @@
             <point key="canvasLocation" x="-107" y="62"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
