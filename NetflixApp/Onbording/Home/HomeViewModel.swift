@@ -9,4 +9,5 @@ import UIKit
 
 class HomeViewModel {
     
+    var homedata : HomeData? = AppData.shared.homeData
 }

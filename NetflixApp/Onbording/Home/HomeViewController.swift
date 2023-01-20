@@ -16,7 +16,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         homeview.setupUI()
-        
+        homeview.homedata = homeviewmodel.homedata
+        homeview.updateUI()
     }
     
 

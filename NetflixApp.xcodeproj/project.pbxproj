@@ -37,6 +37,8 @@
 		047751F929784D2000AB8E87 /* HeroCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047751F729784D2000AB8E87 /* HeroCollectionViewCell.xib */; };
 		047FC0C4295C85FE00CCD036 /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FC0C3295C85FD00CCD036 /* HomeData.swift */; };
 		047FC0C6295CC13C00CCD036 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FC0C5295CC13B00CCD036 /* AppData.swift */; };
+		0484FEF4297A59D80028001D /* CarousalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484FEF2297A59D80028001D /* CarousalCollectionViewCell.swift */; };
+		0484FEF5297A59D80028001D /* CarousalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0484FEF3297A59D80028001D /* CarousalCollectionViewCell.xib */; };
 		048B1944295564310095FF02 /* ProfileselectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B1943295564310095FF02 /* ProfileselectionView.swift */; };
 		048B19462955647D0095FF02 /* ProfileSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B19452955647D0095FF02 /* ProfileSelectionViewController.swift */; };
 		048B194A295564FA0095FF02 /* ProfileSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B1949295564F90095FF02 /* ProfileSelectionViewModel.swift */; };
@@ -101,6 +103,8 @@
 		047751F729784D2000AB8E87 /* HeroCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroCollectionViewCell.xib; sourceTree = "<group>"; };
 		047FC0C3295C85FD00CCD036 /* HomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeData.swift; sourceTree = "<group>"; };
 		047FC0C5295CC13B00CCD036 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		0484FEF2297A59D80028001D /* CarousalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarousalCollectionViewCell.swift; sourceTree = "<group>"; };
+		0484FEF3297A59D80028001D /* CarousalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarousalCollectionViewCell.xib; sourceTree = "<group>"; };
 		048B1943295564310095FF02 /* ProfileselectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileselectionView.swift; sourceTree = "<group>"; };
 		048B19452955647D0095FF02 /* ProfileSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelectionViewController.swift; sourceTree = "<group>"; };
 		048B1949295564F90095FF02 /* ProfileSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelectionViewModel.swift; sourceTree = "<group>"; };
@@ -255,6 +259,15 @@
 			path = Hero;
 			sourceTree = "<group>";
 		};
+		0484FEF1297A59A60028001D /* Carousal */ = {
+			isa = PBXGroup;
+			children = (
+				0484FEF2297A59D80028001D /* CarousalCollectionViewCell.swift */,
+				0484FEF3297A59D80028001D /* CarousalCollectionViewCell.xib */,
+			);
+			path = Carousal;
+			sourceTree = "<group>";
+		};
 		048B194D2955EB9D0095FF02 /* Profiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +381,7 @@
 		04DC9B242951EA84000FEBD3 /* CollectionviewCell */ = {
 			isa = PBXGroup;
 			children = (
+				0484FEF1297A59A60028001D /* Carousal */,
 				047751F1297818B900AB8E87 /* Hero */,
 				048B194D2955EB9D0095FF02 /* Profiles */,
 				04DC9B2A2951EB05000FEBD3 /* image */,
@@ -456,6 +470,7 @@
 				04627E792956CD9A008AAD7C /* netflixGif.gif in Resources */,
 				048B19512955EC080095FF02 /* ProfilesCollectionViewCell.xib in Resources */,
 				047751F929784D2000AB8E87 /* HeroCollectionViewCell.xib in Resources */,
+				0484FEF5297A59D80028001D /* CarousalCollectionViewCell.xib in Resources */,
 				04DC9B292951EAEE000FEBD3 /* ImageCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0484FEF4297A59D80028001D /* CarousalCollectionViewCell.swift in Sources */,
 				048B19502955EC080095FF02 /* ProfilesCollectionViewCell.swift in Sources */,
 				04DC9B232951E936000FEBD3 /* ProfileImageView.swift in Sources */,
 				04DA1D37294380A9002F988A /* Font.swift in Sources */,

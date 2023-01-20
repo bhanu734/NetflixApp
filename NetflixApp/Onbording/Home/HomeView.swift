@@ -10,29 +10,52 @@ import UIKit
 class HomeView: UIView {
 
     @IBOutlet weak var homecollectionview: UICollectionView!
+    var homedata : HomeData?
     
     func setupUI() {
         
         homecollectionview.backgroundColor = Colors.shared.blackcolor
-        
+       
         homecollectionview.register(UINib(nibName: "HeroCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HeroCollectionViewCell")
+        homecollectionview.register(UINib(nibName: "CarousalCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CarousalCollectionViewCell")
         homecollectionview.delegate = self
         homecollectionview.dataSource = self
     }
 
+    func updateUI() {
+        DispatchQueue.main.async {
+            self.homecollectionview.reloadData()
+        }
+    }
 }
 extension HomeView: UICollectionViewDelegate{
     
 }
 
 extension HomeView: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        if section == 0 {
+            return 1
+        }else {
+            return homedata?.playlists?.count ?? 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = homecollectionview.dequeueReusableCell(withReuseIdentifier: "HeroCollectionViewCell", for: indexPath) as? HeroCollectionViewCell {
-            return cell
+        
+        if indexPath.section == 0 {
+            if let cell = homecollectionview.dequeueReusableCell(withReuseIdentifier: "HeroCollectionViewCell", for: indexPath) as? HeroCollectionViewCell {
+                return cell
+            }
+        } else {
+            if let cell = homecollectionview.dequeueReusableCell(withReuseIdentifier: "CarousalCollectionViewCell", for: indexPath) as? CarousalCollectionViewCell {
+                return cell
+            }
         }
         return UICollectionViewCell()
     }
@@ -42,6 +65,6 @@ extension HomeView: UICollectionViewDataSource {
 
 extension HomeView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: homecollectionview.frame.width, height: 900)
+        return CGSize(width: homecollectionview.frame.width, height: homecollectionview.frame.width*1.5)
     }
 }
