@@ -25,4 +25,14 @@ class ImageCollectionViewCell: UICollectionViewCell {
         imageview.image = UIImage(systemName: "xmark.circle")
         imageview.backgroundColor = Colors.shared.darkgreycolor
     }
+    func configureUI(banner: Banner?) {
+        if let banner = banner {
+            if let urlstring = banner.imagery?.thumbnailS {
+                if let url = URL(string: urlstring + "&sz=200-h200") {
+                    imageview.sd_setImage(with: url, placeholderImage: nil)
+                }
+            }
+            
+        }
+    }
 }

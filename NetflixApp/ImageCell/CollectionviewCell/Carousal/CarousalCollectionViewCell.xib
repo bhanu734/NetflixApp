@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,9 +20,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="309" height="213"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPP-UA-oHL">
-                                <rect key="frame" x="5" y="5" width="299" height="30"/>
+                                <rect key="frame" x="5" y="10" width="299" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="rix-Xb-HNG"/>
+                                    <constraint firstAttribute="height" constant="25" id="rix-Xb-HNG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -31,8 +30,8 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Rqj-uS-QoH">
                                 <rect key="frame" x="0.0" y="40" width="309" height="168"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jKu-si-at1">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jKu-si-at1">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -40,14 +39,14 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="jPP-UA-oHL" secondAttribute="trailing" constant="5" id="8iJ-CX-qGZ"/>
                             <constraint firstItem="Rqj-uS-QoH" firstAttribute="leading" secondItem="DPM-Uv-Fvm" secondAttribute="leading" id="BSR-Eq-hcH"/>
                             <constraint firstAttribute="bottom" secondItem="Rqj-uS-QoH" secondAttribute="bottom" constant="5" id="JlK-sl-ueg"/>
                             <constraint firstItem="jPP-UA-oHL" firstAttribute="leading" secondItem="DPM-Uv-Fvm" secondAttribute="leading" constant="5" id="PXx-gW-lq4"/>
                             <constraint firstAttribute="trailing" secondItem="Rqj-uS-QoH" secondAttribute="trailing" id="aNM-QJ-nqo"/>
-                            <constraint firstItem="jPP-UA-oHL" firstAttribute="top" secondItem="DPM-Uv-Fvm" secondAttribute="top" constant="5" id="dc5-1R-kz0"/>
+                            <constraint firstItem="jPP-UA-oHL" firstAttribute="top" secondItem="DPM-Uv-Fvm" secondAttribute="top" constant="10" id="dc5-1R-kz0"/>
                             <constraint firstItem="Rqj-uS-QoH" firstAttribute="top" secondItem="jPP-UA-oHL" secondAttribute="bottom" constant="5" id="s3E-Xn-tpG"/>
                         </constraints>
                     </view>
@@ -68,9 +67,4 @@
             <point key="canvasLocation" x="168.84057971014494" y="76.674107142857139"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

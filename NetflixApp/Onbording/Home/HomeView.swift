@@ -50,10 +50,13 @@ extension HomeView: UICollectionViewDataSource {
         
         if indexPath.section == 0 {
             if let cell = homecollectionview.dequeueReusableCell(withReuseIdentifier: "HeroCollectionViewCell", for: indexPath) as? HeroCollectionViewCell {
+                cell.configureUI(banner: homedata?.banner?.first)
                 return cell
             }
         } else {
             if let cell = homecollectionview.dequeueReusableCell(withReuseIdentifier: "CarousalCollectionViewCell", for: indexPath) as? CarousalCollectionViewCell {
+                cell.ConfigUI(playlist: homedata?.playlists?[indexPath.row
+                ])
                 return cell
             }
         }
@@ -65,6 +68,11 @@ extension HomeView: UICollectionViewDataSource {
 
 extension HomeView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: homecollectionview.frame.width, height: homecollectionview.frame.width*1.5)
+        if indexPath.section == 0{
+            return CGSize(width: homecollectionview.frame.width, height: Home_banner_Height)
+        }else {
+            return CGSize(width: homecollectionview.frame.width, height: Home_carousal_Height)
+        }
+        
     }
 }

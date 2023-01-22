@@ -12,23 +12,39 @@ class CarousalCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var caurosaltitle: UILabel!
     @IBOutlet weak var carousalcollectionview: UICollectionView!
     
+    var playlistdata: Playlist?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
        
+        caurosaltitle.textColor = Colors.shared.whiteTextcolor
         carousalcollectionview.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
         carousalcollectionview.delegate = self
         carousalcollectionview.dataSource = self
     }
 
+    func ConfigUI(playlist: Playlist?) {
+        if let playlist = playlist{
+            self.playlistdata = playlist
+            caurosaltitle.text = playlist.title
+            caurosaltitle.font = Font.shared.bold4
+            DispatchQueue.main.async {
+                self.carousalcollectionview.reloadData()
+            }
+           
+        }
+    }
 }
-extension CarousalCollectionViewCell: UICollectionViewDataSource {
+extension CarousalCollectionViewCell: UICollectionViewDataSource { 
+
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return playlistdata?.content?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = carousalcollectionview.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell {
-            cell.imageview.backgroundColor = UIColor.red
+            cell.configureUI(banner: playlistdata?.content?[indexPath.row])
             return cell
         }
         return UICollectionViewCell()
@@ -48,6 +64,6 @@ extension CarousalCollectionViewCell: UICollectionViewDelegate {
 
 extension CarousalCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.zero
+        return CGSize(width: Home_Tile_Width, height: Home_tile_Height)
     }
 }

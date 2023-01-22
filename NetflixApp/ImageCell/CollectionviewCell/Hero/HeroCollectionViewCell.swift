@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HeroCollectionViewCell: UICollectionViewCell {
 
@@ -21,6 +22,8 @@ class HeroCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var infoimageview: UIImageView!
     @IBOutlet weak var infolabel: UILabel!
     
+    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -30,6 +33,7 @@ class HeroCollectionViewCell: UICollectionViewCell {
     func setupUI() {
         heroimageview.image = Images.shared.welcomeBG
         heroimageview.contentMode = .scaleAspectFill
+        
         
         herostackview.backgroundColor = Colors.shared.blackcolor
         
@@ -50,5 +54,15 @@ class HeroCollectionViewCell: UICollectionViewCell {
         infoview.backgroundColor = Colors.shared.blackcolor
         infolabel.text = Strings.shared.info
         infolabel.textColor = Colors.shared.whiteTextcolor
+    }
+    func configureUI(banner: Banner?) {
+        if let banner = banner {
+            if let urlstring = banner.imagery?.thumbnailV {
+                if let url = URL(string: urlstring + "&sz=300-h410") {
+                    heroimageview.sd_setImage(with: url, placeholderImage: nil)
+                }
+            }
+            
+        }
     }
 }
