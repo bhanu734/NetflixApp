@@ -58,7 +58,7 @@ class HeroCollectionViewCell: UICollectionViewCell {
     func configureUI(banner: Banner?) {
         if let banner = banner {
             if let urlstring = banner.imagery?.thumbnailV {
-                if let url = URL(string: urlstring + "&sz=300-h410") {
+                if let url = URL(string: urlstring + "&sz=300-h450") {
                     heroimageview.sd_setImage(with: url, placeholderImage: nil)
                 }
             }

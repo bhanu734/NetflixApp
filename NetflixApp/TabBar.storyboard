@@ -47,6 +47,7 @@
                         </constraints>
                         <connections>
                             <outlet property="homecollectionview" destination="YCz-hJ-BJA" id="2XS-K8-rBu"/>
+                            <outlet property="menuview" destination="i3G-ia-ThP" id="j5b-VT-fbC"/>
                         </connections>
                     </view>
                     <connections>

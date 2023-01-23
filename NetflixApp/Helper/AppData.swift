@@ -12,6 +12,8 @@ class AppData {
    static let shared: AppData = AppData()
     
     var homeData: HomeData?
+    var tvshowData: HomeData?
+    var moviesData: HomeData?
     var tvshowCategories: [String]?
     var moviesCategories: [String]?
 }

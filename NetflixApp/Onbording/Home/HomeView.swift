@@ -7,12 +7,24 @@
 
 import UIKit
 
+protocol HomeViewDelegate {
+    func tvShowsTapped()
+    func moviesTapped()
+    func HomeTapped()
+}
+
 class HomeView: UIView {
 
     @IBOutlet weak var homecollectionview: UICollectionView!
+    @IBOutlet weak var menuview: MenuView!
+    
     var homedata : HomeData?
     
+    var delegate: HomeViewDelegate?
+    
     func setupUI() {
+        
+        menuview.delegate = self
         
         homecollectionview.backgroundColor = Colors.shared.blackcolor
        
@@ -55,8 +67,7 @@ extension HomeView: UICollectionViewDataSource {
             }
         } else {
             if let cell = homecollectionview.dequeueReusableCell(withReuseIdentifier: "CarousalCollectionViewCell", for: indexPath) as? CarousalCollectionViewCell {
-                cell.ConfigUI(playlist: homedata?.playlists?[indexPath.row
-                ])
+                cell.ConfigUI(playlist: homedata?.playlists?[indexPath.row])
                 return cell
             }
         }
@@ -75,4 +86,44 @@ extension HomeView: UICollectionViewDelegateFlowLayout {
         }
         
     }
+}
+
+extension HomeView: MenuViewDelegate {
+    func logoTapped() {
+        delegate?.HomeTapped()
+    }
+    
+    func tvShowsTapped() {
+        delegate?.tvShowsTapped()
+    }
+    
+    func moviesTapped() {
+        delegate?.moviesTapped()
+    }
+    
+    func mylistTapped() {
+        
+    }
+    
+    func tvShowsTappedEx() {
+        
+    }
+    
+    func moviesTappedEx() {
+        
+    }
+    
+    func mylistTappedEx() {
+        
+    }
+    
+    func tvShowsSubTappedTapped() {
+        
+    }
+    
+    func moviesSubTappedTapped() {
+        
+    }
+    
+    
 }

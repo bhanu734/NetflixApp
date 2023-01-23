@@ -18,6 +18,8 @@ enum Url {
     case tvShowCategories
     case movieCategories
     case deleteprofile
+    case tvshows
+    case movies
     
     func getUrl() -> String {
         switch self {
@@ -41,6 +43,10 @@ enum Url {
             return "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/moviecategories"
         case .deleteprofile:
             return "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/update-user"
+        case .tvshows:
+            return "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/tvshows"
+        case .movies:
+            return "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/movies"
             
             
         }
