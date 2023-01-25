@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		044D313E2968554600AAF2CE /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D313D2968554500AAF2CE /* Extension+UIImage.swift */; };
 		04603667296DA3D400C6639B /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04603666296DA3D400C6639B /* TabBar.storyboard */; };
 		0460366A296DA46E00C6639B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04603669296DA46E00C6639B /* HomeViewModel.swift */; };
 		0460366C296DA4C800C6639B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460366B296DA4C800C6639B /* HomeView.swift */; };
@@ -69,12 +68,17 @@
 		04DC9B232951E936000FEBD3 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9B222951E936000FEBD3 /* ProfileImageView.swift */; };
 		04DC9B282951EAEE000FEBD3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9B262951EAEE000FEBD3 /* ImageCollectionViewCell.swift */; };
 		04DC9B292951EAEE000FEBD3 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DC9B272951EAEE000FEBD3 /* ImageCollectionViewCell.xib */; };
+		04E835F4298112B200038B96 /* Others.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E835F3298112B200038B96 /* Others.storyboard */; };
+		04E835F7298113F900038B96 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E835F6298113F900038B96 /* CategoriesViewController.swift */; };
+		04E835F92981144700038B96 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E835F82981144700038B96 /* CategoriesView.swift */; };
+		04E835FB2981148600038B96 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E835FA2981148600038B96 /* CategoriesViewModel.swift */; };
+		04E8360129816D7F00038B96 /* SubCategorieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E835FF29816D7F00038B96 /* SubCategorieTableViewCell.swift */; };
+		04E8360229816D7F00038B96 /* SubCategorieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8360029816D7F00038B96 /* SubCategorieTableViewCell.xib */; };
 		6F2D2D54E3F2E92EE11CA2C7 /* Pods_NetflixApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDEDB4723C57BA00A300C718 /* Pods_NetflixApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		044D313C2968550C00AAF2CE /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
-		044D313D2968554500AAF2CE /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+UIImage.swift"; path = "../../../ott-app-b3/OTT-App-B3/Helpers/Extension+UIImage.swift"; sourceTree = "<group>"; };
 		04603666296DA3D400C6639B /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		04603669296DA46E00C6639B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0460366B296DA4C800C6639B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -138,6 +142,12 @@
 		04DC9B222951E936000FEBD3 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		04DC9B262951EAEE000FEBD3 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		04DC9B272951EAEE000FEBD3 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		04E835F3298112B200038B96 /* Others.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Others.storyboard; sourceTree = "<group>"; };
+		04E835F6298113F900038B96 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		04E835F82981144700038B96 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		04E835FA2981148600038B96 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		04E835FF29816D7F00038B96 /* SubCategorieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategorieTableViewCell.swift; sourceTree = "<group>"; };
+		04E8360029816D7F00038B96 /* SubCategorieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCategorieTableViewCell.xib; sourceTree = "<group>"; };
 		A56374B6E47A6CB410F613E5 /* Pods-NetflixApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetflixApp.release.xcconfig"; path = "Target Support Files/Pods-NetflixApp/Pods-NetflixApp.release.xcconfig"; sourceTree = "<group>"; };
 		C96E46B735BC01B1ABBAC1D8 /* Pods-NetflixApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetflixApp.debug.xcconfig"; path = "Target Support Files/Pods-NetflixApp/Pods-NetflixApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DDEDB4723C57BA00A300C718 /* Pods_NetflixApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetflixApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,7 +168,6 @@
 		044D313B2968538200AAF2CE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				044D313D2968554500AAF2CE /* Extension+UIImage.swift */,
 				0462F4382944A15A00D013AD /* UIView + Extension.swift */,
 				044D313C2968550C00AAF2CE /* Extension+UIImage.swift */,
 				0470942E294C597A00D990E4 /* NetworkAdaptor.swift */,
@@ -303,6 +312,7 @@
 		04D0F4A929471B870015D482 /* Onbording */ = {
 			isa = PBXGroup;
 			children = (
+				04E835F5298113AC00038B96 /* Categories */,
 				04603668296DA3FE00C6639B /* Home */,
 				04627E7C29570515008AAD7C /* Welcome screen */,
 				04627E6F2956CA13008AAD7C /* SplashScreen */,
@@ -342,6 +352,7 @@
 				04DA1D2429437F3D002F988A /* SceneDelegate.swift */,
 				04DA1D2829437F3D002F988A /* Main.storyboard */,
 				04D0F4A7294710A60015D482 /* Onbording.storyboard */,
+				04E835F3298112B200038B96 /* Others.storyboard */,
 				04603666296DA3D400C6639B /* TabBar.storyboard */,
 				04603670296DC50E00C6639B /* Views */,
 				044D313B2968538200AAF2CE /* Helper */,
@@ -379,7 +390,7 @@
 		04DC9B1B2951E7A1000FEBD3 /* ImageCell */ = {
 			isa = PBXGroup;
 			children = (
-				04DC9B252951EA9F000FEBD3 /* TableviewCell */,
+				04E835FE29816D2300038B96 /* TableviewCell */,
 				04DC9B242951EA84000FEBD3 /* CollectionviewCell */,
 			);
 			path = ImageCell;
@@ -396,13 +407,6 @@
 			path = CollectionviewCell;
 			sourceTree = "<group>";
 		};
-		04DC9B252951EA9F000FEBD3 /* TableviewCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TableviewCell;
-			sourceTree = "<group>";
-		};
 		04DC9B2A2951EB05000FEBD3 /* image */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,13 +416,31 @@
 			path = image;
 			sourceTree = "<group>";
 		};
+		04E835F5298113AC00038B96 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				04E835F82981144700038B96 /* CategoriesView.swift */,
+				04E835F6298113F900038B96 /* CategoriesViewController.swift */,
+				04E835FA2981148600038B96 /* CategoriesViewModel.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		04E835FE29816D2300038B96 /* TableviewCell */ = {
+			isa = PBXGroup;
+			children = (
+				04E835FF29816D7F00038B96 /* SubCategorieTableViewCell.swift */,
+				04E8360029816D7F00038B96 /* SubCategorieTableViewCell.xib */,
+			);
+			path = TableviewCell;
+			sourceTree = "<group>";
+		};
 		BF18B11FDA0DDFF9B0508089 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				C96E46B735BC01B1ABBAC1D8 /* Pods-NetflixApp.debug.xcconfig */,
 				A56374B6E47A6CB410F613E5 /* Pods-NetflixApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -491,11 +513,13 @@
 			files = (
 				04DA1D2F29437F4F002F988A /* LaunchScreen.storyboard in Resources */,
 				04D0F4A8294710A60015D482 /* Onbording.storyboard in Resources */,
+				04E8360229816D7F00038B96 /* SubCategorieTableViewCell.xib in Resources */,
 				04DA1D2C29437F4F002F988A /* Assets.xcassets in Resources */,
 				04DA1D2A29437F3D002F988A /* Main.storyboard in Resources */,
 				04603667296DA3D400C6639B /* TabBar.storyboard in Resources */,
 				04627E792956CD9A008AAD7C /* netflixGif.gif in Resources */,
 				048B19512955EC080095FF02 /* ProfilesCollectionViewCell.xib in Resources */,
+				04E835F4298112B200038B96 /* Others.storyboard in Resources */,
 				047751F929784D2000AB8E87 /* HeroCollectionViewCell.xib in Resources */,
 				0484FEF5297A59D80028001D /* CarousalCollectionViewCell.xib in Resources */,
 				04DC9B292951EAEE000FEBD3 /* ImageCollectionViewCell.xib in Resources */,
@@ -558,9 +582,9 @@
 				0470943B294D009B00D990E4 /* ForgotPasswordView.swift in Sources */,
 				048B1944295564310095FF02 /* ProfileselectionView.swift in Sources */,
 				0460366A296DA46E00C6639B /* HomeViewModel.swift in Sources */,
-				044D313E2968554600AAF2CE /* Extension+UIImage.swift in Sources */,
 				04D0F4AB29471BC10015D482 /* RegisterViewController.swift in Sources */,
 				04627E712956CA71008AAD7C /* SplashViewController.swift in Sources */,
+				04E835F92981144700038B96 /* CategoriesView.swift in Sources */,
 				04709441294D01E300D990E4 /* ResetPasswordViewController.swift in Sources */,
 				04627E7B2957006D008AAD7C /* Constants.swift in Sources */,
 				0460366E296DA57E00C6639B /* HomeViewController.swift in Sources */,
@@ -570,6 +594,7 @@
 				04709432294CA3F600D990E4 /* Urlhandler.swift in Sources */,
 				047751F829784D2000AB8E87 /* HeroCollectionViewCell.swift in Sources */,
 				0470943D294D00F500D990E4 /* ForgotPasswordViewModel.swift in Sources */,
+				04E8360129816D7F00038B96 /* SubCategorieTableViewCell.swift in Sources */,
 				04DA1D3B294380E3002F988A /* Colors.swift in Sources */,
 				04639A5E294AF2C50086BD9F /* LoginModel.swift in Sources */,
 				04DC9B282951EAEE000FEBD3 /* ImageCollectionViewCell.swift in Sources */,
@@ -590,6 +615,7 @@
 				04709434294CA8E600D990E4 /* Controller.swift in Sources */,
 				047751F02978064200AB8E87 /* MenuView.swift in Sources */,
 				047FC0C4295C85FE00CCD036 /* HomeData.swift in Sources */,
+				04E835F7298113F900038B96 /* CategoriesViewController.swift in Sources */,
 				04DC9B1729518AA0000FEBD3 /* CreateProfileViewController.swift in Sources */,
 				04D0F4B129471C6A0015D482 /* RegisterView.swift in Sources */,
 				04DC9B1529518A6B000FEBD3 /* CreateProfileView.swift in Sources */,
@@ -602,6 +628,7 @@
 				048B194A295564FA0095FF02 /* ProfileSelectionViewModel.swift in Sources */,
 				048B19462955647D0095FF02 /* ProfileSelectionViewController.swift in Sources */,
 				0462F4392944A15A00D013AD /* UIView + Extension.swift in Sources */,
+				04E835FB2981148600038B96 /* CategoriesViewModel.swift in Sources */,
 				047FC0C6295CC13C00CCD036 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

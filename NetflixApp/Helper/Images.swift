@@ -22,5 +22,6 @@ class Images {
     let plus = UIImage(systemName: "plus")
     let play = UIImage(systemName: "play")
     let info = UIImage(systemName: "info.circle")
+    let crossimagefill = UIImage(systemName: "xmark.circle.fill")
     
 }

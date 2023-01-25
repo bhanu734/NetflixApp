@@ -35,6 +35,22 @@ extension HomeViewController: HomeViewDelegate {
     func moviesTapped() {
         homeviewmodel.getmoviesData()
     }
+    func tvShowsSubTappedTapped() {
+        DispatchQueue.main.async {
+            let controller = Controller.categories.getController()
+            controller.modalPresentationStyle = .overFullScreen
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func moviesSubTappedTapped() {
+        DispatchQueue.main.async {
+            let controller = Controller.categories.getController()
+            controller.modalPresentationStyle = .overFullScreen
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
     
 }
 extension HomeViewController: HomeViewModelDelegate {

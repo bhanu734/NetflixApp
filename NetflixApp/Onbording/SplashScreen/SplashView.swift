@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 protocol SplashViewDelegate {
     func goto_Welcome_Screen()
     func animation_Completed()
@@ -23,7 +24,8 @@ class SplashView: UIView {
     
     
     func setupUI() {
-        NetflixGifimage.image = UIImage.gifImageWithName("netflixGif")
+//        NetflixGifimage.image = UIImage.gifImageWithName("netflixGif")
+        NetflixGifimage.image = UIImage.sd_image(withGIFData: sd_imageLoadOperation(forKey: "netflixGif") as? Data)
         backgroundColor = Colors.shared.blackcolor
         
         gifwidth.constant = UIScreen.main.bounds.width - 120

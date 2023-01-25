@@ -11,6 +11,8 @@ protocol HomeViewDelegate {
     func tvShowsTapped()
     func moviesTapped()
     func HomeTapped()
+    func tvShowsSubTappedTapped()
+    func moviesSubTappedTapped()
 }
 
 class HomeView: UIView {
@@ -106,11 +108,11 @@ extension HomeView: MenuViewDelegate {
     }
     
     func tvShowsTappedEx() {
-        
+        print("tvshows secondtime tapped")
     }
     
     func moviesTappedEx() {
-        
+        print("movies secondtime tapped")
     }
     
     func mylistTappedEx() {
@@ -118,11 +120,11 @@ extension HomeView: MenuViewDelegate {
     }
     
     func tvShowsSubTappedTapped() {
-        
+        delegate?.tvShowsSubTappedTapped()
     }
     
     func moviesSubTappedTapped() {
-        
+        delegate?.moviesSubTappedTapped()
     }
     
     
