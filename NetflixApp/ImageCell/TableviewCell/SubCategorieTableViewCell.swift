@@ -14,10 +14,14 @@ class SubCategorieTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
        
+        backgroundColor = Colors.shared.clearcolor
+        
         sublabel.textColor = Colors.shared.whiteTextcolor
+//        sublabel.tintColor = Colors.shared.whiteimagecolor
+        
     }
 
-    func configureUI(text: String){
-        sublabel.text = text
+    func configureUI(textname: String){
+        sublabel.text = textname
     }
 }

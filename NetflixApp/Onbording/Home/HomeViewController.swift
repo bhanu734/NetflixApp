@@ -37,17 +37,21 @@ extension HomeViewController: HomeViewDelegate {
     }
     func tvShowsSubTappedTapped() {
         DispatchQueue.main.async {
-            let controller = Controller.categories.getController()
-            controller.modalPresentationStyle = .overFullScreen
-            self.present(controller, animated: true, completion: nil)
+            if let controller = Controller.categories.getController() as? CategoriesViewController {
+                controller.modalPresentationStyle = .overFullScreen
+                controller.categoriesviewmodel.categorytype = .tvshows
+                self.present(controller, animated: true, completion: nil)
+            }
         }
     }
     
     func moviesSubTappedTapped() {
         DispatchQueue.main.async {
-            let controller = Controller.categories.getController()
-            controller.modalPresentationStyle = .overFullScreen
-            self.present(controller, animated: true, completion: nil)
+            if let controller = Controller.categories.getController() as? CategoriesViewController {
+                controller.modalPresentationStyle = .overFullScreen
+                controller.categoriesviewmodel.categorytype = .movies
+                self.present(controller, animated: true, completion: nil)
+            }
         }
     }
     

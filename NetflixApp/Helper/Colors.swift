@@ -10,7 +10,7 @@ import UIKit
 class Colors {
     static let shared: Colors = Colors()
     
-    let cleartcolor = UIColor.clear
+    let clearcolor = UIColor.clear
     let whiteTextcolor = UIColor.white
     let whiteimagecolor = UIColor.white
     let redbuttoncolor = UIColor.red

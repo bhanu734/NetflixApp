@@ -17,7 +17,9 @@ class CategoriesViewController: UIViewController {
         
         categoriesview.delegate = self
         categoriesview.setupUI()
-//        categoriesview.categoriesdata = categoriesviewmodel.categoriesdata
+        categoriesviewmodel.getData()
+        categoriesview.categoriesdata = categoriesviewmodel.categoriesdata
+        
         categoriesview.updateUI()
         
     }

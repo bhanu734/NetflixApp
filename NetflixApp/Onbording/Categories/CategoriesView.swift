@@ -18,24 +18,30 @@ class CategoriesView: UIView {
     @IBOutlet weak var categorietableview: UITableView!
     
     var delegate: CategoriesViewDelegate?
-//    var categoriesdata : [String?] = []
+    var categoriesdata : [String] = []
     func setupUI() {
         
-        backgroundColor = Colors.shared.cleartcolor
-        blueview.backgroundColor = Colors.shared.cleartcolor
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        categorietableview.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 130, right: 0)
+        backgroundColor = Colors.shared.clearcolor
+        
+        blueview.backgroundColor = Colors.shared.clearcolor
+        
+        let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = blueview.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         blueview.addSubview(blurEffectView)
+       
+        categorietableview.backgroundColor = Colors.shared.clearcolor
+        closeview.backgroundColor = Colors.shared.clearcolor
+        closeimageview.image = Images.shared.crossimagefill?.withRenderingMode(.alwaysTemplate)
+        closeimageview.tintColor = Colors.shared.whiteimagecolor
+        
         
         categorietableview.register(UINib(nibName: "SubCategorieTableViewCell", bundle: nil), forCellReuseIdentifier: "SubCategorieTableViewCell")
         categorietableview.delegate = self
         categorietableview.dataSource = self
-        
-        closeview.backgroundColor = Colors.shared.cleartcolor
-        closeimageview.image = Images.shared.crossimagefill
-        closeimageview.tintColor = Colors.shared.whiteimagecolor
+    
         
     }
     @IBAction func closeTapped() {
@@ -48,18 +54,20 @@ class CategoriesView: UIView {
     }
 }
 extension CategoriesView: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }
 extension CategoriesView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0 //categoriesdata.count
+        return categoriesdata.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if let cell = categorietableview.dequeueReusableCell(withIdentifier: "SubCategorieTableViewCell", for: indexPath) as? SubCategorieTableViewCell {
-//            cell.configureUI(text: categoriesdata[indexPath.row])
-//            return cell
-//        }
+        if let cell = categorietableview.dequeueReusableCell(withIdentifier: "SubCategorieTableViewCell", for: indexPath) as? SubCategorieTableViewCell {
+            cell.configureUI(textname: categoriesdata[indexPath.row])
+            return cell
+        }
         return UITableViewCell()
     }
     

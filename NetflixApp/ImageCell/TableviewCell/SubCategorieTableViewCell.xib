@@ -16,16 +16,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="325" height="83"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ar-dz-6u9">
-                        <rect key="frame" x="141.5" y="31" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCx-on-ZiU">
+                        <rect key="frame" x="0.0" y="0.0" width="325" height="83"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ar-dz-6u9">
+                                <rect key="frame" x="141.5" y="31" width="42" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2Ar-dz-6u9" firstAttribute="centerY" secondItem="TCx-on-ZiU" secondAttribute="centerY" id="5rv-x9-qEq"/>
+                            <constraint firstItem="2Ar-dz-6u9" firstAttribute="centerX" secondItem="TCx-on-ZiU" secondAttribute="centerX" id="g6d-bf-00L"/>
+                        </constraints>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="2Ar-dz-6u9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qla-Mn-CMj"/>
-                    <constraint firstItem="2Ar-dz-6u9" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wqd-Nv-9AU"/>
+                    <constraint firstAttribute="trailing" secondItem="TCx-on-ZiU" secondAttribute="trailing" id="CAp-N9-CF8"/>
+                    <constraint firstItem="TCx-on-ZiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="K53-l7-9Bc"/>
+                    <constraint firstItem="TCx-on-ZiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jEs-qZ-Nbc"/>
+                    <constraint firstAttribute="bottom" secondItem="TCx-on-ZiU" secondAttribute="bottom" id="sHw-ee-O9J"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
