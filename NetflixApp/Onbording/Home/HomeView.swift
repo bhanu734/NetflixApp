@@ -24,12 +24,16 @@ class HomeView: UIView {
     
     var delegate: HomeViewDelegate?
     
+    var subcategorydata: CategoryData?
+    var isselected: Bool = false
+    
     func setupUI() {
         
         menuview.delegate = self
         
         homecollectionview.backgroundColor = Colors.shared.blackcolor
        
+        homecollectionview.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
         homecollectionview.register(UINib(nibName: "HeroCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HeroCollectionViewCell")
         homecollectionview.register(UINib(nibName: "CarousalCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CarousalCollectionViewCell")
         homecollectionview.delegate = self
@@ -56,7 +60,12 @@ extension HomeView: UICollectionViewDataSource {
         if section == 0 {
             return 1
         }else {
-            return homedata?.playlists?.count ?? 0
+           if isselected {
+            return subcategorydata?.playlists?.count ?? 0
+            }else {
+                return homedata?.playlists?.count ?? 0
+            }
+            
         }
     }
     
@@ -64,14 +73,27 @@ extension HomeView: UICollectionViewDataSource {
         
         if indexPath.section == 0 {
             if let cell = homecollectionview.dequeueReusableCell(withReuseIdentifier: "HeroCollectionViewCell", for: indexPath) as? HeroCollectionViewCell {
-                cell.configureUI(banner: homedata?.banner?.first)
+                if isselected {
+                    cell.configureUI(banner: subcategorydata?.banner)
+                }else {
+                    cell.configureUI(banner: homedata?.banner?.first)
+                }
+                
                 return cell
             }
         } else {
-            if let cell = homecollectionview.dequeueReusableCell(withReuseIdentifier: "CarousalCollectionViewCell", for: indexPath) as? CarousalCollectionViewCell {
-                cell.ConfigUI(playlist: homedata?.playlists?[indexPath.row])
-                return cell
+            if isselected {
+                if let cell = homecollectionview.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell {
+                    cell.configureUI(banner: subcategorydata?.playlists?[indexPath.row])
+                    return cell
+                }
+            }else {
+                if let cell = homecollectionview.dequeueReusableCell(withReuseIdentifier: "CarousalCollectionViewCell", for: indexPath) as? CarousalCollectionViewCell {
+                    cell.ConfigUI(playlist: homedata?.playlists?[indexPath.row])
+                    return cell
+                }
             }
+            
         }
         return UICollectionViewCell()
     }
@@ -84,9 +106,12 @@ extension HomeView: UICollectionViewDelegateFlowLayout {
         if indexPath.section == 0{
             return CGSize(width: homecollectionview.frame.width, height: Home_banner_Height)
         }else {
-            return CGSize(width: homecollectionview.frame.width, height: Home_carousal_Height)
+            if isselected {
+                return CGSize(width: ((homecollectionview.frame.width)-30)/3, height: ((homecollectionview.frame.width)-30)/3)
+            }else {
+                return CGSize(width: homecollectionview.frame.width, height: Home_carousal_Height)
+            }
         }
-        
     }
 }
 

@@ -6,11 +6,16 @@
 //
 
 import UIKit
+protocol CategoriesViewControllerDelegate {
+    func categoryTapped(category: String, categorytype: categoryType)
+}
 
 class CategoriesViewController: UIViewController {
 
     @IBOutlet weak var categoriesview: CategoriesView!
     var categoriesviewmodel: CategoriesViewModel = CategoriesViewModel()
+    
+    var delegate: CategoriesViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +31,13 @@ class CategoriesViewController: UIViewController {
  
 }
 extension CategoriesViewController: CategoriesViewDelegate {
+   
     func closeTapped() {
         dismiss(animated: true, completion: nil)
     }
     
-    
+    func categorySelected(category: String) {
+        delegate?.categoryTapped(category: category, categorytype: categoriesviewmodel.categorytype)
+        closeTapped()
+    }
 }

@@ -8,6 +8,7 @@
 import UIKit
 protocol CategoriesViewDelegate {
     func closeTapped()
+    func categorySelected(category: String)
 }
 
 class CategoriesView: UIView {
@@ -54,6 +55,9 @@ class CategoriesView: UIView {
     }
 }
 extension CategoriesView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.categorySelected(category: categoriesdata[indexPath.row])
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }

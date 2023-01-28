@@ -40,6 +40,7 @@ extension HomeViewController: HomeViewDelegate {
             if let controller = Controller.categories.getController() as? CategoriesViewController {
                 controller.modalPresentationStyle = .overFullScreen
                 controller.categoriesviewmodel.categorytype = .tvshows
+                controller.delegate = self
                 self.present(controller, animated: true, completion: nil)
             }
         }
@@ -50,6 +51,7 @@ extension HomeViewController: HomeViewDelegate {
             if let controller = Controller.categories.getController() as? CategoriesViewController {
                 controller.modalPresentationStyle = .overFullScreen
                 controller.categoriesviewmodel.categorytype = .movies
+                controller.delegate = self
                 self.present(controller, animated: true, completion: nil)
             }
         }
@@ -61,8 +63,20 @@ extension HomeViewController: HomeViewModelDelegate {
   
     func updateUI() {
         homeview.homedata = homeviewmodel.homedata
+        homeview.isselected = false
         homeview.updateUI()
     }
     
+    func update_sub_categorydata() {
+        homeview.subcategorydata = homeviewmodel.subcategorydata
+        homeview.isselected = true
+        homeview.updateUI()
+    }
+}
+extension HomeViewController: CategoriesViewControllerDelegate {
+    func categoryTapped(category: String, categorytype: categoryType) {
+        print("home: ", category)
+        homeviewmodel.categoryTapped(category: category, categorytype: categorytype)
+    }
     
 }
