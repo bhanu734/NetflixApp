@@ -75,7 +75,7 @@ extension HomeViewController: HomeViewModelDelegate {
 }
 extension HomeViewController: CategoriesViewControllerDelegate {
     func categoryTapped(category: String, categorytype: categoryType) {
-        print("home: ", category)
+        homeview.update_category_Title(category: category, categorytype: categorytype)
         homeviewmodel.categoryTapped(category: category, categorytype: categorytype)
     }
     

@@ -45,6 +45,13 @@ class HomeView: UIView {
             self.homecollectionview.reloadData()
         }
     }
+    func update_category_Title(category: String, categorytype: categoryType) {
+        if categorytype == .movies {
+            menuview.updateMovieSubCategoryTitle(title: category)
+        }else {
+            menuview.updateTvShowsSubCategoryTitle(title: category)
+        }
+    }
 }
 extension HomeView: UICollectionViewDelegate{
     
