@@ -21,10 +21,10 @@ class CategoriesViewController: UIViewController {
         super.viewDidLoad()
         
         categoriesview.delegate = self
-        categoriesview.setupUI()
         categoriesviewmodel.getData()
         categoriesview.categoriesdata = categoriesviewmodel.categoriesdata
-        
+        categoriesview.categorytype = categoriesviewmodel.categorytype
+        categoriesview.setupUI()
         categoriesview.updateUI()
         
     }

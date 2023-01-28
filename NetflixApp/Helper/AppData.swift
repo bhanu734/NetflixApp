@@ -14,6 +14,9 @@ class AppData {
     var homeData: HomeData?
     var tvshowData: HomeData?
     var moviesData: HomeData?
+    var mylistData: HomeData?
     var tvshowCategories: [String]?
     var moviesCategories: [String]?
+    var tvshowscategorydata: [String: CategoryData]?
+    var moviescategorydata: [String: CategoryData]?
 }

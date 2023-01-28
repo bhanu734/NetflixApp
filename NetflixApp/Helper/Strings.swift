@@ -59,5 +59,9 @@ class Strings {
     let mylistlabel = "My List"
     let play = "PLay"
     let info = "Info"
+    let home_cat = "Home"
+    let movies_cat = "Movies"
+    let tvshows_cat = "Tvshows"
+    let mylist_cat = "Mylist"
 }
  

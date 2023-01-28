@@ -20,9 +20,15 @@ class CategoriesView: UIView {
     
     var delegate: CategoriesViewDelegate?
     var categoriesdata : [String] = []
+    var categorytype: categoryType = .home
+    
     func setupUI() {
+        if categorytype == .home {
+            categorietableview.contentInset = UIEdgeInsets(top: 240, left: 0, bottom: 0, right: 0)
+        }else {
+            categorietableview.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 140, right: 0)
+        }
         
-        categorietableview.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 130, right: 0)
         backgroundColor = Colors.shared.clearcolor
         
         blueview.backgroundColor = Colors.shared.clearcolor

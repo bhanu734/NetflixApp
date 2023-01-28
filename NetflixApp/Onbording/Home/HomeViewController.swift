@@ -22,6 +22,16 @@ class HomeViewController: BaseViewController {
         homeview.updateUI()
     }
 
+    func Navigate_to_CategoriesVC() {
+        DispatchQueue.main.async {
+            if let controller = Controller.categories.getController() as? CategoriesViewController {
+                controller.modalPresentationStyle = .overFullScreen
+                controller.categoriesviewmodel.categorytype = .home
+                controller.delegate = self
+                self.present(controller, animated: true, completion: nil)
+            }
+        }
+    }
 }
 extension HomeViewController: HomeViewDelegate {
     func HomeTapped() {
@@ -56,7 +66,17 @@ extension HomeViewController: HomeViewDelegate {
             }
         }
     }
+    func tvShowsTappedEx() {
+        Navigate_to_CategoriesVC()
+    }
     
+    func moviesTappedEx() {
+        Navigate_to_CategoriesVC()
+    }
+    
+    func mylistTappedEx() {
+        Navigate_to_CategoriesVC()
+    }
     
 }
 extension HomeViewController: HomeViewModelDelegate {
