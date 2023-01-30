@@ -86,6 +86,10 @@ class HomeViewModel {
         
     }
     
+    func getMylistData() {
+        
+    }
+    
     func categoryTapped(category: String, categorytype: categoryType) {
         self.delegate?.showLoader()
         var urlString = ""
@@ -112,6 +116,20 @@ class HomeViewModel {
             }
             
         }
+    }
+    
+    func updateHomeData(category: String) {
+        if category == Strings.shared.home_cat {
+            getHomeData()
+        } else if category == Strings.shared.movies_cat {
+            getmoviesData()
+        } else if category == Strings.shared.mylist_cat {
+            getMylistData()
+        } else if category == Strings.shared.tvshows_cat {
+            getTvshowsData()
+        }
+        
+        
     }
 }
 

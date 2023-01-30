@@ -55,6 +55,18 @@ class HomeView: UIView {
             menuview.updateTvShowsSubCategoryTitle(title: category)
         }
     }
+    
+    func update_Menuview_Layout(category: String) {
+        if category == Strings.shared.home_cat {
+            menuview.logoTapped()
+        } else if category == Strings.shared.movies_cat {
+            menuview.moviesTapped()
+        } else if category == Strings.shared.mylist_cat {
+            menuview.mylistTapped()
+        } else if category == Strings.shared.tvshows_cat {
+            menuview.tvshowsTapped()
+        }
+    }
 }
 extension HomeView: UICollectionViewDelegate{
     

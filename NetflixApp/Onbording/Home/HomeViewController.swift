@@ -95,8 +95,14 @@ extension HomeViewController: HomeViewModelDelegate {
 }
 extension HomeViewController: CategoriesViewControllerDelegate {
     func categoryTapped(category: String, categorytype: categoryType) {
-        homeview.update_category_Title(category: category, categorytype: categorytype)
-        homeviewmodel.categoryTapped(category: category, categorytype: categorytype)
+        if categorytype == .home {
+            homeview.update_Menuview_Layout(category: category)
+            homeviewmodel.updateHomeData(category: category)
+        }else {
+            homeview.update_category_Title(category: category, categorytype: categorytype)
+            homeviewmodel.categoryTapped(category: category, categorytype: categorytype)
+        
+        }
     }
     
 }
