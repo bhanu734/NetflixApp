@@ -32,6 +32,16 @@
 		0470943F294D01A700D990E4 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470943E294D01A700D990E4 /* ResetPasswordView.swift */; };
 		04709441294D01E300D990E4 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04709440294D01E300D990E4 /* ResetPasswordViewController.swift */; };
 		04709443294D028A00D990E4 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04709442294D028A00D990E4 /* ResetPasswordViewModel.swift */; };
+		0475C8822987970B002A2372 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C8812987970B002A2372 /* SearchViewController.swift */; };
+		0475C88429879769002A2372 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C88329879769002A2372 /* SearchView.swift */; };
+		0475C886298797AD002A2372 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C885298797AD002A2372 /* SearchViewModel.swift */; };
+		0475C8892987B501002A2372 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C8882987B501002A2372 /* TabBarViewController.swift */; };
+		0475C88D2987CF31002A2372 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C88C2987CF31002A2372 /* AccountView.swift */; };
+		0475C88F2987CF65002A2372 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C88E2987CF65002A2372 /* AccountViewController.swift */; };
+		0475C8912987CFC4002A2372 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C8902987CFC4002A2372 /* AccountViewModel.swift */; };
+		0475C8932987D07E002A2372 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C8922987D07E002A2372 /* SettingsView.swift */; };
+		0475C8952987D0B2002A2372 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C8942987D0B2002A2372 /* SettingsViewController.swift */; };
+		0475C8972987D0E2002A2372 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C8962987D0E2002A2372 /* SettingsViewModel.swift */; };
 		047751F02978064200AB8E87 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047751EF2978064100AB8E87 /* MenuView.swift */; };
 		047751F829784D2000AB8E87 /* HeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047751F629784D2000AB8E87 /* HeroCollectionViewCell.swift */; };
 		047751F929784D2000AB8E87 /* HeroCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047751F729784D2000AB8E87 /* HeroCollectionViewCell.xib */; };
@@ -105,6 +115,16 @@
 		0470943E294D01A700D990E4 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		04709440294D01E300D990E4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		04709442294D028A00D990E4 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
+		0475C8812987970B002A2372 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0475C88329879769002A2372 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		0475C885298797AD002A2372 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		0475C8882987B501002A2372 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		0475C88C2987CF31002A2372 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		0475C88E2987CF65002A2372 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		0475C8902987CFC4002A2372 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		0475C8922987D07E002A2372 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0475C8942987D0B2002A2372 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0475C8962987D0E2002A2372 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		047751EF2978064100AB8E87 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		047751F629784D2000AB8E87 /* HeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionViewCell.swift; sourceTree = "<group>"; };
 		047751F729784D2000AB8E87 /* HeroCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -267,6 +287,47 @@
 			path = ResetPassword;
 			sourceTree = "<group>";
 		};
+		0475C8802987968D002A2372 /* Search Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0475C8812987970B002A2372 /* SearchViewController.swift */,
+				0475C88329879769002A2372 /* SearchView.swift */,
+				0475C885298797AD002A2372 /* SearchViewModel.swift */,
+			);
+			path = "Search Screen";
+			sourceTree = "<group>";
+		};
+		0475C8872987B48F002A2372 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0475C8882987B501002A2372 /* TabBarViewController.swift */,
+				0475C88B2987CE4B002A2372 /* SettingsScreen */,
+				0475C88A2987CDFE002A2372 /* AccountScreen */,
+				0475C8802987968D002A2372 /* Search Screen */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		0475C88A2987CDFE002A2372 /* AccountScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0475C88C2987CF31002A2372 /* AccountView.swift */,
+				0475C88E2987CF65002A2372 /* AccountViewController.swift */,
+				0475C8902987CFC4002A2372 /* AccountViewModel.swift */,
+			);
+			path = AccountScreen;
+			sourceTree = "<group>";
+		};
+		0475C88B2987CE4B002A2372 /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0475C8922987D07E002A2372 /* SettingsView.swift */,
+				0475C8942987D0B2002A2372 /* SettingsViewController.swift */,
+				0475C8962987D0E2002A2372 /* SettingsViewModel.swift */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
 		047751F1297818B900AB8E87 /* Hero */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +422,7 @@
 				044D313B2968538200AAF2CE /* Helper */,
 				04DC9B1B2951E7A1000FEBD3 /* ImageCell */,
 				04C99E8A2950978D00FA4FFA /* BaseClasses */,
+				0475C8872987B48F002A2372 /* TabBar */,
 				04D0F4A929471B870015D482 /* Onbording */,
 				04DA1D2B29437F4F002F988A /* Assets.xcassets */,
 				04627E782956CD99008AAD7C /* netflixGif.gif */,
@@ -593,26 +655,34 @@
 				0460366E296DA57E00C6639B /* HomeViewController.swift in Sources */,
 				04DA1D3F29438143002F988A /* WelcomeViewController.swift in Sources */,
 				04709443294D028A00D990E4 /* ResetPasswordViewModel.swift in Sources */,
+				0475C88D2987CF31002A2372 /* AccountView.swift in Sources */,
 				04639A5C294AED250086BD9F /* LoginView.swift in Sources */,
 				04709432294CA3F600D990E4 /* Urlhandler.swift in Sources */,
 				047751F829784D2000AB8E87 /* HeroCollectionViewCell.swift in Sources */,
 				0470943D294D00F500D990E4 /* ForgotPasswordViewModel.swift in Sources */,
 				04E8360129816D7F00038B96 /* SubCategorieTableViewCell.swift in Sources */,
 				04DA1D3B294380E3002F988A /* Colors.swift in Sources */,
+				0475C8912987CFC4002A2372 /* AccountViewModel.swift in Sources */,
+				0475C8952987D0B2002A2372 /* SettingsViewController.swift in Sources */,
 				04639A5E294AF2C50086BD9F /* LoginModel.swift in Sources */,
 				04DC9B282951EAEE000FEBD3 /* ImageCollectionViewCell.swift in Sources */,
+				0475C8932987D07E002A2372 /* SettingsView.swift in Sources */,
 				04DA1D41294381B4002F988A /* WelcomeView.swift in Sources */,
 				04627E732956CA96008AAD7C /* SplashView.swift in Sources */,
 				04DC9B1D2951E807000FEBD3 /* ProfileImageViewController.swift in Sources */,
 				0470942F294C597A00D990E4 /* NetworkAdaptor.swift in Sources */,
 				04708A162984E4D7007AA87C /* CategoryDataModel.swift in Sources */,
+				0475C8892987B501002A2372 /* TabBarViewController.swift in Sources */,
 				04DC9B1F2951E846000FEBD3 /* ProfileImageViewModel.swift in Sources */,
 				04C99E8C295097F900FA4FFA /* BaseViewController.swift in Sources */,
 				04DA1D39294380D2002F988A /* Images.swift in Sources */,
 				04627E752956CABD008AAD7C /* SplashViewModel.swift in Sources */,
+				0475C88429879769002A2372 /* SearchView.swift in Sources */,
 				0460366C296DA4C800C6639B /* HomeView.swift in Sources */,
 				04639A5A294AECE80086BD9F /* LoginViewModel.swift in Sources */,
 				04D0F4AF29471C100015D482 /* RegisterViewModel.swift in Sources */,
+				0475C8972987D0E2002A2372 /* SettingsViewModel.swift in Sources */,
+				0475C88F2987CF65002A2372 /* AccountViewController.swift in Sources */,
 				04DA1D2329437F3D002F988A /* AppDelegate.swift in Sources */,
 				048B194C29559CEC0095FF02 /* User.swift in Sources */,
 				04DA1D2529437F3D002F988A /* SceneDelegate.swift in Sources */,
@@ -620,6 +690,7 @@
 				047751F02978064200AB8E87 /* MenuView.swift in Sources */,
 				047FC0C4295C85FE00CCD036 /* HomeData.swift in Sources */,
 				04E835F7298113F900038B96 /* CategoriesViewController.swift in Sources */,
+				0475C8822987970B002A2372 /* SearchViewController.swift in Sources */,
 				04DC9B1729518AA0000FEBD3 /* CreateProfileViewController.swift in Sources */,
 				04D0F4B129471C6A0015D482 /* RegisterView.swift in Sources */,
 				04DC9B1529518A6B000FEBD3 /* CreateProfileView.swift in Sources */,
@@ -634,6 +705,7 @@
 				0462F4392944A15A00D013AD /* UIView + Extension.swift in Sources */,
 				04E835FB2981148600038B96 /* CategoriesViewModel.swift in Sources */,
 				047FC0C6295CC13C00CCD036 /* AppData.swift in Sources */,
+				0475C886298797AD002A2372 /* SearchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

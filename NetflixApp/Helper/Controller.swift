@@ -19,6 +19,10 @@ enum Controller {
     case homeTab
     case categories
     case details
+    case search
+    case Account
+    case settings
+    case TabBar
     
     func getController() -> UIViewController {
         switch self {
@@ -44,6 +48,15 @@ enum Controller {
             return UIStoryboard(name: "Others", bundle: nil).instantiateViewController(withIdentifier: "CategoriesViewController")
         case .details:
             return UIStoryboard(name: "Others", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController")
+        case .search:
+            return UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "SearchViewController")
+        case .Account:
+            return UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "AccountViewController")
+        case .settings:
+            return UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController")
+        case .TabBar:
+            return UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBarViewController")
+        
         }
     }
 }

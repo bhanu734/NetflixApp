@@ -63,5 +63,9 @@ class Strings {
     let movies_cat = "Movies"
     let tvshows_cat = "Tvshows"
     let mylist_cat = "Mylist"
+    let Home = "Home"
+    let Search = "Search"
+    let Account = "Account"
+    let Settings = "Settings"
 }
  

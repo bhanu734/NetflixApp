@@ -56,7 +56,7 @@ extension ProfileSelectionViewController: ProfileSelectionViewModelDelegate {
 extension ProfileSelectionViewController: ProfileselectionViewDelegate {
     func goto_homeScreen() {
         DispatchQueue.main.async {
-            let controller = Controller.homeTab.getController()
+            let controller = Controller.TabBar.getController()
             self.navigationController?.pushViewController(controller, animated: true)
         }
         
