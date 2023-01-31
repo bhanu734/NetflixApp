@@ -21,6 +21,7 @@ class Images {
     let netflix_logo = UIImage(named: "netfliximage")
     let plus = UIImage(systemName: "plus")
     let play = UIImage(systemName: "play")
+    let playcircle = UIImage(systemName: "play.circle")
     let info = UIImage(systemName: "info.circle")
     let crossimagefill = UIImage(systemName: "xmark.circle.fill")
     let scope = UIImage(systemName: "magnifyingglass")

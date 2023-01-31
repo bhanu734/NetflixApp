@@ -68,3 +68,13 @@ struct Playlist: Codable {
     let title: String?
     let content: [Banner]?
 }
+
+struct SearchInitalModel: Codable {
+    let statusCode: Int?
+    let body: [Banner]?
+}
+
+struct SearchModel: Codable {
+    let status: Int?
+    let response: [Banner]?
+}

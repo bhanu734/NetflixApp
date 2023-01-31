@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: BaseViewController {
 
     @IBOutlet weak var searchview: SearchView!
     var searchviewmodel: SearchViewModel = SearchViewModel()
@@ -15,8 +15,20 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchviewmodel.delegate = self
         searchview.setupUI()
         
+        searchviewmodel.get_search_inital_data()
+        searchview.updateUI()
     }
  
+}
+extension SearchViewController: SearchViewModelDelegate {
+    func updateUI() {
+        searchview.searchData = searchviewmodel.search_inital
+        searchview.updateUI()
+    }
+    
+    
+    
 }

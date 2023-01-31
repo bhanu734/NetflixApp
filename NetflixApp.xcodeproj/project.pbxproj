@@ -17,6 +17,8 @@
 		04627E752956CABD008AAD7C /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627E742956CABD008AAD7C /* SplashViewModel.swift */; };
 		04627E792956CD9A008AAD7C /* netflixGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04627E782956CD99008AAD7C /* netflixGif.gif */; };
 		04627E7B2957006D008AAD7C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627E7A2957006D008AAD7C /* Constants.swift */; };
+		0462DACE298925DC009C302F /* SearchViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462DACC298925DC009C302F /* SearchViewTableViewCell.swift */; };
+		0462DACF298925DC009C302F /* SearchViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0462DACD298925DC009C302F /* SearchViewTableViewCell.xib */; };
 		0462F4392944A15A00D013AD /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462F4382944A15A00D013AD /* UIView + Extension.swift */; };
 		04639A58294AECA20086BD9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04639A57294AECA20086BD9F /* LoginViewController.swift */; };
 		04639A5A294AECE80086BD9F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04639A59294AECE80086BD9F /* LoginViewModel.swift */; };
@@ -100,6 +102,8 @@
 		04627E742956CABD008AAD7C /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		04627E782956CD99008AAD7C /* netflixGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = netflixGif.gif; sourceTree = "<group>"; };
 		04627E7A2957006D008AAD7C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0462DACC298925DC009C302F /* SearchViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewTableViewCell.swift; sourceTree = "<group>"; };
+		0462DACD298925DC009C302F /* SearchViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewTableViewCell.xib; sourceTree = "<group>"; };
 		0462F4382944A15A00D013AD /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		04639A57294AECA20086BD9F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04639A59294AECE80086BD9F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -244,6 +248,24 @@
 				04DA1D3E29438143002F988A /* WelcomeViewController.swift */,
 			);
 			path = "Welcome screen";
+			sourceTree = "<group>";
+		};
+		0462DACA29892463009C302F /* SubCategories */ = {
+			isa = PBXGroup;
+			children = (
+				04E835FF29816D7F00038B96 /* SubCategorieTableViewCell.swift */,
+				04E8360029816D7F00038B96 /* SubCategorieTableViewCell.xib */,
+			);
+			path = SubCategories;
+			sourceTree = "<group>";
+		};
+		0462DACB298924A5009C302F /* SearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				0462DACC298925DC009C302F /* SearchViewTableViewCell.swift */,
+				0462DACD298925DC009C302F /* SearchViewTableViewCell.xib */,
+			);
+			path = SearchCell;
 			sourceTree = "<group>";
 		};
 		04639A56294AEC4E0086BD9F /* Login */ = {
@@ -494,8 +516,8 @@
 		04E835FE29816D2300038B96 /* TableviewCell */ = {
 			isa = PBXGroup;
 			children = (
-				04E835FF29816D7F00038B96 /* SubCategorieTableViewCell.swift */,
-				04E8360029816D7F00038B96 /* SubCategorieTableViewCell.xib */,
+				0462DACB298924A5009C302F /* SearchCell */,
+				0462DACA29892463009C302F /* SubCategories */,
 			);
 			path = TableviewCell;
 			sourceTree = "<group>";
@@ -580,6 +602,7 @@
 				04D0F4A8294710A60015D482 /* Onbording.storyboard in Resources */,
 				04E8360229816D7F00038B96 /* SubCategorieTableViewCell.xib in Resources */,
 				04DA1D2C29437F4F002F988A /* Assets.xcassets in Resources */,
+				0462DACF298925DC009C302F /* SearchViewTableViewCell.xib in Resources */,
 				04DA1D2A29437F3D002F988A /* Main.storyboard in Resources */,
 				04603667296DA3D400C6639B /* TabBar.storyboard in Resources */,
 				04627E792956CD9A008AAD7C /* netflixGif.gif in Resources */,
@@ -689,6 +712,7 @@
 				04709434294CA8E600D990E4 /* Controller.swift in Sources */,
 				047751F02978064200AB8E87 /* MenuView.swift in Sources */,
 				047FC0C4295C85FE00CCD036 /* HomeData.swift in Sources */,
+				0462DACE298925DC009C302F /* SearchViewTableViewCell.swift in Sources */,
 				04E835F7298113F900038B96 /* CategoriesViewController.swift in Sources */,
 				0475C8822987970B002A2372 /* SearchViewController.swift in Sources */,
 				04DC9B1729518AA0000FEBD3 /* CreateProfileViewController.swift in Sources */,

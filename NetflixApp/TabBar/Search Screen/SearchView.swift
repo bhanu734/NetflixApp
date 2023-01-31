@@ -18,6 +18,7 @@ class SearchView: UIView {
     @IBOutlet weak var scopeleading: NSLayoutConstraint!
     
     var leadingconstant: CGFloat = (SCREENWIDTH/2) - 55
+    var searchData: [Banner]?
     
     func setupUI() {
         cancelbutton.isHidden = true
@@ -35,6 +36,16 @@ class SearchView: UIView {
         
         scopeimage.image = Images.shared.scope?.withRenderingMode(.alwaysTemplate)
         scopeimage.tintColor = Colors.shared.lightgreycolor
+        
+        searchtableview.register(UINib(nibName: "SearchViewTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchViewTableViewCell")
+        searchtableview.delegate = self
+        searchtableview.dataSource = self
+    }
+    
+    func updateUI() {
+        DispatchQueue.main.async {
+        self.searchtableview.reloadData()
+        }
     }
     @IBAction func cancelTapped() {
         cancelbutton.isHidden = true
@@ -52,4 +63,25 @@ class SearchView: UIView {
         }
         searchtextfeild.becomeFirstResponder()
     }
+}
+
+extension SearchView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+}
+extension SearchView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchData?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = searchtableview.dequeueReusableCell(withIdentifier: "SearchViewTableViewCell", for: indexPath) as? SearchViewTableViewCell {
+            cell.configureUI(banner: searchData?[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    
 }
