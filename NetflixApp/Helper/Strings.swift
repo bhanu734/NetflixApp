@@ -67,5 +67,6 @@ class Strings {
     let Search = "Search"
     let Account = "Account"
     let Settings = "Settings"
+    let cancel = "Cancel"
 }
  

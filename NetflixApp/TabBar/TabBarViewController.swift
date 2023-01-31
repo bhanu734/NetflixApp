@@ -17,19 +17,20 @@ class TabBarViewController: UITabBarController {
     }
     
     func setupTabBar() {
-        tabBar.tintColor = Colors.shared.blackcolor
-        tabBar.unselectedItemTintColor = Colors.shared.darkgreycolor
-        tabBar.backgroundColor = UIColor.blue.withAlphaComponent(0.8)
+        tabBar.tintColor = Colors.shared.whiteTextcolor
+        tabBar.unselectedItemTintColor = Colors.shared.grey_tabBar_color
+        
+        UITabBar.appearance().barTintColor = Colors.shared.blackcolor
     }
     func setupControllers(){
         let HomeController = Controller.homeTab.getController()
-        HomeController.tabBarItem = UITabBarItem(title: Strings.shared.Home, image: Images.shared.pluscircle, selectedImage: UIImage(systemName: "square.grid.2x2"))
-        let SearchController = Controller.homeTab.getController()
-        SearchController.tabBarItem = UITabBarItem(title: Strings.shared.Search, image: Images.shared.play, selectedImage: UIImage(systemName: "play.rectangle"))
-        let AccountControlller =  Controller.homeTab.getController()
-        AccountControlller.tabBarItem = UITabBarItem(title: Strings.shared.Account, image: UIImage(systemName: "map"), selectedImage: UIImage(systemName: "map"))
-        let SettingsController = Controller.homeTab.getController()
-        SettingsController.tabBarItem = UITabBarItem(title: Strings.shared.Settings, image: UIImage(systemName: "photo"), selectedImage: UIImage(systemName: "photo"))
+        HomeController.tabBarItem = UITabBarItem(title: Strings.shared.Home, image: Images.shared.home_unselect, selectedImage: Images.shared.home_select)
+        let SearchController = Controller.search.getController()
+        SearchController.tabBarItem = UITabBarItem(title: Strings.shared.Search, image: Images.shared.search_unselect, selectedImage: Images.shared.search_select)
+        let AccountControlller =  Controller.Account.getController()
+        AccountControlller.tabBarItem = UITabBarItem(title: Strings.shared.Account, image: Images.shared.account_unselect, selectedImage: Images.shared.account_select)
+        let SettingsController = Controller.settings.getController()
+        SettingsController.tabBarItem = UITabBarItem(title: Strings.shared.Settings, image: Images.shared.setting_unselect, selectedImage: Images.shared.setting_select)
         
         viewControllers = [HomeController, SearchController, AccountControlller, SettingsController]
     }

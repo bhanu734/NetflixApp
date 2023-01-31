@@ -23,5 +23,13 @@ class Images {
     let play = UIImage(systemName: "play")
     let info = UIImage(systemName: "info.circle")
     let crossimagefill = UIImage(systemName: "xmark.circle.fill")
-    
+    let scope = UIImage(systemName: "magnifyingglass")
+    let home_unselect = UIImage(systemName: "house")
+    let home_select = UIImage(systemName: "house.fill")
+    let search_unselect = UIImage(systemName: "magnifyingglass")
+    let search_select = UIImage(systemName: "magnifyingglass.circle.fill")
+    let account_unselect = UIImage(systemName: "person")
+    let account_select = UIImage(systemName: "person.fill")
+    let setting_unselect = UIImage(systemName: "gear")
+    let setting_select = UIImage(systemName: "gear.fill")
 }
