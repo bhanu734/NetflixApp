@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol SearchViewDelegate {
+    func getsearchlist(querystring: String)
+    func getinitaldata()
+}
+
 class SearchView: UIView {
 
     @IBOutlet weak var backgroundview: UIView!
@@ -17,6 +22,7 @@ class SearchView: UIView {
     @IBOutlet weak var searchtextfeild: UITextField!
     @IBOutlet weak var scopeleading: NSLayoutConstraint!
     
+    var delegate: SearchViewDelegate?
     var leadingconstant: CGFloat = (SCREENWIDTH/2) - 55
     var searchData: [Banner]?
     
@@ -54,6 +60,8 @@ class SearchView: UIView {
             self.layoutIfNeeded()
         }
         searchtextfeild.resignFirstResponder()
+        searchtextfeild.text = ""
+        delegate?.getinitaldata()
     }
     @IBAction func startSearch() {
         cancelbutton.isHidden = false
@@ -63,11 +71,19 @@ class SearchView: UIView {
         }
         searchtextfeild.becomeFirstResponder()
     }
+    @IBAction func searchTextchanged(_ sender: UITextField) {
+        print("search text: ", sender.text)
+        if let searchtext = sender.text, searchtext.replacingOccurrences(of: " ", with: "").count > 2 {
+            delegate?.getsearchlist(querystring: searchtext)
+        }else if let searchtext = sender.text, searchtext.replacingOccurrences(of: " ", with: "") == "" {
+            delegate?.getinitaldata()
+        }
+    }
 }
 
 extension SearchView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 90
     }
 }
 extension SearchView: UITableViewDataSource {

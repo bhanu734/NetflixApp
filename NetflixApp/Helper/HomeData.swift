@@ -43,6 +43,14 @@ struct Banner: Codable {
         case contentType = "content_type"
         case imagery, name
     }
+    
+    func getTitle() -> String? {
+        if originalTitle != nil && originalTitle != "" {
+            return originalTitle
+        }else {
+            return name
+        }
+    }
 }
 
 enum ContentType: String, Codable {

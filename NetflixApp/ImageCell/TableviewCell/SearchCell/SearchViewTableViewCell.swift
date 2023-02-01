@@ -22,7 +22,7 @@ class SearchViewTableViewCell: UITableViewCell {
     }
     
     func setupUI() {
-        searchimage.layer.cornerRadius = 10.0
+       
         backview.backgroundColor = Colors.shared.blackcolor
         
         searchlabel.textColor = Colors.shared.whiteTextcolor
@@ -31,13 +31,14 @@ class SearchViewTableViewCell: UITableViewCell {
         playview.backgroundColor = Colors.shared.blackcolor
         playimage.tintColor = Colors.shared.whiteimagecolor
         playimage.image = Images.shared.playcircle
-        
+        searchimage.layer.cornerRadius = 10.0
+        searchimage.layer.masksToBounds = false
     }
     func configureUI(banner: Banner?) {
-        searchlabel.text = banner?.originalTitle
+        searchlabel.text = banner?.getTitle()
         if let banner = banner {
             if let urlstring = banner.imagery?.banner {
-                if let url = URL(string: urlstring + "&sz=300-h200") {
+                if let url = URL(string: urlstring + "&sz=w175-h100") {
                     searchimage.sd_setImage(with: url, placeholderImage: nil)
                 }
             }

@@ -15,6 +15,7 @@ class SearchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchview.delegate = self
         searchviewmodel.delegate = self
         searchview.setupUI()
         
@@ -28,7 +29,16 @@ extension SearchViewController: SearchViewModelDelegate {
         searchview.searchData = searchviewmodel.search_inital
         searchview.updateUI()
     }
-    
-    
-    
+    func updateSearchresult() {
+        searchview.searchData = searchviewmodel.searchresult
+        searchview.updateUI()
+    }
+}
+extension SearchViewController: SearchViewDelegate {
+    func getsearchlist(querystring: String) {
+        searchviewmodel.getsearchlist(querystring: querystring)
+    }
+    func getinitaldata() {
+        updateUI()
+    }
 }
