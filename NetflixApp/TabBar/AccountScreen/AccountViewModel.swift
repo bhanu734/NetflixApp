@@ -9,4 +9,7 @@ import UIKit
 
 class AccountViewModel {
     
+    var profile : [Profile] {
+        return User.shared.userdetails?.profiles ?? []
+    }
 }

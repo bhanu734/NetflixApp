@@ -47,4 +47,10 @@ class ProfilesCollectionViewCell: UICollectionViewCell {
         profilename.text = ""
         profileimage.tintColor = Colors.shared.whiteimagecolor
     }
+    func configureUI_accountVC(profile: Profile?) {
+        if let profile = profile {
+            profileimage.image = UIImage(named: profile.profileImage ?? "" )
+            profilename.text = profile.profileName
+        }
+    }
 }

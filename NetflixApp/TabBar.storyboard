@@ -190,16 +190,74 @@
         <scene sceneID="pbt-0G-Hg3">
             <objects>
                 <viewController storyboardIdentifier="AccountViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vsp-0U-IAz" customClass="AccountViewController" customModule="NetflixApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CM4-zW-fsP">
+                    <view key="view" contentMode="scaleToFill" id="CM4-zW-fsP" customClass="AccountView" customModule="NetflixApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhT-Hy-Ljy">
+                                <rect key="frame" x="354" y="54" width="40" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AIg-rz-g1P">
+                                        <rect key="frame" x="4" y="4" width="32" height="32"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSx-Fh-ADD">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <connections>
+                                            <action selector="closeTap" destination="CM4-zW-fsP" eventType="touchUpInside" id="aCc-UF-0gS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MhT-Hy-Ljy" secondAttribute="height" multiplier="1:1" id="Uuo-fG-Wc9"/>
+                                    <constraint firstItem="YSx-Fh-ADD" firstAttribute="height" secondItem="MhT-Hy-Ljy" secondAttribute="height" id="bf2-Xd-EJ9"/>
+                                    <constraint firstItem="AIg-rz-g1P" firstAttribute="height" secondItem="MhT-Hy-Ljy" secondAttribute="height" multiplier="0.8" id="cnI-N1-8hW"/>
+                                    <constraint firstItem="AIg-rz-g1P" firstAttribute="centerX" secondItem="MhT-Hy-Ljy" secondAttribute="centerX" id="e3V-eu-wuZ"/>
+                                    <constraint firstItem="YSx-Fh-ADD" firstAttribute="centerX" secondItem="MhT-Hy-Ljy" secondAttribute="centerX" id="e72-5L-Hgz"/>
+                                    <constraint firstAttribute="height" constant="40" id="iju-oA-n7L"/>
+                                    <constraint firstItem="YSx-Fh-ADD" firstAttribute="centerY" secondItem="MhT-Hy-Ljy" secondAttribute="centerY" id="lRY-wi-Tkm"/>
+                                    <constraint firstItem="AIg-rz-g1P" firstAttribute="width" secondItem="MhT-Hy-Ljy" secondAttribute="width" multiplier="0.8" id="pjQ-0h-iBQ"/>
+                                    <constraint firstItem="YSx-Fh-ADD" firstAttribute="width" secondItem="MhT-Hy-Ljy" secondAttribute="width" id="vyA-6I-IYa"/>
+                                    <constraint firstItem="AIg-rz-g1P" firstAttribute="centerY" secondItem="MhT-Hy-Ljy" secondAttribute="centerY" id="wrP-to-agr"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ltN-iH-mCe">
+                                <rect key="frame" x="97" y="124" width="220" height="120"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="RG6-Hx-gL4"/>
+                                    <constraint firstAttribute="height" constant="120" id="tpi-fH-a1T"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GTN-m1-WHB">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ssz-x5-G54"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MhT-Hy-Ljy" firstAttribute="top" secondItem="Ssz-x5-G54" secondAttribute="top" constant="10" id="3aj-0s-abf"/>
+                            <constraint firstItem="ltN-iH-mCe" firstAttribute="top" secondItem="Ssz-x5-G54" secondAttribute="top" constant="80" id="Qba-iW-6mb"/>
+                            <constraint firstItem="ltN-iH-mCe" firstAttribute="centerX" secondItem="CM4-zW-fsP" secondAttribute="centerX" id="ebG-bR-w7U"/>
+                            <constraint firstItem="Ssz-x5-G54" firstAttribute="trailing" secondItem="MhT-Hy-Ljy" secondAttribute="trailing" constant="20" id="nL9-ot-Cu4"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="closeimage" destination="AIg-rz-g1P" id="LRv-Dt-qGe"/>
+                            <outlet property="closeview" destination="MhT-Hy-Ljy" id="DTn-QC-UQW"/>
+                            <outlet property="profilecollectionview" destination="ltN-iH-mCe" id="RFT-Zj-Q0r"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="accountview" destination="CM4-zW-fsP" id="rj3-if-xpd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZr-JM-pBp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="826" y="40"/>
+            <point key="canvasLocation" x="824.63768115942037" y="39.508928571428569"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="oQb-Ld-dR7">
@@ -223,9 +281,6 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
