@@ -16,11 +16,14 @@ class AccountView: UIView {
     @IBOutlet weak var closeview: UIView!
     @IBOutlet weak var closeimage: UIImageView!
     @IBOutlet weak var profilecollectionview: UICollectionView!
+//    @IBOutlet weak var collectionviewWidth: NSLayoutConstraint!
     
     var delegate: AccountViewDelegate?
     var profiles: [Profile] = []
     
     func setupUI() {
+//        collectionviewWidth.constant = (CGFloat(profiles.count) * PROFILE_WIDTH) + (CGFloat(profiles.count - 1)*5)
+            
         backgroundColor = Colors.shared.blackcolor
         closeview.backgroundColor = Colors.shared.blackcolor
         closeimage.image = Images.shared.crossimage
@@ -51,8 +54,14 @@ extension AccountView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = profilecollectionview.dequeueReusableCell(withReuseIdentifier: "ProfilesCollectionViewCell", for: indexPath) as? ProfilesCollectionViewCell {
-            cell.configureUI_accountVC(profile: profiles[indexPath.row])
-            return cell
+            if User.shared.selectedProfile?.profileID == profiles[indexPath.row].profileID {
+                cell.configureUI_accountVC(profile: profiles[indexPath.row], isSelected: true)
+                return cell
+            }else {
+                cell.configureUI_accountVC(profile: profiles[indexPath.row], isSelected: false)
+                return cell
+            }
+            
         }
         return UICollectionViewCell()
     }
@@ -61,6 +70,12 @@ extension AccountView: UICollectionViewDataSource {
 }
 extension AccountView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: profilecollectionview.frame.width/5 , height: (profilecollectionview.frame.width)/5 + 21 )
+        return CGSize(width: PROFILE_WIDTH , height: PROFILE_HEIGHT )
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
     }
 }

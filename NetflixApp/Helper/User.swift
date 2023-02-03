@@ -16,6 +16,7 @@ class User {
         }
     }
     
+    var selectedProfile: Profile?
 //    let email = UserDefaults.standard.value(forKey: email_UD)?
     
     var isLogin : Bool {

@@ -221,11 +221,11 @@
                                     <constraint firstItem="AIg-rz-g1P" firstAttribute="centerY" secondItem="MhT-Hy-Ljy" secondAttribute="centerY" id="wrP-to-agr"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ltN-iH-mCe">
-                                <rect key="frame" x="97" y="124" width="220" height="120"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ltN-iH-mCe">
+                                <rect key="frame" x="57" y="124" width="300" height="120"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="RG6-Hx-gL4"/>
+                                    <constraint firstAttribute="width" constant="300" id="RG6-Hx-gL4"/>
                                     <constraint firstAttribute="height" constant="120" id="tpi-fH-a1T"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GTN-m1-WHB">

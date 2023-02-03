@@ -47,10 +47,17 @@ class ProfilesCollectionViewCell: UICollectionViewCell {
         profilename.text = ""
         profileimage.tintColor = Colors.shared.whiteimagecolor
     }
-    func configureUI_accountVC(profile: Profile?) {
+    func configureUI_accountVC(profile: Profile?, isSelected: Bool ) {
         if let profile = profile {
             profileimage.image = UIImage(named: profile.profileImage ?? "" )
             profilename.text = profile.profileName
+            deleteview.backgroundColor = Colors.shared.clearcolor
+        }
+        profileBG.layer.borderWidth = 1.5
+        if isSelected {
+            profileBG.layer.borderColor = Colors.shared.whiteimagecolor.cgColor
+        }else {
+            profileBG.layer.borderColor = Colors.shared.clearcolor.cgColor
         }
     }
 }

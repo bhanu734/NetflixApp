@@ -17,3 +17,7 @@ let Home_carousal_Height: CGFloat = (UIScreen.main.bounds.width*0.4) + 50
 //let Home_carousal_Width: CGFloat = (UIScreen.main.bounds.width*0.4) + 45
 
 let Home_banner_Height: CGFloat = UIScreen.main.bounds.height*0.70
+
+let PROFILE_WIDTH: CGFloat = (UIScreen.main.bounds.width  )/5
+
+let PROFILE_HEIGHT: CGFloat = (UIScreen.main.bounds.width  )/5 + 20

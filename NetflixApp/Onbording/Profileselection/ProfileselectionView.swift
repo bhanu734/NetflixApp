@@ -114,6 +114,7 @@ extension ProfileselectionView: UICollectionViewDelegate{
                     delegate?.showAlert(title: Strings.shared.error_title, message: Strings.shared.minimum_one_profile_must)
                 }
             }else {
+                User.shared.selectedProfile = profiles[indexPath.row]
                 delegate?.goto_homeScreen()
                 print("profile tapped go to home")
             }
