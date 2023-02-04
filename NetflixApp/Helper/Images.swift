@@ -35,7 +35,7 @@ class Images {
     let setting_select = UIImage(systemName: "gear.fill")
     let pencil = UIImage(systemName: "pencil")?.withRenderingMode(.alwaysTemplate)
     let bell = UIImage(systemName: "bell")
-    let device = UIImage(systemName: "iphone.smartbatterycase.gen1")
+    let device = UIImage(systemName: "iphone")
     let question = UIImage(systemName: "questionmark.circle")
     let chevronRight = UIImage(systemName: "chevron.right")
     let xmark = UIImage(systemName: "xmark")?.withRenderingMode(.alwaysTemplate)

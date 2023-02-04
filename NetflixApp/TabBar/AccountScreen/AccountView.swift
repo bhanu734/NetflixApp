@@ -9,6 +9,7 @@ import UIKit
 
 protocol AccountViewDelegate {
     func closedTapped()
+    func sigoutTapped()
 }
 
 class AccountView: UIView {
@@ -52,7 +53,7 @@ class AccountView: UIView {
         signOutLabel.textColor = Colors.shared.whiteTextcolor
         signOutLabel.text = Strings.shared.signOut
         
-        versionLabel.textColor = Colors.shared.whiteTextcolor
+        versionLabel.textColor = Colors.shared.lightgreycolor
         versionLabel.text = Strings.shared.signOut
         
         profilecollectionview.register(UINib(nibName: "ProfilesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProfilesCollectionViewCell")
@@ -73,6 +74,9 @@ class AccountView: UIView {
     }
     @IBAction func manageProfileTap() {
         delegate?.closedTapped()
+    }
+    @IBAction func signOutTap() {
+        delegate?.sigoutTapped()
     }
 }
 extension AccountView: UICollectionViewDelegate {

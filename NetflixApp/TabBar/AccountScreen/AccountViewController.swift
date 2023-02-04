@@ -16,9 +16,9 @@ class AccountViewController: UIViewController {
         super.viewDidLoad()
 
         accountview.delegate = self
-        accountview.setupUI()
         accountview.profiles = accountviewmodel.profile
         accountview.accountsettings = accountviewmodel.accountsettings
+        accountview.setupUI()
         accountview.updateUI()
     }
 
@@ -26,5 +26,10 @@ class AccountViewController: UIViewController {
 extension AccountViewController: AccountViewDelegate {
     func closedTapped() {
         dismiss(animated: true, completion: nil)
+    }
+    func sigoutTapped() {
+        accountviewmodel.logOutUser()
+        let controller = Controller.welcome.getController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

@@ -297,11 +297,18 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nto-6k-r9b">
+                                <rect key="frame" x="158.5" y="712" width="97" height="100"/>
+                                <connections>
+                                    <action selector="signOutTap" destination="CM4-zW-fsP" eventType="touchUpInside" id="QdJ-pr-Jv5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ssz-x5-G54"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eDr-Rv-uIp" firstAttribute="top" secondItem="vxK-mb-xQY" secondAttribute="bottom" constant="40" id="2DL-Lg-O79"/>
+                            <constraint firstItem="Nto-6k-r9b" firstAttribute="centerX" secondItem="MXC-AN-exh" secondAttribute="centerX" id="2qG-se-Hv5"/>
                             <constraint firstItem="MhT-Hy-Ljy" firstAttribute="top" secondItem="Ssz-x5-G54" secondAttribute="top" constant="10" id="3aj-0s-abf"/>
                             <constraint firstItem="Ssz-x5-G54" firstAttribute="bottom" secondItem="MXC-AN-exh" secondAttribute="bottom" constant="50" id="6tU-ye-V79"/>
                             <constraint firstItem="MXC-AN-exh" firstAttribute="centerX" secondItem="CM4-zW-fsP" secondAttribute="centerX" id="889-ch-PgP"/>
@@ -309,7 +316,10 @@
                             <constraint firstItem="Ssz-x5-G54" firstAttribute="trailing" secondItem="eDr-Rv-uIp" secondAttribute="trailing" constant="10" id="SRy-OG-hPF"/>
                             <constraint firstItem="MXC-AN-exh" firstAttribute="top" secondItem="eDr-Rv-uIp" secondAttribute="bottom" constant="20" id="Utm-dd-ssy"/>
                             <constraint firstItem="eDr-Rv-uIp" firstAttribute="centerX" secondItem="CM4-zW-fsP" secondAttribute="centerX" id="WfG-zA-WYa"/>
+                            <constraint firstItem="Nto-6k-r9b" firstAttribute="height" secondItem="MXC-AN-exh" secondAttribute="height" id="cAq-Ls-6oT"/>
                             <constraint firstItem="vxK-mb-xQY" firstAttribute="centerX" secondItem="CM4-zW-fsP" secondAttribute="centerX" id="cc4-z0-fC5"/>
+                            <constraint firstItem="Nto-6k-r9b" firstAttribute="width" secondItem="MXC-AN-exh" secondAttribute="width" id="ceG-4n-ce9"/>
+                            <constraint firstItem="Nto-6k-r9b" firstAttribute="centerY" secondItem="MXC-AN-exh" secondAttribute="centerY" id="eaj-O1-Agn"/>
                             <constraint firstItem="ltN-iH-mCe" firstAttribute="centerX" secondItem="CM4-zW-fsP" secondAttribute="centerX" id="ebG-bR-w7U"/>
                             <constraint firstItem="Ssz-x5-G54" firstAttribute="trailing" secondItem="MhT-Hy-Ljy" secondAttribute="trailing" constant="20" id="nL9-ot-Cu4"/>
                             <constraint firstItem="vxK-mb-xQY" firstAttribute="top" secondItem="ltN-iH-mCe" secondAttribute="bottom" constant="50" id="niT-Wt-D6J"/>
