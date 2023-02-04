@@ -29,6 +29,8 @@ class AccountView: UIView {
     var delegate: AccountViewDelegate?
     var profiles: [Profile] = []
     var accountsettings: [AccountSettings] = []
+    var versionNumber: String = ""
+    var buildNumber: String = ""
     
     func setupUI() {
 //        collectionviewWidth.constant = (CGFloat(profiles.count) * PROFILE_WIDTH) + (CGFloat(profiles.count - 1)*5)
@@ -52,9 +54,12 @@ class AccountView: UIView {
         stackView.backgroundColor = Colors.shared.blackcolor
         signOutLabel.textColor = Colors.shared.whiteTextcolor
         signOutLabel.text = Strings.shared.signOut
+        signOutLabel.font = Font.shared.bold5
         
+        versionLabel.text = Strings.shared.version + versionNumber + "(" + buildNumber + ")"
         versionLabel.textColor = Colors.shared.lightgreycolor
-        versionLabel.text = Strings.shared.signOut
+        versionLabel.font = Font.shared.semibold1
+        
         
         profilecollectionview.register(UINib(nibName: "ProfilesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProfilesCollectionViewCell")
         profilecollectionview.delegate = self
@@ -105,7 +110,7 @@ extension AccountView: UICollectionViewDataSource {
 }
 extension AccountView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: PROFILE_WIDTH , height: PROFILE_HEIGHT )
+        return CGSize(width: profilecollectionview.frame.width/5 , height: (profilecollectionview.frame.width/5) + 20 )
     }
     
 }

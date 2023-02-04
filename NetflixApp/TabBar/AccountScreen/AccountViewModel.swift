@@ -18,6 +18,9 @@ class AccountViewModel {
         return User.shared.userdetails?.profiles ?? []
     }
     
+    var AppVersionNumber: String? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    var AppbuildNumber: String? = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+    
     var accountsettings: [AccountSettings] = []
     
     init() {
