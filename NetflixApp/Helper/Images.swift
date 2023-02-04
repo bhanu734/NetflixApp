@@ -33,4 +33,17 @@ class Images {
     let account_select = UIImage(systemName: "person.fill")
     let setting_unselect = UIImage(systemName: "gear")
     let setting_select = UIImage(systemName: "gear.fill")
+    let pencil = UIImage(systemName: "pencil")?.withRenderingMode(.alwaysTemplate)
+    let bell = UIImage(systemName: "bell")
+    let device = UIImage(systemName: "iphone.smartbatterycase.gen1")
+    let question = UIImage(systemName: "questionmark.circle")
+    let chevronRight = UIImage(systemName: "chevron.right")
+    let xmark = UIImage(systemName: "xmark")?.withRenderingMode(.alwaysTemplate)
+    let wifi = UIImage(systemName: "wifi")
+    let downlaod = UIImage(systemName: "square.and.arrow.down")
+    let videoQuality = UIImage(systemName: "airplayvideo")
+    let delete = UIImage(systemName: "trash")
+    let speed = UIImage(systemName: "speedometer")
+    let privacy = UIImage(systemName: "rectangle.portrait.tophalf.inset.filled")
+  
 }

@@ -58,6 +58,8 @@
 		048B19502955EC080095FF02 /* ProfilesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B194E2955EC080095FF02 /* ProfilesCollectionViewCell.swift */; };
 		048B19512955EC080095FF02 /* ProfilesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048B194F2955EC080095FF02 /* ProfilesCollectionViewCell.xib */; };
 		04C99E8C295097F900FA4FFA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C99E8B295097F900FA4FFA /* BaseViewController.swift */; };
+		04CFF31A298E60CD00DD5251 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFF318298E60CD00DD5251 /* AccountTableViewCell.swift */; };
+		04CFF31B298E60CD00DD5251 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CFF319298E60CD00DD5251 /* AccountTableViewCell.xib */; };
 		04D0F4A8294710A60015D482 /* Onbording.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D0F4A7294710A60015D482 /* Onbording.storyboard */; };
 		04D0F4AB29471BC10015D482 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0F4AA29471BC10015D482 /* RegisterViewController.swift */; };
 		04D0F4AF29471C100015D482 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0F4AE29471C100015D482 /* RegisterViewModel.swift */; };
@@ -143,6 +145,8 @@
 		048B194E2955EC080095FF02 /* ProfilesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesCollectionViewCell.swift; sourceTree = "<group>"; };
 		048B194F2955EC080095FF02 /* ProfilesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilesCollectionViewCell.xib; sourceTree = "<group>"; };
 		04C99E8B295097F900FA4FFA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		04CFF318298E60CD00DD5251 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		04CFF319298E60CD00DD5251 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		04D0F4A7294710A60015D482 /* Onbording.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onbording.storyboard; sourceTree = "<group>"; };
 		04D0F4AA29471BC10015D482 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		04D0F4AE29471C100015D482 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -395,6 +399,15 @@
 			path = BaseClasses;
 			sourceTree = "<group>";
 		};
+		04CFF313298E541C00DD5251 /* Accountscreen */ = {
+			isa = PBXGroup;
+			children = (
+				04CFF318298E60CD00DD5251 /* AccountTableViewCell.swift */,
+				04CFF319298E60CD00DD5251 /* AccountTableViewCell.xib */,
+			);
+			path = Accountscreen;
+			sourceTree = "<group>";
+		};
 		04D0F4A929471B870015D482 /* Onbording */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +529,7 @@
 		04E835FE29816D2300038B96 /* TableviewCell */ = {
 			isa = PBXGroup;
 			children = (
+				04CFF313298E541C00DD5251 /* Accountscreen */,
 				0462DACB298924A5009C302F /* SearchCell */,
 				0462DACA29892463009C302F /* SubCategories */,
 			);
@@ -603,6 +617,7 @@
 				04E8360229816D7F00038B96 /* SubCategorieTableViewCell.xib in Resources */,
 				04DA1D2C29437F4F002F988A /* Assets.xcassets in Resources */,
 				0462DACF298925DC009C302F /* SearchViewTableViewCell.xib in Resources */,
+				04CFF31B298E60CD00DD5251 /* AccountTableViewCell.xib in Resources */,
 				04DA1D2A29437F3D002F988A /* Main.storyboard in Resources */,
 				04603667296DA3D400C6639B /* TabBar.storyboard in Resources */,
 				04627E792956CD9A008AAD7C /* netflixGif.gif in Resources */,
@@ -700,6 +715,7 @@
 				04C99E8C295097F900FA4FFA /* BaseViewController.swift in Sources */,
 				04DA1D39294380D2002F988A /* Images.swift in Sources */,
 				04627E752956CABD008AAD7C /* SplashViewModel.swift in Sources */,
+				04CFF31A298E60CD00DD5251 /* AccountTableViewCell.swift in Sources */,
 				0475C88429879769002A2372 /* SearchView.swift in Sources */,
 				0460366C296DA4C800C6639B /* HomeView.swift in Sources */,
 				04639A5A294AECE80086BD9F /* LoginViewModel.swift in Sources */,

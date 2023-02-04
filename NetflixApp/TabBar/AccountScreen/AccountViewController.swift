@@ -18,6 +18,7 @@ class AccountViewController: UIViewController {
         accountview.delegate = self
         accountview.setupUI()
         accountview.profiles = accountviewmodel.profile
+        accountview.accountsettings = accountviewmodel.accountsettings
         accountview.updateUI()
     }
 
