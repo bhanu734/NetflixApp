@@ -57,6 +57,8 @@
 		048B194C29559CEC0095FF02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B194B29559CEC0095FF02 /* User.swift */; };
 		048B19502955EC080095FF02 /* ProfilesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B194E2955EC080095FF02 /* ProfilesCollectionViewCell.swift */; };
 		048B19512955EC080095FF02 /* ProfilesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048B194F2955EC080095FF02 /* ProfilesCollectionViewCell.xib */; };
+		04C1D511298F9C7700B13192 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C1D50F298F9C7600B13192 /* SettingTableViewCell.swift */; };
+		04C1D512298F9C7700B13192 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C1D510298F9C7600B13192 /* SettingTableViewCell.xib */; };
 		04C99E8C295097F900FA4FFA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C99E8B295097F900FA4FFA /* BaseViewController.swift */; };
 		04CFF31A298E60CD00DD5251 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFF318298E60CD00DD5251 /* AccountTableViewCell.swift */; };
 		04CFF31B298E60CD00DD5251 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CFF319298E60CD00DD5251 /* AccountTableViewCell.xib */; };
@@ -144,6 +146,8 @@
 		048B194B29559CEC0095FF02 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		048B194E2955EC080095FF02 /* ProfilesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesCollectionViewCell.swift; sourceTree = "<group>"; };
 		048B194F2955EC080095FF02 /* ProfilesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilesCollectionViewCell.xib; sourceTree = "<group>"; };
+		04C1D50F298F9C7600B13192 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		04C1D510298F9C7600B13192 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		04C99E8B295097F900FA4FFA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04CFF318298E60CD00DD5251 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		04CFF319298E60CD00DD5251 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
@@ -391,6 +395,15 @@
 			path = Profileselection;
 			sourceTree = "<group>";
 		};
+		04C1D50E298F9BE100B13192 /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				04C1D50F298F9C7600B13192 /* SettingTableViewCell.swift */,
+				04C1D510298F9C7600B13192 /* SettingTableViewCell.xib */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
 		04C99E8A2950978D00FA4FFA /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,6 +542,7 @@
 		04E835FE29816D2300038B96 /* TableviewCell */ = {
 			isa = PBXGroup;
 			children = (
+				04C1D50E298F9BE100B13192 /* SettingsScreen */,
 				04CFF313298E541C00DD5251 /* Accountscreen */,
 				0462DACB298924A5009C302F /* SearchCell */,
 				0462DACA29892463009C302F /* SubCategories */,
@@ -620,6 +634,7 @@
 				04CFF31B298E60CD00DD5251 /* AccountTableViewCell.xib in Resources */,
 				04DA1D2A29437F3D002F988A /* Main.storyboard in Resources */,
 				04603667296DA3D400C6639B /* TabBar.storyboard in Resources */,
+				04C1D512298F9C7700B13192 /* SettingTableViewCell.xib in Resources */,
 				04627E792956CD9A008AAD7C /* netflixGif.gif in Resources */,
 				048B19512955EC080095FF02 /* ProfilesCollectionViewCell.xib in Resources */,
 				04E835F4298112B200038B96 /* Others.storyboard in Resources */,
@@ -729,6 +744,7 @@
 				047751F02978064200AB8E87 /* MenuView.swift in Sources */,
 				047FC0C4295C85FE00CCD036 /* HomeData.swift in Sources */,
 				0462DACE298925DC009C302F /* SearchViewTableViewCell.swift in Sources */,
+				04C1D511298F9C7700B13192 /* SettingTableViewCell.swift in Sources */,
 				04E835F7298113F900038B96 /* CategoriesViewController.swift in Sources */,
 				0475C8822987970B002A2372 /* SearchViewController.swift in Sources */,
 				04DC9B1729518AA0000FEBD3 /* CreateProfileViewController.swift in Sources */,

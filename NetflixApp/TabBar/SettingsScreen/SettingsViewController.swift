@@ -9,6 +9,9 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var settingsview: SettingsView!
+    var settingsviewmodel: SettingsViewModel = SettingsViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
