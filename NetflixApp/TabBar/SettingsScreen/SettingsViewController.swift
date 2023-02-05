@@ -15,7 +15,9 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        settingsview.setupUI()
+        settingsview.settingData = settingsviewmodel.settingData
+        settingsview.updateUI()
     }
 
 }
