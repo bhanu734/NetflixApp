@@ -15,6 +15,7 @@ protocol ProfileSelectionViewModelDelegate {
 }
 class ProfileSelectionViewModel {
     
+    var hideclose: Bool = true
     var delegate:  ProfileSelectionViewModelDelegate?
     var  profiles : [Profile] {
         return User.shared.userdetails?.profiles ?? []

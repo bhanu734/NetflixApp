@@ -275,7 +275,7 @@
                                     <constraint firstItem="Qgw-1s-bNT" firstAttribute="width" secondItem="vxK-mb-xQY" secondAttribute="width" id="oDb-tB-6kd"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eDr-Rv-uIp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eDr-Rv-uIp">
                                 <rect key="frame" x="10" y="374" width="394" height="318"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>

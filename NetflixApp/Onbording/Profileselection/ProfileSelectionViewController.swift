@@ -23,6 +23,7 @@ class ProfileSelectionViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        profileselectionview.hideclose = profileselectionviewmodel.hideclose
         profileselectionview.profiles = profileselectionviewmodel.profiles
         profileselectionview.setupUI()
        
@@ -73,6 +74,9 @@ extension ProfileSelectionViewController: ProfileselectionViewDelegate {
     
     func deleteProfile(profile: Profile) {
         profileselectionviewmodel.deleteProfile(profile: profile)
+    }
+    func closeTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func goto_create_profile() {

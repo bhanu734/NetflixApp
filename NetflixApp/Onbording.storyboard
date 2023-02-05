@@ -939,9 +939,36 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7v-YL-Eji">
+                                <rect key="frame" x="187" y="776" width="40" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BeT-42-w3Z">
+                                        <rect key="frame" x="10" y="0.0" width="20" height="40"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blf-YQ-1Wc">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <connections>
+                                            <action selector="close" destination="v0V-Bl-cyN" eventType="touchUpInside" id="QeD-UR-Rt7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Blf-YQ-1Wc" firstAttribute="centerX" secondItem="v7v-YL-Eji" secondAttribute="centerX" id="1Pf-Vt-ebg"/>
+                                    <constraint firstItem="Blf-YQ-1Wc" firstAttribute="height" secondItem="v7v-YL-Eji" secondAttribute="height" id="4BX-i8-eyF"/>
+                                    <constraint firstAttribute="bottom" secondItem="BeT-42-w3Z" secondAttribute="bottom" id="87b-iS-vL8"/>
+                                    <constraint firstAttribute="trailing" secondItem="BeT-42-w3Z" secondAttribute="trailing" constant="10" id="FOw-L6-RRV"/>
+                                    <constraint firstAttribute="width" secondItem="v7v-YL-Eji" secondAttribute="height" multiplier="1:1" id="PZO-YR-Ylb"/>
+                                    <constraint firstItem="BeT-42-w3Z" firstAttribute="leading" secondItem="v7v-YL-Eji" secondAttribute="leading" constant="10" id="Ywa-yn-JpL"/>
+                                    <constraint firstItem="Blf-YQ-1Wc" firstAttribute="width" secondItem="v7v-YL-Eji" secondAttribute="width" id="kcH-LQ-qKa"/>
+                                    <constraint firstAttribute="height" constant="40" id="lK1-1v-20s"/>
+                                    <constraint firstItem="BeT-42-w3Z" firstAttribute="top" secondItem="v7v-YL-Eji" secondAttribute="top" id="vNm-CY-o1h"/>
+                                    <constraint firstItem="Blf-YQ-1Wc" firstAttribute="centerY" secondItem="v7v-YL-Eji" secondAttribute="centerY" id="yA3-pT-hqG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a9I-a2-L7K"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qQT-mX-l3e" firstAttribute="leading" secondItem="a9I-a2-L7K" secondAttribute="leading" constant="40" id="Blo-jj-EsH"/>
                             <constraint firstItem="a9I-a2-L7K" firstAttribute="trailing" secondItem="lhw-zR-Yhy" secondAttribute="trailing" id="HGG-uL-qN5"/>
@@ -949,13 +976,17 @@
                             <constraint firstItem="a9I-a2-L7K" firstAttribute="trailing" secondItem="qQT-mX-l3e" secondAttribute="trailing" constant="40" id="W8S-eI-R0T"/>
                             <constraint firstAttribute="bottom" secondItem="qQT-mX-l3e" secondAttribute="bottom" constant="30" id="YcZ-RJ-X7J"/>
                             <constraint firstItem="lhw-zR-Yhy" firstAttribute="top" secondItem="a9I-a2-L7K" secondAttribute="top" id="ctl-Go-UXc"/>
+                            <constraint firstItem="v7v-YL-Eji" firstAttribute="centerX" secondItem="v0V-Bl-cyN" secondAttribute="centerX" id="mDs-QA-3sF"/>
                             <constraint firstItem="qQT-mX-l3e" firstAttribute="top" secondItem="lhw-zR-Yhy" secondAttribute="bottom" constant="30" id="x8n-x1-339"/>
+                            <constraint firstAttribute="bottom" secondItem="v7v-YL-Eji" secondAttribute="bottom" constant="80" id="yZg-D7-Dvi"/>
                         </constraints>
                         <connections>
                             <outlet property="ButtonImageview" destination="KYC-wR-pW2" id="p0o-xY-dHL"/>
                             <outlet property="Collectionview" destination="qQT-mX-l3e" id="UPB-lJ-Z20"/>
                             <outlet property="EditButton" destination="2Ki-gc-OKi" id="kAA-Ca-c8f"/>
                             <outlet property="Headinglabel" destination="Q28-Uz-OKg" id="14p-Om-OHp"/>
+                            <outlet property="closeimage" destination="BeT-42-w3Z" id="rgR-XM-Ilf"/>
+                            <outlet property="closeview" destination="v7v-YL-Eji" id="MSr-qr-0S1"/>
                             <outlet property="navbarview" destination="lhw-zR-Yhy" id="hmP-cR-Sg9"/>
                         </connections>
                     </view>

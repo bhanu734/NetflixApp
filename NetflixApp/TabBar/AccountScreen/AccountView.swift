@@ -10,6 +10,7 @@ import UIKit
 protocol AccountViewDelegate {
     func closedTapped()
     func sigoutTapped()
+    func manageProfilesTapped()
 }
 
 class AccountView: UIView {
@@ -78,7 +79,7 @@ class AccountView: UIView {
         delegate?.closedTapped()
     }
     @IBAction func manageProfileTap() {
-        delegate?.closedTapped()
+        delegate?.manageProfilesTapped()
     }
     @IBAction func signOutTap() {
         delegate?.sigoutTapped()

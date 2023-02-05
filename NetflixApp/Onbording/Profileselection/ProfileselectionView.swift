@@ -14,6 +14,7 @@ protocol ProfileselectionViewDelegate {
     func goto_create_profile()
     func updateUI()
     func goto_homeScreen()
+    func closeTapped()
 }
 
 class ProfileselectionView: UIView {
@@ -23,8 +24,10 @@ class ProfileselectionView: UIView {
     @IBOutlet weak var EditButton: UIButton!
     @IBOutlet weak var ButtonImageview: UIImageView!
     @IBOutlet weak var Collectionview: UICollectionView!
-
+    @IBOutlet weak var closeview: UIView!
+    @IBOutlet weak var closeimage: UIImageView!
     
+    var hideclose: Bool = true
     var profiles : [Profile] = []
     var isEditing: Bool = false
     var delegate: ProfileselectionViewDelegate?
@@ -35,6 +38,16 @@ class ProfileselectionView: UIView {
         Collectionview.delegate = self
         Collectionview.dataSource = self
         Collectionview.reloadData()
+        
+        if hideclose {
+            closeview.isHidden = true
+        }else {
+            closeview.backgroundColor = Colors.shared.darkgreycolor
+            closeview.layer.cornerRadius = 20.0
+            closeimage.tintColor = Colors.shared.whiteimagecolor
+            closeimage.image = Images.shared.xmark
+            
+        }
         
         backgroundColor = Colors.shared.blackcolor
         navbarview.backgroundColor = Colors.shared.blackcolor
@@ -60,8 +73,11 @@ class ProfileselectionView: UIView {
     
     func updateProfilesUI() {
         DispatchQueue.main.async {
-            self.Collectionview.reloadData()
+        self.Collectionview.reloadData()
         }
+    }
+    @IBAction func close() {
+        delegate?.closeTapped()
     }
 }
 
