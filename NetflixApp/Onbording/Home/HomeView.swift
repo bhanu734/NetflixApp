@@ -16,6 +16,7 @@ protocol HomeViewDelegate {
     func tvShowsTappedEx()
     func moviesTappedEx()
     func mylistTappedEx()
+    func goto_details_screen()
 }
 
 class HomeView: UIView {
@@ -69,7 +70,9 @@ class HomeView: UIView {
     }
 }
 extension HomeView: UICollectionViewDelegate{
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.goto_details_screen()
+    }
 }
 
 extension HomeView: UICollectionViewDataSource {

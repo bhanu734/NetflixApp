@@ -77,7 +77,12 @@ extension HomeViewController: HomeViewDelegate {
     func mylistTappedEx() {
         Navigate_to_CategoriesVC()
     }
-    
+    func goto_details_screen() {
+        DispatchQueue.main.async {
+            let controller = Controller.details_screen.getController()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
 }
 extension HomeViewController: HomeViewModelDelegate {
   

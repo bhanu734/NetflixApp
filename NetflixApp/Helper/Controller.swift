@@ -23,6 +23,7 @@ enum Controller {
     case Account
     case settings
     case TabBar
+    case details_screen
     
     func getController() -> UIViewController {
         switch self {
@@ -56,7 +57,9 @@ enum Controller {
             return UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController")
         case .TabBar:
             return UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBarViewController")
-        
+        case .details_screen:
+            return UIStoryboard(name: "Others", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController")
+       
         }
     }
 }
