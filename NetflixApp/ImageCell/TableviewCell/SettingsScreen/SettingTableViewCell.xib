@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,9 +20,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="321" height="72"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8tl-Lr-I2I">
-                                <rect key="frame" x="15" y="29" width="20" height="14"/>
+                                <rect key="frame" x="15" y="26" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="8tl-Lr-I2I" secondAttribute="height" multiplier="7:5" id="Qzm-Xr-i34"/>
+                                    <constraint firstAttribute="width" secondItem="8tl-Lr-I2I" secondAttribute="height" multiplier="1:1" id="Qzm-Xr-i34"/>
                                     <constraint firstAttribute="width" constant="20" id="w2e-nh-rzu"/>
                                 </constraints>
                             </imageView>
@@ -41,25 +40,25 @@
                                     <constraint firstAttribute="width" constant="49" id="IDL-ea-cNL"/>
                                 </constraints>
                             </switch>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vMB-PW-Jvx">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vMB-PW-Jvx">
                                 <rect key="frame" x="50" y="10" width="192" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zy-BW-cwN">
-                                        <rect key="frame" x="0.0" y="0.0" width="192" height="23.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="26"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqC-EZ-1Jf">
-                                        <rect key="frame" x="0.0" y="28.5" width="192" height="23.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="26" width="192" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8tl-Lr-I2I" firstAttribute="leading" secondItem="n1P-YM-zbS" secondAttribute="leading" constant="15" id="4ce-hh-1IG"/>
                             <constraint firstItem="vMB-PW-Jvx" firstAttribute="leading" secondItem="8tl-Lr-I2I" secondAttribute="trailing" constant="15" id="7lW-ie-0Na"/>
@@ -94,9 +93,4 @@
             <point key="canvasLocation" x="132.60869565217394" y="87.053571428571431"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

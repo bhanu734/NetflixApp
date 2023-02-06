@@ -28,7 +28,7 @@ class SettingTableViewCell: UITableViewCell {
         
         stackview.backgroundColor = Colors.shared.darkgreycolor
         
-        logoimage.tintColor = Colors.shared.lightgreycolor
+        logoimage.tintColor = Colors.shared.whiteimagecolor
         
         arrowimage.tintColor = Colors.shared.lightgreycolor
         arrowimage.image = Images.shared.chevronRight

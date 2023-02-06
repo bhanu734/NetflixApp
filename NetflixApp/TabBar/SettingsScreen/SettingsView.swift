@@ -12,7 +12,7 @@ class SettingsView: UIView {
     @IBOutlet weak var SettingLable: UILabel!
     @IBOutlet weak var settingsTableview: UITableView!
     
-    var settingData: [Setting] = []
+    var settingData: [[Setting]] = []
     
     func setupUI() {
         
@@ -38,7 +38,6 @@ extension SettingsView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
@@ -46,16 +45,16 @@ extension SettingsView: UITableViewDelegate {
 }
 extension SettingsView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return settingData.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingData.count
+        return settingData[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = settingsTableview.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as? SettingTableViewCell {
-            cell.configureUI(Data: settingData[indexPath.row])
+            cell.configureUI(Data: settingData[indexPath.section][indexPath.row])
             return cell
         }
         return UITableViewCell()
