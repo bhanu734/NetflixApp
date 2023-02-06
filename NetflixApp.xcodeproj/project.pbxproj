@@ -24,6 +24,8 @@
 		04639A5A294AECE80086BD9F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04639A59294AECE80086BD9F /* LoginViewModel.swift */; };
 		04639A5C294AED250086BD9F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04639A5B294AED250086BD9F /* LoginView.swift */; };
 		04639A5E294AF2C50086BD9F /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04639A5D294AF2C50086BD9F /* LoginModel.swift */; };
+		046EDE462990CC09009E9F65 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EDE442990CC09009E9F65 /* HeaderTableViewCell.swift */; };
+		046EDE472990CC09009E9F65 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046EDE452990CC09009E9F65 /* HeaderTableViewCell.xib */; };
 		04708A162984E4D7007AA87C /* CategoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04708A152984E4D7007AA87C /* CategoryDataModel.swift */; };
 		0470942F294C597A00D990E4 /* NetworkAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470942E294C597A00D990E4 /* NetworkAdaptor.swift */; };
 		04709432294CA3F600D990E4 /* Urlhandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04709431294CA3F600D990E4 /* Urlhandler.swift */; };
@@ -113,6 +115,8 @@
 		04639A59294AECE80086BD9F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		04639A5B294AED250086BD9F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		04639A5D294AF2C50086BD9F /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		046EDE442990CC09009E9F65 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		046EDE452990CC09009E9F65 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		04708A152984E4D7007AA87C /* CategoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataModel.swift; sourceTree = "<group>"; };
 		0470942E294C597A00D990E4 /* NetworkAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdaptor.swift; sourceTree = "<group>"; };
 		04709431294CA3F600D990E4 /* Urlhandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urlhandler.swift; sourceTree = "<group>"; };
@@ -285,6 +289,15 @@
 				04639A5D294AF2C50086BD9F /* LoginModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		046EDE432990CBC5009E9F65 /* HeaderLabel */ = {
+			isa = PBXGroup;
+			children = (
+				046EDE442990CC09009E9F65 /* HeaderTableViewCell.swift */,
+				046EDE452990CC09009E9F65 /* HeaderTableViewCell.xib */,
+			);
+			path = HeaderLabel;
 			sourceTree = "<group>";
 		};
 		04709435294CFF4400D990E4 /* Register */ = {
@@ -542,6 +555,7 @@
 		04E835FE29816D2300038B96 /* TableviewCell */ = {
 			isa = PBXGroup;
 			children = (
+				046EDE432990CBC5009E9F65 /* HeaderLabel */,
 				04C1D50E298F9BE100B13192 /* SettingsScreen */,
 				04CFF313298E541C00DD5251 /* Accountscreen */,
 				0462DACB298924A5009C302F /* SearchCell */,
@@ -630,6 +644,7 @@
 				04D0F4A8294710A60015D482 /* Onbording.storyboard in Resources */,
 				04E8360229816D7F00038B96 /* SubCategorieTableViewCell.xib in Resources */,
 				04DA1D2C29437F4F002F988A /* Assets.xcassets in Resources */,
+				046EDE472990CC09009E9F65 /* HeaderTableViewCell.xib in Resources */,
 				0462DACF298925DC009C302F /* SearchViewTableViewCell.xib in Resources */,
 				04CFF31B298E60CD00DD5251 /* AccountTableViewCell.xib in Resources */,
 				04DA1D2A29437F3D002F988A /* Main.storyboard in Resources */,
@@ -759,6 +774,7 @@
 				048B194A295564FA0095FF02 /* ProfileSelectionViewModel.swift in Sources */,
 				048B19462955647D0095FF02 /* ProfileSelectionViewController.swift in Sources */,
 				0462F4392944A15A00D013AD /* UIView + Extension.swift in Sources */,
+				046EDE462990CC09009E9F65 /* HeaderTableViewCell.swift in Sources */,
 				04E835FB2981148600038B96 /* CategoriesViewModel.swift in Sources */,
 				047FC0C6295CC13C00CCD036 /* AppData.swift in Sources */,
 				0475C886298797AD002A2372 /* SearchViewModel.swift in Sources */,

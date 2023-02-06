@@ -13,6 +13,7 @@ class SettingsView: UIView {
     @IBOutlet weak var settingsTableview: UITableView!
     
     var settingData: [[Setting]] = []
+    var settingHeader: [String] = []
     
     func setupUI() {
         
@@ -25,6 +26,7 @@ class SettingsView: UIView {
         settingsTableview.backgroundColor = Colors.shared.blackcolor
         
         settingsTableview.register(UINib(nibName: "SettingTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingTableViewCell")
+        settingsTableview.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell")
         settingsTableview.delegate = self
         settingsTableview.dataSource = self
     }
@@ -39,7 +41,7 @@ extension SettingsView: UITableViewDelegate {
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 45
     }
     
 }
@@ -59,7 +61,11 @@ extension SettingsView: UITableViewDataSource {
         }
         return UITableViewCell()
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "video \(section)"
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let header = settingsTableview.dequeueReusableCell(withIdentifier: "HeaderTableViewCell") as? HeaderTableViewCell {
+            header.configUI(text: settingHeader[section] )
+            return header
+        }
+        return nil
     }
 }

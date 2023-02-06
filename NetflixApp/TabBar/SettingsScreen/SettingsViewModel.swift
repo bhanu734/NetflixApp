@@ -18,6 +18,7 @@ struct Setting {
 
 class SettingsViewModel {
     var settingData: [[Setting]] = []
+    var settingHeader: [String] = []
     
     init() {
         getData()
@@ -37,10 +38,15 @@ class SettingsViewModel {
         
         var dataforsection3: [Setting] = []
        dataforsection3.append(Setting(logoimage: Images.shared.speed, title: Strings.shared.internetSpeedTest, caption: nil, showArrow: true, showSwitch: false))
-        dataforsection3.append(Setting(logoimage: Images.shared.speed, title: Strings.shared.privacyPolicy, caption: nil, showArrow: true, showSwitch: false))
+        dataforsection3.append(Setting(logoimage: Images.shared.bell , title: Strings.shared.privacyPolicy, caption: nil, showArrow: true, showSwitch: false))
         
         settingData.append(dataforsection1)
         settingData.append(dataforsection2)
         settingData.append(dataforsection3)
+        
+        settingHeader = []
+        settingHeader.append(Strings.shared.videoPlayback)
+        settingHeader.append(Strings.shared.downloads)
+        settingHeader.append(Strings.shared.about)
     }
 }

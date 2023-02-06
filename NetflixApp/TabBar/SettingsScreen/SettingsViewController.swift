@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController {
 
         settingsview.setupUI()
         settingsview.settingData = settingsviewmodel.settingData
+        settingsview.settingHeader = settingsviewmodel.settingHeader
         settingsview.updateUI()
     }
 
