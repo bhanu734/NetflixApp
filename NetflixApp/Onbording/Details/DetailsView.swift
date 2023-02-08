@@ -18,15 +18,18 @@ class DetailsView: UIView {
     @IBOutlet weak var closeimage: UIImageView!
     
     var delegate: DetailsViewDelegate?
+    var bannerdata: [Banner?] = []
     
     func setupUI() {
+        backgroundColor = Colors.shared.blackcolor
         collectionView.backgroundColor = Colors.shared.blackcolor
         
         closeview.backgroundColor = Colors.shared.darkgreycolor
         closeimage.image = Images.shared.xmark
         closeimage.tintColor = Colors.shared.whiteimagecolor
-        closeview.layer.cornerRadius = 20.0
+        closeview.layer.cornerRadius = 15.0
         
+        collectionView.register(UINib(nibName: "DetailheroCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DetailheroCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -43,16 +46,21 @@ extension DetailsView: UICollectionViewDelegate {
 }
 extension DetailsView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailheroCollectionViewCell", for: indexPath) as? DetailheroCollectionViewCell {
+            
+            return cell
+        }
         return UICollectionViewCell()
     }
     
     
 }
 extension DetailsView: UICollectionViewDelegateFlowLayout {
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 900)
+    }
 }

@@ -19,6 +19,7 @@ class Images {
     let netfliximage = UIImage(named: "netfliximage")
     let del_image = UIImage(systemName: "multiply")
     let netflix_logo = UIImage(named: "netfliximage")
+    let netflix_Letter_N = UIImage(systemName: "netflixhome")
     let plus = UIImage(systemName: "plus")
     let play = UIImage(systemName: "play")
     let playcircle = UIImage(systemName: "play.circle")
@@ -45,5 +46,7 @@ class Images {
     let delete = UIImage(systemName: "trash")
     let speed = UIImage(systemName: "speedometer")
     let privacy = UIImage(systemName: "rectangle.portrait.tophalf.inset.filled")
-  
+    let rate = UIImage(systemName: "hand.thumbsup")
+    let share = UIImage(systemName: "paperplane")
+    let download_details = UIImage(systemName: "arrow.down.to.line")
 }

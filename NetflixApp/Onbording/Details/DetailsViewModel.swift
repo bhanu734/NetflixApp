@@ -9,4 +9,5 @@ import UIKit
 
 class DetailsViewModel {
     
+    var bannerdata: [Banner?] = []
 }

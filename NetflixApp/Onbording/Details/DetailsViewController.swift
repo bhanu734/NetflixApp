@@ -16,6 +16,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         detailsview.delegate = self
+        detailsview.bannerdata = detailsviewmodel.bannerdata
         detailsview.setupUI()
         detailsview.updateUI()
     }

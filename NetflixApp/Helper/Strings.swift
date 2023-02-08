@@ -88,6 +88,9 @@ class Strings {
     let about = "About"
     let internetSpeedTest = "Internet Speed Test"
     let privacyPolicy = "Privacy Policy"
+    let download = "Download"
+    let rate = "Rate"
+    let share = "Share"
     
 }
  

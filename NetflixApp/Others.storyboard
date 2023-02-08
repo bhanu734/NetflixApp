@@ -100,13 +100,13 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTh-07-5L4">
-                                <rect key="frame" x="344" y="64" width="40" height="40"/>
+                                <rect key="frame" x="369" y="64" width="30" height="30"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hpj-Zl-POO">
-                                        <rect key="frame" x="5" y="5" width="30" height="30"/>
+                                        <rect key="frame" x="5" y="5" width="20" height="20"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ld9-Zv-0tq">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <connections>
                                             <action selector="closeTap" destination="g9H-D9-Fbb" eventType="touchUpInside" id="41R-Z5-gNR"/>
                                         </connections>
@@ -117,7 +117,7 @@
                                     <constraint firstItem="ld9-Zv-0tq" firstAttribute="centerY" secondItem="rTh-07-5L4" secondAttribute="centerY" id="8He-nD-7Cm"/>
                                     <constraint firstItem="ld9-Zv-0tq" firstAttribute="width" secondItem="rTh-07-5L4" secondAttribute="width" id="IBt-Ej-XIt"/>
                                     <constraint firstItem="hpj-Zl-POO" firstAttribute="leading" secondItem="rTh-07-5L4" secondAttribute="leading" constant="5" id="WYJ-4F-bm1"/>
-                                    <constraint firstAttribute="width" constant="40" id="ab0-OX-yV1"/>
+                                    <constraint firstAttribute="width" constant="30" id="ab0-OX-yV1"/>
                                     <constraint firstItem="ld9-Zv-0tq" firstAttribute="height" secondItem="rTh-07-5L4" secondAttribute="height" id="gsE-pO-XQ0"/>
                                     <constraint firstItem="hpj-Zl-POO" firstAttribute="top" secondItem="rTh-07-5L4" secondAttribute="top" constant="5" id="hBB-ah-rlY"/>
                                     <constraint firstItem="ld9-Zv-0tq" firstAttribute="centerX" secondItem="rTh-07-5L4" secondAttribute="centerX" id="hcv-cB-YGu"/>
@@ -130,7 +130,7 @@
                         <viewLayoutGuide key="safeArea" id="fVD-j0-MhZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fVD-j0-MhZ" firstAttribute="trailing" secondItem="rTh-07-5L4" secondAttribute="trailing" constant="30" id="PA2-Nm-Ybk"/>
+                            <constraint firstItem="fVD-j0-MhZ" firstAttribute="trailing" secondItem="rTh-07-5L4" secondAttribute="trailing" constant="15" id="PA2-Nm-Ybk"/>
                             <constraint firstAttribute="bottom" secondItem="Joo-pS-ykS" secondAttribute="bottom" id="QnV-ul-qFg"/>
                             <constraint firstItem="fVD-j0-MhZ" firstAttribute="trailing" secondItem="Joo-pS-ykS" secondAttribute="trailing" id="TuK-Rl-rtN"/>
                             <constraint firstItem="Joo-pS-ykS" firstAttribute="top" secondItem="g9H-D9-Fbb" secondAttribute="top" id="as4-fR-Pl6"/>
