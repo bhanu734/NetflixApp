@@ -18,7 +18,13 @@ class DetailsView: UIView {
     @IBOutlet weak var closeimage: UIImageView!
     
     var delegate: DetailsViewDelegate?
-    var bannerdata: [Banner?] = []
+    var banner: Banner?
+    var movieDetails: MoviesData?
+    var seriesDetails: SeriesData?
+    
+    var isSeries: Bool {
+        return (seriesDetails != nil)
+    }
     
     func setupUI() {
         backgroundColor = Colors.shared.blackcolor
@@ -34,7 +40,10 @@ class DetailsView: UIView {
         collectionView.dataSource = self
     }
     func updateUI() {
-        self.collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+     
     }
     @IBAction func closeTap() {
         delegate?.cloeTapped()
@@ -51,7 +60,11 @@ extension DetailsView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailheroCollectionViewCell", for: indexPath) as? DetailheroCollectionViewCell {
-            
+            if isSeries {
+                cell.configUI(detailsData: seriesDetails)
+            }else {
+                cell.configUI(detailsData: movieDetails)
+            }
             return cell
         }
         return UICollectionViewCell()
@@ -61,6 +74,6 @@ extension DetailsView: UICollectionViewDataSource {
 }
 extension DetailsView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 900)
+        return CGSize(width: SCREENWIDTH , height: 700)
     }
 }

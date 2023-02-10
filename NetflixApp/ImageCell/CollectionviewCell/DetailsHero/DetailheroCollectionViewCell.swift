@@ -47,14 +47,14 @@ class DetailheroCollectionViewCell: UICollectionViewCell {
 
     func setupUI() {
         mainstackview()
-        commentsstackview()
+        commentsStackview()
         
         backgroundColor = Colors.shared.blackcolor
         
         topview.backgroundColor = Colors.shared.blackcolor
         
-        heroImage.image = Images.shared.welcomeBG
-        heroImage.contentMode = .scaleAspectFill
+        
+//        heroImage.contentMode = .scaleAspectFit
         
         logoImage.image = Images.shared.netflix_Letter_N
         
@@ -66,7 +66,7 @@ class DetailheroCollectionViewCell: UICollectionViewCell {
         
         cat_view.backgroundColor = Colors.shared.darkgreycolor
         cat_label.textColor = Colors.shared.whiteTextcolor
-        cat_label.text = Strings.shared.Home
+//        cat_label.text = Strings.shared.Home
         
         descriptionlabel.textColor = Colors.shared.whiteTextcolor
         descriptionlabel.font = Font.shared.medium1
@@ -95,7 +95,7 @@ class DetailheroCollectionViewCell: UICollectionViewCell {
         
      
     }
-    func commentsstackview() {
+    func commentsStackview() {
         
 //        commentstackview.backgroundColor = Colors.shared.blackcolor
         
@@ -118,12 +118,25 @@ class DetailheroCollectionViewCell: UICollectionViewCell {
         shareimage.tintColor = Colors.shared.whiteimagecolor
     }
     
-    func configUI(text: String) {
-        titlelabel.text = text
-        descriptionlabel.text = text
-        castlabel.text = text
-        generslabel.text = text
-        datelabel.text = text
+    func configUI(detailsData: SeriesData?) {
+        if let detailsData = detailsData {
+            heroImage.sd_setImage(with: URL(string: detailsData.imagery?.banner ?? ""), completed: nil)
+            titlelabel.text = detailsData.name
+            datelabel.text = detailsData.firstAirDate
+            descriptionlabel.text = detailsData.overview
+            cat_label.text = detailsData.type
+            
+        }
+    }
+    func configUI(detailsData: MoviesData?) {
+        if let detailsData = detailsData {
+            heroImage.sd_setImage(with: URL(string: detailsData.imagery?.banner ?? ""), completed: nil)
+            titlelabel.text = detailsData.originalTitle
+            datelabel.text = detailsData.releaseDate
+            descriptionlabel.text = detailsData.overview
+            cat_label.text = detailsData.contentType
+            
+        }
     }
     
     @IBAction func playbuttonTapped() {

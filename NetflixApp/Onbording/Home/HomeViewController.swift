@@ -77,10 +77,14 @@ extension HomeViewController: HomeViewDelegate {
     func mylistTappedEx() {
         Navigate_to_CategoriesVC()
     }
-    func goto_details_screen() {
+    func goto_details_screen(banner: Banner?) {
         DispatchQueue.main.async {
-            let controller = Controller.details_screen.getController()
+          if let controller = Controller.details_screen.getController() as? DetailsViewController {
+//            controller.modalPresentationStyle = .overFullScreen
+            controller.detailsviewmodel.banner = banner
             self.navigationController?.pushViewController(controller, animated: true)
+            }
+          
         }
     }
 }

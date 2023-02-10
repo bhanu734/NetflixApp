@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: BaseViewController {
 
     @IBOutlet weak var detailsview: DetailsView!
     var detailsviewmodel: DetailsViewModel = DetailsViewModel()
@@ -16,8 +16,10 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         detailsview.delegate = self
-        detailsview.bannerdata = detailsviewmodel.bannerdata
+        detailsviewmodel.delegate = self
+        detailsview.banner = detailsviewmodel.banner
         detailsview.setupUI()
+        detailsviewmodel.getDetails()
         detailsview.updateUI()
     }
     
@@ -26,8 +28,17 @@ class DetailsViewController: UIViewController {
 extension DetailsViewController: DetailsViewDelegate {
     func cloeTapped() {
         DispatchQueue.main.async {
-            let controller = Controller.TabBar.getController()
-            self.navigationController?.pushViewController(controller, animated: true)
+//            let controller = Controller.TabBar.getController()
+//            self.navigationController?.pushViewController(controller, animated: true)
+            self.navigationController?.popViewController(animated: true)
         }
+    }
+}
+
+extension DetailsViewController: DetailsViewModelDelegate {
+    func updateUI() {
+        detailsview.seriesDetails = detailsviewmodel.seriesDetails
+        detailsview.movieDetails = detailsviewmodel.movieDetails
+        detailsview.updateUI()
     }
 }

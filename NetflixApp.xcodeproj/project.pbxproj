@@ -41,6 +41,8 @@
 		0470943F294D01A700D990E4 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470943E294D01A700D990E4 /* ResetPasswordView.swift */; };
 		04709441294D01E300D990E4 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04709440294D01E300D990E4 /* ResetPasswordViewController.swift */; };
 		04709443294D028A00D990E4 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04709442294D028A00D990E4 /* ResetPasswordViewModel.swift */; };
+		047342AE29961B5A00621B73 /* MoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047342AC29961B5900621B73 /* MoviesModel.swift */; };
+		047342AF29961B5A00621B73 /* SeriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047342AD29961B5A00621B73 /* SeriesData.swift */; };
 		0475C8822987970B002A2372 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C8812987970B002A2372 /* SearchViewController.swift */; };
 		0475C88429879769002A2372 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C88329879769002A2372 /* SearchView.swift */; };
 		0475C886298797AD002A2372 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C885298797AD002A2372 /* SearchViewModel.swift */; };
@@ -137,6 +139,8 @@
 		0470943E294D01A700D990E4 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		04709440294D01E300D990E4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		04709442294D028A00D990E4 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
+		047342AC29961B5900621B73 /* MoviesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesModel.swift; sourceTree = "<group>"; };
+		047342AD29961B5A00621B73 /* SeriesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesData.swift; sourceTree = "<group>"; };
 		0475C8812987970B002A2372 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0475C88329879769002A2372 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		0475C885298797AD002A2372 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -227,8 +231,6 @@
 				04DA1D3C29438107002F988A /* Strings.swift */,
 				048B194B29559CEC0095FF02 /* User.swift */,
 				04627E7A2957006D008AAD7C /* Constants.swift */,
-				047FC0C3295C85FD00CCD036 /* HomeData.swift */,
-				04708A152984E4D7007AA87C /* CategoryDataModel.swift */,
 				047FC0C5295CC13B00CCD036 /* AppData.swift */,
 			);
 			path = Helper;
@@ -357,6 +359,17 @@
 				04709440294D01E300D990E4 /* ResetPasswordViewController.swift */,
 			);
 			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		047342AB29961AAE00621B73 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				047FC0C3295C85FD00CCD036 /* HomeData.swift */,
+				04708A152984E4D7007AA87C /* CategoryDataModel.swift */,
+				047342AC29961B5900621B73 /* MoviesModel.swift */,
+				047342AD29961B5A00621B73 /* SeriesData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0475C8802987968D002A2372 /* Search Screen */ = {
@@ -509,6 +522,7 @@
 				04D0F4A7294710A60015D482 /* Onbording.storyboard */,
 				04E835F3298112B200038B96 /* Others.storyboard */,
 				04603666296DA3D400C6639B /* TabBar.storyboard */,
+				047342AB29961AAE00621B73 /* Model */,
 				04603670296DC50E00C6639B /* Views */,
 				044D313B2968538200AAF2CE /* Helper */,
 				04DC9B1B2951E7A1000FEBD3 /* ImageCell */,
@@ -787,6 +801,8 @@
 				04639A5A294AECE80086BD9F /* LoginViewModel.swift in Sources */,
 				04D0F4AF29471C100015D482 /* RegisterViewModel.swift in Sources */,
 				0475C8972987D0E2002A2372 /* SettingsViewModel.swift in Sources */,
+				047342AE29961B5A00621B73 /* MoviesModel.swift in Sources */,
+				047342AF29961B5A00621B73 /* SeriesData.swift in Sources */,
 				0475C88F2987CF65002A2372 /* AccountViewController.swift in Sources */,
 				04DA1D2329437F3D002F988A /* AppDelegate.swift in Sources */,
 				048B194C29559CEC0095FF02 /* User.swift in Sources */,

@@ -8,11 +8,16 @@
 import UIKit
 import  SDWebImage
 
+protocol CarousalCollectionViewCellDelegate {
+    func contentTapped(banner: Banner?)
+}
+
 class CarousalCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var caurosaltitle: UILabel!
     @IBOutlet weak var carousalcollectionview: UICollectionView!
     
+    var delegate: CarousalCollectionViewCellDelegate?
     var playlistdata: Playlist?
     
     override func awakeFromNib() {
@@ -55,6 +60,11 @@ extension CarousalCollectionViewCell: UICollectionViewDataSource {
 }
 
 extension CarousalCollectionViewCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.contentTapped(banner: playlistdata?.content?[indexPath.row])
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }

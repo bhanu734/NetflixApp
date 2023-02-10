@@ -16,7 +16,7 @@ protocol HomeViewDelegate {
     func tvShowsTappedEx()
     func moviesTappedEx()
     func mylistTappedEx()
-    func goto_details_screen()
+    func goto_details_screen(banner: Banner?)
 }
 
 class HomeView: UIView {
@@ -71,7 +71,15 @@ class HomeView: UIView {
 }
 extension HomeView: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.goto_details_screen()
+        if indexPath.section == 0 {
+            if isselected {
+                delegate?.goto_details_screen(banner: subcategorydata?.banner )
+            }else {
+                delegate?.goto_details_screen(banner: homedata?.banner?.first )
+            }
+        }else if isselected {
+            delegate?.goto_details_screen(banner: subcategorydata?.playlists?[indexPath.row])
+        }
     }
 }
 
@@ -114,6 +122,7 @@ extension HomeView: UICollectionViewDataSource {
                 }
             }else {
                 if let cell = homecollectionview.dequeueReusableCell(withReuseIdentifier: "CarousalCollectionViewCell", for: indexPath) as? CarousalCollectionViewCell {
+                    cell.delegate = self
                     cell.ConfigUI(playlist: homedata?.playlists?[indexPath.row])
                     return cell
                 }
@@ -137,6 +146,11 @@ extension HomeView: UICollectionViewDelegateFlowLayout {
                 return CGSize(width: homecollectionview.frame.width, height: Home_carousal_Height)
             }
         }
+    }
+}
+extension HomeView: CarousalCollectionViewCellDelegate {
+    func contentTapped(banner: Banner?) {
+        delegate?.goto_details_screen(banner: banner)
     }
 }
 
