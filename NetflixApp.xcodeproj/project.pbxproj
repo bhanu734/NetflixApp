@@ -26,6 +26,8 @@
 		04639A5A294AECE80086BD9F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04639A59294AECE80086BD9F /* LoginViewModel.swift */; };
 		04639A5C294AED250086BD9F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04639A5B294AED250086BD9F /* LoginView.swift */; };
 		04639A5E294AF2C50086BD9F /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04639A5D294AF2C50086BD9F /* LoginModel.swift */; };
+		046541582997AFC500B06343 /* DetailsHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046541562997AFC500B06343 /* DetailsHeaderCollectionReusableView.swift */; };
+		046541592997AFC500B06343 /* DetailsHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046541572997AFC500B06343 /* DetailsHeaderCollectionReusableView.xib */; };
 		046EDE462990CC09009E9F65 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EDE442990CC09009E9F65 /* HeaderTableViewCell.swift */; };
 		046EDE472990CC09009E9F65 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046EDE452990CC09009E9F65 /* HeaderTableViewCell.xib */; };
 		046EDE4E29910D39009E9F65 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EDE4D29910D39009E9F65 /* DetailsViewController.swift */; };
@@ -124,6 +126,8 @@
 		04639A59294AECE80086BD9F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		04639A5B294AED250086BD9F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		04639A5D294AF2C50086BD9F /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		046541562997AFC500B06343 /* DetailsHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		046541572997AFC500B06343 /* DetailsHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		046EDE442990CC09009E9F65 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		046EDE452990CC09009E9F65 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		046EDE4D29910D39009E9F65 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +314,15 @@
 				04639A5D294AF2C50086BD9F /* LoginModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		046541552997AF2000B06343 /* DetailHeader */ = {
+			isa = PBXGroup;
+			children = (
+				046541562997AFC500B06343 /* DetailsHeaderCollectionReusableView.swift */,
+				046541572997AFC500B06343 /* DetailsHeaderCollectionReusableView.xib */,
+			);
+			path = DetailHeader;
 			sourceTree = "<group>";
 		};
 		046EDE432990CBC5009E9F65 /* HeaderLabel */ = {
@@ -569,6 +582,7 @@
 		04DC9B242951EA84000FEBD3 /* CollectionviewCell */ = {
 			isa = PBXGroup;
 			children = (
+				046541552997AF2000B06343 /* DetailHeader */,
 				045FE78B2992009200D9271F /* DetailsHero */,
 				0484FEF1297A59A60028001D /* Carousal */,
 				047751F1297818B900AB8E87 /* Hero */,
@@ -694,6 +708,7 @@
 				0462DACF298925DC009C302F /* SearchViewTableViewCell.xib in Resources */,
 				04CFF31B298E60CD00DD5251 /* AccountTableViewCell.xib in Resources */,
 				04DA1D2A29437F3D002F988A /* Main.storyboard in Resources */,
+				046541592997AFC500B06343 /* DetailsHeaderCollectionReusableView.xib in Resources */,
 				04603667296DA3D400C6639B /* TabBar.storyboard in Resources */,
 				04C1D512298F9C7700B13192 /* SettingTableViewCell.xib in Resources */,
 				04627E792956CD9A008AAD7C /* netflixGif.gif in Resources */,
@@ -784,6 +799,7 @@
 				045FE78E2992010800D9271F /* DetailheroCollectionViewCell.swift in Sources */,
 				04DC9B282951EAEE000FEBD3 /* ImageCollectionViewCell.swift in Sources */,
 				0475C8932987D07E002A2372 /* SettingsView.swift in Sources */,
+				046541582997AFC500B06343 /* DetailsHeaderCollectionReusableView.swift in Sources */,
 				04DA1D41294381B4002F988A /* WelcomeView.swift in Sources */,
 				046EDE5029910D70009E9F65 /* DetailsView.swift in Sources */,
 				04627E732956CA96008AAD7C /* SplashView.swift in Sources */,

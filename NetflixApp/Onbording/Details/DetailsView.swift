@@ -36,6 +36,7 @@ class DetailsView: UIView {
         closeview.layer.cornerRadius = 15.0
         
         collectionView.register(UINib(nibName: "DetailheroCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DetailheroCollectionViewCell")
+        collectionView.register(UINib(nibName: "DetailsHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "DetailsHeaderCollectionReusableView")
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -54,7 +55,14 @@ extension DetailsView: UICollectionViewDelegate {
     
 }
 extension DetailsView: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 1 {
+            return 0
+        }
         return 1
     }
     
@@ -70,10 +78,27 @@ extension DetailsView: UICollectionViewDataSource {
         return UICollectionViewCell()
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader , indexPath.section == 1 {
+            if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "DetailsHeaderCollectionReusableView", for: indexPath) as? DetailsHeaderCollectionReusableView {
+                header.configreUI(isSeries: isSeries)
+                return header
+            }
+        }
+        return UICollectionReusableView()
+    }
 }
 extension DetailsView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: SCREENWIDTH , height: 750)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 1 {
+            return CGSize(width: collectionView.frame.width, height: 50)
+        }
+            return CGSize.zero
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+            return CGSize.zero
     }
 }
