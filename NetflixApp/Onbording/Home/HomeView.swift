@@ -94,7 +94,7 @@ extension HomeView: UICollectionViewDataSource {
             return 1
         }else {
            if isselected {
-            return subcategorydata?.playlists?.count ?? 0
+                return subcategorydata?.playlists?.count ?? 0
             }else {
                 return homedata?.playlists?.count ?? 0
             }

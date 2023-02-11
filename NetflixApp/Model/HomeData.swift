@@ -32,7 +32,7 @@ struct Banner: Codable {
     let id: Int?
     let originalLanguage: String?
     let originalTitle: String?
-    let contentType: String?
+    let contentType: ContentType?
     let imagery: Imagery?
     let name: String?
 

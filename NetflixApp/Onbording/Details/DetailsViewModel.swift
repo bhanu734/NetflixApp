@@ -17,7 +17,7 @@ class DetailsViewModel {
     
     var banner: Banner?
     var isSeries : Bool {
-        return banner?.contentType == .none
+        return banner?.contentType == .series
     }
     
     var delegate: DetailsViewModelDelegate?
@@ -47,7 +47,6 @@ class DetailsViewModel {
                 do{
                     let jsonResponse = try JSONDecoder().decode(MovieDetails.self, from: data)
                     self.movieDetails = jsonResponse.data
-                    print(self.movieDetails?.title, self.movieDetails?.originalTitle )
                     self.delegate?.updateUI()
                 }catch {
                     print(error.localizedDescription)
@@ -62,18 +61,16 @@ class DetailsViewModel {
         let baseUrl = Url.seriesDetails.getUrl()
         let urlString = baseUrl + String(id)
         
-        NetworkAdaptor.urlRequest(urlstring: urlString, method: .get, headers: headers) { data, response, error in
+        NetworkAdaptor.urlRequest(urlstring: urlString, method: .get) { data, response, error in
             self.delegate?.hideLoader()
             if let data = data {
-                do{
-                    let jsonResponse = try JSONDecoder().decode(SeriesDetailsModel.self, from: data)
-                    self.seriesDetails = jsonResponse.data?.response
-                    print(self.seriesDetails?.name)
+                do {
+                    let seriesjsondata = try JSONDecoder().decode(SeriesDetailsModel.self, from: data)
+                    self.seriesDetails = seriesjsondata.data?.response
                     self.delegate?.updateUI()
-                }catch{
-                    
+                } catch  {
+                    print(error.localizedDescription)
                 }
-                
             }
         }
     }
