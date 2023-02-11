@@ -69,7 +69,7 @@ class DetailheroCollectionViewCell: UICollectionViewCell {
 //        cat_label.text = Strings.shared.Home
         
         descriptionlabel.textColor = Colors.shared.whiteTextcolor
-        descriptionlabel.font = Font.shared.medium1
+        descriptionlabel.font = Font.shared.medium3
         
         castlabel.textColor = Colors.shared.whiteTextcolor
         
@@ -125,7 +125,8 @@ class DetailheroCollectionViewCell: UICollectionViewCell {
             datelabel.text = detailsData.firstAirDate
             descriptionlabel.text = detailsData.overview
             cat_label.text = detailsData.type
-            
+            castlabel.text = getCastString(cast: detailsData.productionCompanies)
+            generslabel.text = getCastString(genre: detailsData.genres)
         }
     }
     func configUI(detailsData: MoviesData?) {
@@ -135,8 +136,40 @@ class DetailheroCollectionViewCell: UICollectionViewCell {
             datelabel.text = detailsData.releaseDate
             descriptionlabel.text = detailsData.overview
             cat_label.text = detailsData.contentType
-            
+            castlabel.text = getCastString(cast: detailsData.productionCompanies)
+            generslabel.text = getCastString(genre: detailsData.genres)
         }
+    }
+    
+    func getCastString(cast: [ProductionCompany]?) -> String? {
+        var finalcast: String = "Cast: "
+        
+        if let cast = cast, cast.count > 0 {
+            for castDict in cast {
+                if let name = castDict.name {
+                    finalcast += name + ", "
+                }
+            }
+            finalcast.removeLast()
+            finalcast.removeLast()
+            return finalcast
+        }
+        return nil
+    }
+    func getCastString(genre: [Genre]?) -> String? {
+        var finalgenre: String = "Genre: "
+        
+        if let genre = genre, genre.count > 0 {
+            for genreDict in genre {
+                if let name = genreDict.name {
+                    finalgenre += name + ", "
+                }
+            }
+            finalgenre.removeLast()
+            finalgenre.removeLast()
+            return finalgenre
+        }
+        return nil
     }
     
     @IBAction func playbuttonTapped() {

@@ -38,7 +38,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="OAz-0F-JsD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -141,26 +141,26 @@
                                     <constraint firstAttribute="height" constant="80" id="mmp-jK-Obf"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rz3-on-ajP">
-                                <rect key="frame" x="10" y="455.5" width="391" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rz3-on-ajP">
+                                <rect key="frame" x="10" y="455.5" width="391" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTE-je-c5c">
-                                <rect key="frame" x="10" y="496" width="391" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTE-je-c5c">
+                                <rect key="frame" x="10" y="494.5" width="391" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMa-MJ-BSh">
-                                <rect key="frame" x="10" y="526.5" width="391" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMa-MJ-BSh">
+                                <rect key="frame" x="10" y="522.5" width="391" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Rbb-A4-oEM">
-                                <rect key="frame" x="10" y="557" width="240" height="60"/>
+                                <rect key="frame" x="10" y="550.5" width="240" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wkt-i5-TjR">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="60"/>
@@ -277,7 +277,7 @@
                             <constraint firstItem="gzb-UM-zxY" firstAttribute="leading" secondItem="PEN-iP-Q2T" secondAttribute="leading" constant="10" id="Y5Z-tg-qYz"/>
                             <constraint firstItem="Rbb-A4-oEM" firstAttribute="top" secondItem="FMa-MJ-BSh" secondAttribute="bottom" constant="10" id="cbP-Wb-U7P"/>
                             <constraint firstItem="Rbb-A4-oEM" firstAttribute="leading" secondItem="PEN-iP-Q2T" secondAttribute="leading" constant="10" id="dlp-Rw-slE"/>
-                            <constraint firstItem="fTE-je-c5c" firstAttribute="top" secondItem="Rz3-on-ajP" secondAttribute="bottom" constant="20" id="dx8-hM-BzR"/>
+                            <constraint firstItem="fTE-je-c5c" firstAttribute="top" secondItem="Rz3-on-ajP" secondAttribute="bottom" constant="15" id="dx8-hM-BzR"/>
                             <constraint firstItem="Rz3-on-ajP" firstAttribute="top" secondItem="gzb-UM-zxY" secondAttribute="bottom" constant="10" id="ePw-9I-lQh"/>
                             <constraint firstAttribute="trailing" secondItem="Rz3-on-ajP" secondAttribute="trailing" constant="10" id="enI-2A-Oje"/>
                             <constraint firstItem="0J6-1h-uqS" firstAttribute="leading" secondItem="PEN-iP-Q2T" secondAttribute="leading" constant="10" id="eoV-TL-c2t"/>
