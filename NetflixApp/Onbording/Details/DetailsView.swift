@@ -37,6 +37,8 @@ class DetailsView: UIView {
         
         collectionView.register(UINib(nibName: "DetailheroCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DetailheroCollectionViewCell")
         collectionView.register(UINib(nibName: "DetailsHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "DetailsHeaderCollectionReusableView")
+        collectionView.register(UINib(nibName: "EpisodeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "EpisodeCollectionViewCell")
+        
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -61,19 +63,29 @@ extension DetailsView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 1 {
-            return 0
+            if isSeries {
+                return seriesDetails?.seasons?.first?.episodes?.count ?? 0
+            }
+            return movieDetails?.imagery?.banner?.count ?? 0
         }
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailheroCollectionViewCell", for: indexPath) as? DetailheroCollectionViewCell {
-            if isSeries {
-                cell.configUI(detailsData: seriesDetails)
-            }else {
-                cell.configUI(detailsData: movieDetails)
+        if indexPath.section == 0 {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailheroCollectionViewCell", for: indexPath) as? DetailheroCollectionViewCell {
+                if isSeries {
+                    cell.configUI(detailsData: seriesDetails)
+                }else {
+                    cell.configUI(detailsData: movieDetails)
+                }
+                return cell
             }
-            return cell
+        }else if indexPath.section == 1 {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EpisodeCollectionViewCell", for: indexPath) as? EpisodeCollectionViewCell {
+                cell.configureUI(episode: seriesDetails?.seasons?.first?.episodes?[indexPath.row], imagery: seriesDetails?.imagery)
+                return cell
+            }
         }
         return UICollectionViewCell()
     }
@@ -84,13 +96,19 @@ extension DetailsView: UICollectionViewDataSource {
                 header.configreUI(isSeries: isSeries)
                 return header
             }
+            
         }
         return UICollectionReusableView()
     }
 }
 extension DetailsView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: SCREENWIDTH , height: 750)
+        if indexPath.section == 0 {
+            return CGSize(width: SCREENWIDTH , height: 750)
+        }else if indexPath.section == 1 {
+            return CGSize(width: collectionView.frame.width , height: 140)
+        }
+        return CGSize.zero
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 1 {

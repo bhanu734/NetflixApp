@@ -45,6 +45,8 @@
 		04709443294D028A00D990E4 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04709442294D028A00D990E4 /* ResetPasswordViewModel.swift */; };
 		047342AE29961B5A00621B73 /* MoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047342AC29961B5900621B73 /* MoviesModel.swift */; };
 		047342AF29961B5A00621B73 /* SeriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047342AD29961B5A00621B73 /* SeriesData.swift */; };
+		0473873129992ACD00A4E540 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473872F29992ACD00A4E540 /* EpisodeCollectionViewCell.swift */; };
+		0473873229992ACD00A4E540 /* EpisodeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0473873029992ACD00A4E540 /* EpisodeCollectionViewCell.xib */; };
 		0475C8822987970B002A2372 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C8812987970B002A2372 /* SearchViewController.swift */; };
 		0475C88429879769002A2372 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C88329879769002A2372 /* SearchView.swift */; };
 		0475C886298797AD002A2372 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C885298797AD002A2372 /* SearchViewModel.swift */; };
@@ -145,6 +147,8 @@
 		04709442294D028A00D990E4 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		047342AC29961B5900621B73 /* MoviesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesModel.swift; sourceTree = "<group>"; };
 		047342AD29961B5A00621B73 /* SeriesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesData.swift; sourceTree = "<group>"; };
+		0473872F29992ACD00A4E540 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
+		0473873029992ACD00A4E540 /* EpisodeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCollectionViewCell.xib; sourceTree = "<group>"; };
 		0475C8812987970B002A2372 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0475C88329879769002A2372 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		0475C885298797AD002A2372 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -385,6 +389,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0473872E29992A4D00A4E540 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				0473872F29992ACD00A4E540 /* EpisodeCollectionViewCell.swift */,
+				0473873029992ACD00A4E540 /* EpisodeCollectionViewCell.xib */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
 		0475C8802987968D002A2372 /* Search Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +595,7 @@
 		04DC9B242951EA84000FEBD3 /* CollectionviewCell */ = {
 			isa = PBXGroup;
 			children = (
+				0473872E29992A4D00A4E540 /* Episodes */,
 				046541552997AF2000B06343 /* DetailHeader */,
 				045FE78B2992009200D9271F /* DetailsHero */,
 				0484FEF1297A59A60028001D /* Carousal */,
@@ -711,6 +725,7 @@
 				046541592997AFC500B06343 /* DetailsHeaderCollectionReusableView.xib in Resources */,
 				04603667296DA3D400C6639B /* TabBar.storyboard in Resources */,
 				04C1D512298F9C7700B13192 /* SettingTableViewCell.xib in Resources */,
+				0473873229992ACD00A4E540 /* EpisodeCollectionViewCell.xib in Resources */,
 				04627E792956CD9A008AAD7C /* netflixGif.gif in Resources */,
 				048B19512955EC080095FF02 /* ProfilesCollectionViewCell.xib in Resources */,
 				04E835F4298112B200038B96 /* Others.storyboard in Resources */,
@@ -769,6 +784,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0473873129992ACD00A4E540 /* EpisodeCollectionViewCell.swift in Sources */,
 				0484FEF4297A59D80028001D /* CarousalCollectionViewCell.swift in Sources */,
 				048B19502955EC080095FF02 /* ProfilesCollectionViewCell.swift in Sources */,
 				04DC9B232951E936000FEBD3 /* ProfileImageView.swift in Sources */,
