@@ -39,6 +39,7 @@ extension DetailsViewController: DetailsViewModelDelegate {
     func updateUI() {
         detailsview.seriesDetails = detailsviewmodel.seriesDetails
         detailsview.movieDetails = detailsviewmodel.movieDetails
+        detailsview.relatedContent = detailsviewmodel.relatedContent
         detailsview.updateUI()
     }
 }

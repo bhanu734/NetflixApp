@@ -24,6 +24,7 @@ class DetailsViewModel {
    
     var movieDetails: MoviesData?
     var seriesDetails: SeriesData?
+    var relatedContent: [Banner] = []
     
     func getDetails() {
         if let id = banner?.id {
@@ -32,6 +33,7 @@ class DetailsViewModel {
             }else {
                 getMoviesDetails(id: id)
             }
+            getRelatedContent()
         }
     }
     
@@ -67,6 +69,30 @@ class DetailsViewModel {
                 do {
                     let seriesjsondata = try JSONDecoder().decode(SeriesDetailsModel.self, from: data)
                     self.seriesDetails = seriesjsondata.data?.response
+                    self.delegate?.updateUI()
+                } catch  {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func getRelatedContent() {
+        delegate?.showLoader()
+        var headers: [String: String] = ["Content-Type": "application/json"]
+        headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
+        
+        let contentTypepasses = isSeries ? ContentType.series.rawValue : ContentType.movie.rawValue
+        let timestamp = String(Int(Date().timeIntervalSince1970))
+        let baseUrl = Url.relatedContent.getUrl()
+        let urlString = baseUrl + "timestamp=\(timestamp)&contenttype=\(contentTypepasses)"
+        
+        NetworkAdaptor.urlRequest(urlstring: urlString, method: .get , headers: headers) { data, response, error in
+            self.delegate?.hideLoader()
+            if let data = data {
+                do {
+                    let jsonresponse = try JSONDecoder().decode(RelatedContent.self, from: data)
+                    self.relatedContent = jsonresponse.response ?? []
                     self.delegate?.updateUI()
                 } catch  {
                     print(error.localizedDescription)

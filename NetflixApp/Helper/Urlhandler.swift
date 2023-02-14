@@ -26,6 +26,7 @@ enum Url {
     case search
     case movieDetails
     case seriesDetails
+    case relatedContent
     
     func getUrl() -> String {
         switch self {
@@ -65,6 +66,8 @@ enum Url {
             return "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/moviedetails?movieid="
         case .seriesDetails:
             return "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/seriesdetails?seriesid="
+        case .relatedContent:
+            return "https://jwxebkwcfj.execute-api.us-east-1.amazonaws.com/dev/relatedcontent?"
         }
     }
 }

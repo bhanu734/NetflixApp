@@ -21,6 +21,8 @@ class DetailsView: UIView {
     var banner: Banner?
     var movieDetails: MoviesData?
     var seriesDetails: SeriesData?
+    var ismoreLikeThis: Bool = false
+    var relatedContent: [Banner] = []
     
     var isSeries: Bool {
         return (seriesDetails != nil)
@@ -38,6 +40,7 @@ class DetailsView: UIView {
         collectionView.register(UINib(nibName: "DetailheroCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DetailheroCollectionViewCell")
         collectionView.register(UINib(nibName: "DetailsHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "DetailsHeaderCollectionReusableView")
         collectionView.register(UINib(nibName: "EpisodeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "EpisodeCollectionViewCell")
+        collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -64,9 +67,12 @@ extension DetailsView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 1 {
             if isSeries {
-                return seriesDetails?.seasons?.first?.episodes?.count ?? 0
+                if !ismoreLikeThis {
+                    return seriesDetails?.seasons?.first?.episodes?.count ?? 0
+                }
+                
             }
-            return movieDetails?.imagery?.banner?.count ?? 0
+            return relatedContent.count
         }
         return 1
     }
@@ -82,8 +88,17 @@ extension DetailsView: UICollectionViewDataSource {
                 return cell
             }
         }else if indexPath.section == 1 {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EpisodeCollectionViewCell", for: indexPath) as? EpisodeCollectionViewCell {
-                cell.configureUI(episode: seriesDetails?.seasons?.first?.episodes?[indexPath.row], imagery: seriesDetails?.imagery)
+            if isSeries {
+                if !ismoreLikeThis {
+                    if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EpisodeCollectionViewCell", for: indexPath) as? EpisodeCollectionViewCell {
+                        cell.configureUI(episode: seriesDetails?.seasons?.first?.episodes?[indexPath.row], imagery: seriesDetails?.imagery)
+                        return cell
+                    }
+                }
+                
+            }
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell {
+                cell.configureUI(banner: relatedContent[indexPath.row])
                 return cell
             }
         }
@@ -93,6 +108,7 @@ extension DetailsView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader , indexPath.section == 1 {
             if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "DetailsHeaderCollectionReusableView", for: indexPath) as? DetailsHeaderCollectionReusableView {
+                header.delegate = self
                 header.configreUI(isSeries: isSeries)
                 return header
             }
@@ -106,7 +122,12 @@ extension DetailsView: UICollectionViewDelegateFlowLayout {
         if indexPath.section == 0 {
             return CGSize(width: SCREENWIDTH , height: 750)
         }else if indexPath.section == 1 {
-            return CGSize(width: collectionView.frame.width , height: 140)
+            if isSeries {
+                if !ismoreLikeThis {
+                    return CGSize(width: collectionView.frame.width , height: 140)
+                }
+            }
+            return CGSize(width: (collectionView.frame.width)/3-10 , height: (collectionView.frame.width)/3-10)
         }
         return CGSize.zero
     }
@@ -118,5 +139,15 @@ extension DetailsView: UICollectionViewDelegateFlowLayout {
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
             return CGSize.zero
+    }
+}
+extension DetailsView: DetailsHeaderCollectionReusableViewDelegate {
+    func episodeTapped() {
+        ismoreLikeThis = false
+        updateUI()
+    }
+    func moreLikeThisTapped() {
+        ismoreLikeThis = true
+        updateUI()
     }
 }

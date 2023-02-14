@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol DetailsHeaderCollectionReusableViewDelegate {
+    func episodeTapped()
+    func moreLikeThisTapped()
+}
+
 class DetailsHeaderCollectionReusableView: UICollectionReusableView {
 
     @IBOutlet weak var episodesViewWidth: NSLayoutConstraint!
@@ -14,6 +19,7 @@ class DetailsHeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var episodesView: UIView!
     @IBOutlet weak var episodeButton: UIButton!
     
+    var delegate: DetailsHeaderCollectionReusableViewDelegate?
     var episodeTapped: Bool = false
     var isSeries: Bool = false
     
@@ -47,6 +53,7 @@ class DetailsHeaderCollectionReusableView: UICollectionReusableView {
     
     @IBAction func episodesTapped() {
         if !episodeTapped {
+            delegate?.episodeTapped()
             episodesViewWidth.constant = 75
             moreLikeThisViewWidth.constant = 0
             
@@ -60,6 +67,7 @@ class DetailsHeaderCollectionReusableView: UICollectionReusableView {
     }
     @IBAction func moreLikeThisTapped() {
         if episodeTapped {
+            delegate?.moreLikeThisTapped()
             episodesViewWidth.constant = 0
             moreLikeThisViewWidth.constant = 115
             

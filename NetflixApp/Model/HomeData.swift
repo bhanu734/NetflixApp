@@ -86,3 +86,8 @@ struct SearchModel: Codable {
     let status: Int?
     let response: [Banner]?
 }
+
+struct  RelatedContent: Codable {
+    let status: Int?
+    let response: [Banner]?
+}
