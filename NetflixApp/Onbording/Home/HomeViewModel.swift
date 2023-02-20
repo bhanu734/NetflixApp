@@ -44,7 +44,6 @@ class HomeViewModel {
                         AppData.shared.tvshowData = tvshowdata.body?.data
                         self.homedata = tvshowdata.body?.data
                         self.delegate?.updateUI()
-                        print("tvshow Api called", tvshowdata.body?.data?.playlists?.count)
                     } catch {
                         print("error", error.localizedDescription)
                     }
@@ -75,7 +74,6 @@ class HomeViewModel {
                         AppData.shared.moviesData = moviesdata.body?.data
                         self.homedata = moviesdata.body?.data
                         self.delegate?.updateUI()
-                        print("movies Api called", moviesdata.body?.data?.playlists?.count)
                     } catch {
                         print("error", error.localizedDescription)
                     }

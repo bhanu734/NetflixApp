@@ -30,12 +30,9 @@ class SplashViewModel {
         get_Movies_SubCategories()
         
         dispatchgroup.notify(queue: .global(qos: .userInteractive)) {
-           print("dispatch group notifier called")
-            if User.shared.isLogin {
-                print("notifier if called")
+           if User.shared.isLogin {
                 self.delegate?.data_fetch_completed()
             }else{
-                print("notifier else called")
                 self.delegate?.goto_Login_vc()
             }
         }
@@ -68,7 +65,6 @@ class SplashViewModel {
                 self.logout_user()
                 self.delegate?.goto_Login_vc()
             }
-            print("User_details Api called")
             self.dispatchgroup.leave()
         }
     }
@@ -92,7 +88,6 @@ class SplashViewModel {
                     let homedata = try JSONDecoder().decode(HomeModel.self, from: data)
                     AppData.shared.homeData = homedata.body?.data
                     self.dispatchgroup.leave()
-                    print("HomeData Api called")
                 } catch {
                     print("error", error.localizedDescription)
                     self.getHomedata()
@@ -125,7 +120,6 @@ class SplashViewModel {
                     print("error", error.localizedDescription)
                 }
             }
-            print("Tv_Shows Api called")
             self.dispatchgroup.leave()
         }
     }
@@ -151,7 +145,6 @@ class SplashViewModel {
                     print("error", error.localizedDescription)
                 }
             }
-            print("Movies Api called")
             self.dispatchgroup.leave()
         }
     }

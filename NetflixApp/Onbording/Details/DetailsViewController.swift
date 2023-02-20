@@ -15,12 +15,11 @@ class DetailsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        detailsview.delegate = self
         detailsviewmodel.delegate = self
-        detailsview.banner = detailsviewmodel.banner
+        detailsview.delegate = self
         detailsview.setupUI()
         detailsviewmodel.getDetails()
-        detailsview.updateUI()
+        detailsview.isSeries = detailsviewmodel.isSeries
     }
     
 

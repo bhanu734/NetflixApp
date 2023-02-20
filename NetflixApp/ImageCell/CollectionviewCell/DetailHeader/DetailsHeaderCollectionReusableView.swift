@@ -20,7 +20,7 @@ class DetailsHeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var episodeButton: UIButton!
     
     var delegate: DetailsHeaderCollectionReusableViewDelegate?
-    var episodeTapped: Bool = false
+    var episodeTapped: Bool = true
     var isSeries: Bool = false
     
     override func awakeFromNib() {
@@ -39,42 +39,44 @@ class DetailsHeaderCollectionReusableView: UICollectionReusableView {
                 episodesViewWidth.constant = 0
                 moreLikeThisViewWidth.constant = 115
             }
-            episodesViewWidth.constant = 75
-            moreLikeThisViewWidth.constant = 0
-            
             episodeButton.isHidden = false
             episodesView.isHidden = false
         }else {
+            moreLikeThisViewWidth.constant = 115
             episodeButton.isHidden = true
             episodesView.isHidden = true
+            
+            episodeTapped = false
         }
     }
     
     
     @IBAction func episodesTapped() {
         if !episodeTapped {
+            self.episodeTapped = true
             delegate?.episodeTapped()
             episodesViewWidth.constant = 75
             moreLikeThisViewWidth.constant = 0
             
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: 0.3) {
                 self.layoutIfNeeded()
             } completion: { Bool in
-                self.episodeTapped = true
+//                self.episodeTapped = true
             }
 
         }
     }
     @IBAction func moreLikeThisTapped() {
         if episodeTapped {
+            self.episodeTapped = false
             delegate?.moreLikeThisTapped()
             episodesViewWidth.constant = 0
             moreLikeThisViewWidth.constant = 115
             
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: 0.3) {
                 self.layoutIfNeeded()
             } completion: { Bool in
-                self.episodeTapped = false
+//                self.episodeTapped = false
             }
 
         }

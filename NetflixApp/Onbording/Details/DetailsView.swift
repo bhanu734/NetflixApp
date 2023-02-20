@@ -24,9 +24,7 @@ class DetailsView: UIView {
     var ismoreLikeThis: Bool = false
     var relatedContent: [Banner] = []
     
-    var isSeries: Bool {
-        return (seriesDetails != nil)
-    }
+    var isSeries: Bool = false
     
     func setupUI() {
         backgroundColor = Colors.shared.blackcolor

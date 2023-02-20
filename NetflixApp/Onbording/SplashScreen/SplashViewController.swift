@@ -34,7 +34,6 @@ extension SplashViewController: SplashViewModelDelegate{
     func data_fetch_completed() {
         datafetchComplete = true
         if animationComplete {
-            print("data fetch if called")
             if User.shared.userdetails?.profiles?.count ?? 1 >= 1 {
                 DispatchQueue.main.async {
                     let controller = Controller.profileselection.getController()
@@ -42,7 +41,6 @@ extension SplashViewController: SplashViewModelDelegate{
                 }
             }else {
                 DispatchQueue.main.async {
-                    print("data fetch else called")
                     let controller = Controller.createprofile.getController()
                     self.navigationController?.pushViewController(controller, animated: true)
                 }
