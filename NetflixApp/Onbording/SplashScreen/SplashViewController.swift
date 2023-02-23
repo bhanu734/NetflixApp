@@ -21,13 +21,17 @@ class SplashViewController: BaseViewController {
         splashviewmodel.delegate = self
         splashview.delegate = self
         splashview.setupUI()
-        splashviewmodel.getDetails()
+//        splashviewmodel.getDetails()
     }
     override func viewDidAppear(_ animated: Bool) {
       
        
         splashview.animateGifimage()
-        
+        gotoVc(VC: Controller.playerscreen.getController() )
+    }
+    
+    func gotoVc(VC: UIViewController) {
+        navigationController?.pushViewController(VC, animated: true)
     }
 }
 extension SplashViewController: SplashViewModelDelegate{

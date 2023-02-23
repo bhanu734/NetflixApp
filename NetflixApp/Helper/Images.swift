@@ -49,4 +49,10 @@ class Images {
     let rate = UIImage(systemName: "hand.thumbsup")
     let share = UIImage(systemName: "paperplane")
     let download_details = UIImage(systemName: "arrow.down.to.line")
+    let tenSecondBackward = UIImage(systemName: "gobackward.10")
+    let tenSecondForward = UIImage(systemName: "goforward.10")
+    let playbutton = UIImage(systemName: "play.circle.fill")
+    let pausebutton = UIImage(systemName: "pause.circle.fill")
+    let checkMark = UIImage(systemName: "checkmark")
+
 }
