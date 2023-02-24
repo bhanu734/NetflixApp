@@ -312,7 +312,9 @@
                             <constraint firstItem="Uom-4B-IjY" firstAttribute="bottom" secondItem="w8Y-St-zho" secondAttribute="bottom" id="IEJ-iN-89P"/>
                             <constraint firstItem="w8Y-St-zho" firstAttribute="top" secondItem="Uom-4B-IjY" secondAttribute="top" id="MKZ-GO-PCO"/>
                             <constraint firstItem="w8Y-St-zho" firstAttribute="leading" secondItem="Uom-4B-IjY" secondAttribute="leading" id="fQt-rv-ojZ"/>
-                            <constraint firstItem="Kk5-Vv-Mfu" firstAttribute="bottom" secondItem="Lqk-yu-RKq" secondAttribute="bottom" id="h3O-sN-2M9"/>
+                            <constraint firstItem="Kk5-Vv-Mfu" firstAttribute="bottom" secondItem="Lqk-yu-RKq" secondAttribute="bottom" id="h3O-sN-2M9">
+                                <variation key="heightClass=compact-widthClass=regular" constant="-50"/>
+                            </constraint>
                             <constraint firstItem="Lqk-yu-RKq" firstAttribute="centerY" secondItem="ojC-vK-LpP" secondAttribute="centerY" id="kdp-Vg-Z3I"/>
                             <constraint firstItem="Lqk-yu-RKq" firstAttribute="leading" secondItem="Uom-4B-IjY" secondAttribute="leading" id="z2S-WW-mqu"/>
                         </constraints>

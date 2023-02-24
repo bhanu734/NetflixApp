@@ -22,9 +22,9 @@ class PlayerView: UIView {
     func setupUI() {
         backgroundColor = Colors.shared.blackcolor
         
-        closeview.backgroundColor = Colors.shared.blackcolor
+        closeview.backgroundColor = Colors.shared.clearcolor
         closeimage.image = Images.shared.crossimage
-        closeimage.tintColor = Colors.shared.whiteimagecolor
+        closeimage.tintColor = Colors.shared.whiteBgcolor
         closeview.layer.cornerRadius = 20.0
         
         backwardimage.image = Images.shared.tenSecondBackward
@@ -36,12 +36,26 @@ class PlayerView: UIView {
         
         progressbar.tintColor = Colors.shared.redbuttoncolor
         progressbar.thumbTintColor = Colors.shared.redbuttoncolor
-        progressbar.minimumTrackTintColor = Colors.shared.darkgreycolor
+        progressbar.minimumTrackTintColor = Colors.shared.redbuttoncolor
         progressbar.maximumTrackTintColor = Colors.shared.blackcolor
         
         currentTime.textColor = Colors.shared.whiteTextcolor
         currentTime.font = Font.shared.medium3
         totalDuration.textColor = Colors.shared.whiteTextcolor
         totalDuration.font = Font.shared.medium3
+        
+        controlsview.isHidden = true
+        addTapGester()
+    }
+    
+    func addTapGester() {
+        let tapGester = UITapGestureRecognizer(target: self, action: #selector(tapGesterRecognized(_:)))
+        tapGester.numberOfTapsRequired = 1
+        self.addGestureRecognizer(tapGester)
+       
+    }
+    @objc func tapGesterRecognized(_ sender: UITapGestureRecognizer ) {
+        
+        controlsview.isHidden = !controlsview.isHidden
     }
 }
