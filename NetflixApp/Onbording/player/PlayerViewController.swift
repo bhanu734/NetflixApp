@@ -7,15 +7,20 @@
 
 import UIKit
 
-class PlayerViewController: UIViewController {
+class PlayerViewController: BaseViewController {
 
     @IBOutlet weak var playerview: PlayerView!
     var playerviewmodel: PlayerViewModel = PlayerViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        playerviewmodel.delegate = self
         playerview.setupUI()
     }
+    
+}
+
+extension PlayerViewController: PlayerViewModelDelegate {
     
 }

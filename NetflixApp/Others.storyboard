@@ -167,7 +167,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8Y-St-zho">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVO-YQ-Qf4">
                                         <rect key="frame" x="349" y="10" width="45" height="45"/>
@@ -194,7 +194,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="4fr-pc-IEF">
-                                        <rect key="frame" x="92" y="384" width="230" height="50"/>
+                                        <rect key="frame" x="92" y="401" width="230" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENU-FX-ScN">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -309,7 +309,7 @@
                         <constraints>
                             <constraint firstItem="Uom-4B-IjY" firstAttribute="trailing" secondItem="Lqk-yu-RKq" secondAttribute="trailing" id="2D4-ph-tow"/>
                             <constraint firstItem="Uom-4B-IjY" firstAttribute="trailing" secondItem="w8Y-St-zho" secondAttribute="trailing" id="8gY-tD-TuO"/>
-                            <constraint firstItem="Uom-4B-IjY" firstAttribute="bottom" secondItem="w8Y-St-zho" secondAttribute="bottom" id="IEJ-iN-89P"/>
+                            <constraint firstAttribute="bottom" secondItem="w8Y-St-zho" secondAttribute="bottom" id="IEJ-iN-89P"/>
                             <constraint firstItem="w8Y-St-zho" firstAttribute="top" secondItem="Uom-4B-IjY" secondAttribute="top" id="MKZ-GO-PCO"/>
                             <constraint firstItem="w8Y-St-zho" firstAttribute="leading" secondItem="Uom-4B-IjY" secondAttribute="leading" id="fQt-rv-ojZ"/>
                             <constraint firstItem="Kk5-Vv-Mfu" firstAttribute="bottom" secondItem="Lqk-yu-RKq" secondAttribute="bottom" id="h3O-sN-2M9">
