@@ -160,10 +160,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lqk-yu-RKq">
-                                <rect key="frame" x="0.0" y="344.5" width="414" height="207"/>
+                                <rect key="frame" x="0.0" y="329" width="414" height="238"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Lqk-yu-RKq" secondAttribute="height" multiplier="2:1" id="QhH-4d-BrR"/>
+                                    <constraint firstAttribute="width" secondItem="Lqk-yu-RKq" secondAttribute="height" multiplier="2:1.15" id="QhH-4d-BrR"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8Y-St-zho">
@@ -177,6 +177,9 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwG-BQ-f3j">
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                <connections>
+                                                    <action selector="closeTapped" destination="ojC-vK-LpP" eventType="touchUpInside" id="miu-OU-Uf7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -204,6 +207,9 @@
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmG-j1-tr1">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <connections>
+                                                            <action selector="backwardTapped" destination="ojC-vK-LpP" eventType="touchUpInside" id="sbl-9c-AIW"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -227,6 +233,9 @@
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wue-FG-rI4">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <connections>
+                                                            <action selector="playPauseTapped" destination="ojC-vK-LpP" eventType="touchUpInside" id="LgV-iG-dk9"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -250,6 +259,9 @@
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cd-Hw-qGg">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <connections>
+                                                            <action selector="forwardTapped" destination="ojC-vK-LpP" eventType="touchUpInside" id="dow-cw-GCu"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -273,17 +285,20 @@
                                             <constraint firstItem="1dX-up-RZH" firstAttribute="width" secondItem="1dX-up-RZH" secondAttribute="height" multiplier="1:1" id="xbi-lG-9mP"/>
                                         </constraints>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kk5-Vv-Mfu">
-                                        <rect key="frame" x="28" y="477.5" width="358" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kk5-Vv-Mfu">
+                                        <rect key="frame" x="28" y="493" width="358" height="31"/>
+                                        <connections>
+                                            <action selector="sliderValueChanged" destination="ojC-vK-LpP" eventType="valueChanged" id="Yh1-X0-ykR"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UV-vL-L29">
-                                        <rect key="frame" x="30" y="512.5" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="30" y="528" width="41.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azM-PU-5bD">
-                                        <rect key="frame" x="342.5" y="512.5" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="342.5" y="528" width="41.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -323,11 +338,12 @@
                             <outlet property="closeimage" destination="Xx9-uB-hee" id="8Fo-5x-cOQ"/>
                             <outlet property="closeview" destination="GVO-YQ-Qf4" id="7NR-Rr-XPn"/>
                             <outlet property="controlsview" destination="w8Y-St-zho" id="CFa-dy-wgt"/>
-                            <outlet property="currentTime" destination="7UV-vL-L29" id="R4D-DD-HfN"/>
+                            <outlet property="currentTimeLabel" destination="7UV-vL-L29" id="wFb-Za-frf"/>
                             <outlet property="forwordimage" destination="XZi-4z-ws2" id="87P-oT-iz2"/>
                             <outlet property="playPauseimage" destination="9Vl-k3-EhM" id="Oof-9Y-v7V"/>
+                            <outlet property="playerView" destination="Lqk-yu-RKq" id="KRw-NZ-5lG"/>
                             <outlet property="progressbar" destination="Kk5-Vv-Mfu" id="4fu-hL-ooR"/>
-                            <outlet property="totalDuration" destination="azM-PU-5bD" id="xfT-fb-6lQ"/>
+                            <outlet property="totalDurationLabel" destination="azM-PU-5bD" id="ct4-sR-phz"/>
                         </connections>
                     </view>
                     <connections>

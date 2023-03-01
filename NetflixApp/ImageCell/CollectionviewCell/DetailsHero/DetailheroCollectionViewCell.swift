@@ -5,6 +5,9 @@
 //  Created by Mac on 06/02/23.
 //
 
+protocol DetailheroCollectionViewCellDelegate {
+    func playTapped()
+}
 import UIKit
 
 class DetailheroCollectionViewCell: UICollectionViewCell {
@@ -36,6 +39,8 @@ class DetailheroCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var sharelabel: UILabel!
     @IBOutlet weak var shareimage: UIImageView!
     @IBOutlet weak var topview: UIView!
+    
+    var delegate: DetailheroCollectionViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -173,7 +178,7 @@ class DetailheroCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func playbuttonTapped() {
-        
+        delegate?.playTapped()
     }
     @IBAction func downloadbuttonTapped() {
         

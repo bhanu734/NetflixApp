@@ -32,6 +32,16 @@ extension DetailsViewController: DetailsViewDelegate {
             self.navigationController?.popViewController(animated: true)
         }
     }
+    
+    func playTapped() {
+        DispatchQueue.main.async {
+           if let controller = Controller.playerscreen.getController() as? PlayerViewController {
+            controller.playerviewmodel.banner = self.detailsviewmodel.banner
+            controller.modalPresentationStyle = .overFullScreen
+            self.present(controller, animated: true, completion: nil)
+            }
+        }
+    }
 }
 
 extension DetailsViewController: DetailsViewModelDelegate {

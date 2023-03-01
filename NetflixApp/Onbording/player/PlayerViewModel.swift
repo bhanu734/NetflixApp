@@ -9,6 +9,7 @@ import UIKit
 protocol PlayerViewModelDelegate {
     func showLoader()
     func hideLoader()
+    func updateUI (videourl: String)
 }
 
 class PlayerViewModel {
@@ -23,7 +24,7 @@ class PlayerViewModel {
             var headers : [String: String] = [ : ]
             headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
             headers["Content-Type"] = "application/json"
-        
+                   
             var bodyparameters: [String: Any] = [:]
             bodyparameters["episodenumber"] = 1
             
@@ -34,7 +35,18 @@ class PlayerViewModel {
             self.delegate?.hideLoader()
                 
                 if let data = data {
-                   
+                    do {
+                        if let jsonData = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String:Any] {
+                            if let videoUrl = jsonData["video-url"] as? String {
+                                self.delegate?.updateUI(videourl: videoUrl)
+                            }
+                           
+                        }
+                        
+                        
+                    } catch {
+                        print("error: ", error.localizedDescription)
+                    }
                      
                 } else {
                     print("error", error?.localizedDescription )

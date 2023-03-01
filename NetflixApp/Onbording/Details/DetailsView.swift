@@ -9,6 +9,7 @@ import UIKit
 
 protocol DetailsViewDelegate {
     func cloeTapped()
+    func playTapped()
 }
 
 class DetailsView: UIView {
@@ -78,6 +79,7 @@ extension DetailsView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailheroCollectionViewCell", for: indexPath) as? DetailheroCollectionViewCell {
+                cell.delegate = self
                 if isSeries {
                     cell.configUI(detailsData: seriesDetails)
                 }else {
@@ -148,4 +150,11 @@ extension DetailsView: DetailsHeaderCollectionReusableViewDelegate {
         ismoreLikeThis = true
         updateUI()
     }
+}
+extension DetailsView: DetailheroCollectionViewCellDelegate {
+    func playTapped() {
+        delegate?.playTapped()
+    }
+    
+    
 }
