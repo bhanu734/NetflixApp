@@ -71,13 +71,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OwX-BZ-cem">
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="60"/>
+                                        <connections>
+                                            <action selector="playtapped" destination="gTV-IL-0wX" eventType="touchUpInside" id="0el-7D-UtG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="OwX-BZ-cem" firstAttribute="width" secondItem="pVo-M7-Nhp" secondAttribute="width" id="5yu-NB-qrz"/>
                                     <constraint firstItem="lrB-g7-tu8" firstAttribute="top" secondItem="pVo-M7-Nhp" secondAttribute="top" constant="25" id="8kD-V3-5tr"/>
                                     <constraint firstItem="e3y-pU-dUN" firstAttribute="leading" secondItem="lrB-g7-tu8" secondAttribute="trailing" constant="5" id="Iqf-qd-66g"/>
+                                    <constraint firstItem="OwX-BZ-cem" firstAttribute="centerX" secondItem="pVo-M7-Nhp" secondAttribute="centerX" id="PTf-Nf-4HZ"/>
                                     <constraint firstItem="lrB-g7-tu8" firstAttribute="leading" secondItem="pVo-M7-Nhp" secondAttribute="leading" constant="30" id="QeJ-Qf-CZj"/>
                                     <constraint firstItem="e3y-pU-dUN" firstAttribute="top" secondItem="pVo-M7-Nhp" secondAttribute="top" constant="25" id="gSy-dV-wV1"/>
+                                    <constraint firstItem="OwX-BZ-cem" firstAttribute="centerY" secondItem="pVo-M7-Nhp" secondAttribute="centerY" id="kqd-Tg-dX4"/>
+                                    <constraint firstItem="OwX-BZ-cem" firstAttribute="height" secondItem="pVo-M7-Nhp" secondAttribute="height" id="qNm-CZ-Lev"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FEM-fQ-i1M">

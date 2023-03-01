@@ -3,8 +3,10 @@
 //  NetflixApp
 //
 //  Created by Mac on 18/01/23.
-//
 
+protocol HeroCollectionViewCelldelegate{
+    func playtapped()
+}
 import UIKit
 import SDWebImage
 
@@ -22,7 +24,7 @@ class HeroCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var infoimageview: UIImageView!
     @IBOutlet weak var infolabel: UILabel!
     
-    
+    var delegate: HeroCollectionViewCelldelegate?
         
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -64,5 +66,12 @@ class HeroCollectionViewCell: UICollectionViewCell {
             }
             
         }
+}
+    
+    
+    @IBAction func playtapped() {
+        delegate?.playtapped()
+        
     }
 }
+

@@ -6,6 +6,11 @@
 //
 
 import UIKit
+enum HomeDataType {
+    case home
+    case category
+    case mylist
+}
 
 protocol HomeViewDelegate {
     func tvShowsTapped()
@@ -17,6 +22,8 @@ protocol HomeViewDelegate {
     func moviesTappedEx()
     func mylistTappedEx()
     func goto_details_screen(banner: Banner?)
+    func goto_playerScren(banner: Banner?)
+    func goto_playscreen()
 }
 
 class HomeView: UIView {
@@ -30,6 +37,8 @@ class HomeView: UIView {
     
     var subcategorydata: CategoryData?
     var isselected: Bool = false
+    var homeDataType: HomeDataType = .home
+    var myListData: [Banner] = []
     
     func setupUI() {
         
@@ -106,6 +115,7 @@ extension HomeView: UICollectionViewDataSource {
         
         if indexPath.section == 0 {
             if let cell = homecollectionview.dequeueReusableCell(withReuseIdentifier: "HeroCollectionViewCell", for: indexPath) as? HeroCollectionViewCell {
+                cell.delegate = self
                 if isselected {
                     cell.configureUI(banner: subcategorydata?.banner)
                 }else {
@@ -195,3 +205,23 @@ extension HomeView: MenuViewDelegate {
     
     
 }
+extension HomeView: HeroCollectionViewCelldelegate {
+    func playtapped() {
+        if homeDataType == .category {
+            delegate?.goto_playerScren(banner: subcategorydata?.banner )
+        }else if homeDataType == .home {
+            delegate?.goto_playerScren(banner: homedata?.banner?.first)
+        }else {
+            delegate?.goto_playerScren(banner: myListData.first)
+            print("mylistTspped hello")
+        }
+    }
+    
+    
+    func playtapped(banner: Banner?) {
+       
+    }
+    
+}
+
+

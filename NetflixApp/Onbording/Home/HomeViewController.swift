@@ -87,6 +87,44 @@ extension HomeViewController: HomeViewDelegate {
           
         }
     }
+//    func playTapped() {
+//        DispatchQueue.main.async {
+//          if let controller = Controller.playerscreen.getController() as? PlayerViewController {
+//            controller.modalPresentationStyle = .overFullScreen
+////            controller.detailsviewmodel.banner = banner
+////            self.navigationController?.pushViewController(controller, animated: true)
+//            }
+//
+//        }
+//    }
+    func goto_playerScren(banner: Banner?) {
+        if banner?.contentType == .movie {
+            DispatchQueue.main.async {
+                if let controller = Controller.playerscreen.getController() as? PlayerViewController {
+                    controller.playerviewmodel.banner = banner
+                controller.modalPresentationStyle = .overFullScreen
+                    self.present(controller, animated: true, completion: nil)
+                }
+              
+            }
+            
+        }else {
+            if let banner = banner {
+                print("goto series details")
+            }
+        }
+       
+    }
+    func goto_playscreen() {
+        DispatchQueue.main.async {
+          if let controller = Controller.playerscreen.getController() as? DetailsViewController {
+            controller.modalPresentationStyle = .overFullScreen
+           
+//            self.navigationController?.pushViewController(controller, animated: true)
+            }
+          
+        }
+    }
 }
 extension HomeViewController: HomeViewModelDelegate {
   
