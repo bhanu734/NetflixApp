@@ -287,9 +287,6 @@
                                     </stackView>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kk5-Vv-Mfu">
                                         <rect key="frame" x="28" y="493" width="358" height="31"/>
-                                        <connections>
-                                            <action selector="sliderValueChanged" destination="ojC-vK-LpP" eventType="valueChanged" id="Yh1-X0-ykR"/>
-                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UV-vL-L29">
                                         <rect key="frame" x="30" y="528" width="41.5" height="20.5"/>

@@ -35,6 +35,7 @@ class PlayerView: UIView {
     
     func setupUI() {
         backgroundColor = Colors.shared.blackcolor
+        playerView.backgroundColor = Colors.shared.blackcolor
         
         closeview.backgroundColor = Colors.shared.clearcolor
         closeimage.image = Images.shared.crossimage
@@ -45,13 +46,14 @@ class PlayerView: UIView {
         backwardimage.tintColor = Colors.shared.whiteimagecolor
         forwordimage.image = Images.shared.tenSecondForward
         forwordimage.tintColor = Colors.shared.whiteimagecolor
-        playPauseimage.image = Images.shared.playbutton
+        playPauseimage.image = Images.shared.pausebutton
         playPauseimage.tintColor = Colors.shared.whiteimagecolor
         
         progressbar.tintColor = Colors.shared.redbuttoncolor
         progressbar.thumbTintColor = Colors.shared.redbuttoncolor
         progressbar.minimumTrackTintColor = Colors.shared.redbuttoncolor
         progressbar.maximumTrackTintColor = Colors.shared.blackcolor
+        progressbar.addTarget(self, action: #selector(sliderValueChanged(_:_:)), for: UIControl.Event.valueChanged)
         
         currentTimeLabel.textColor = Colors.shared.whiteTextcolor
         currentTimeLabel.font = Font.shared.medium3
@@ -94,6 +96,20 @@ class PlayerView: UIView {
         self.addGestureRecognizer(tapGester)
        
     }
+    
+    @objc func sliderValueChanged(_ sender: UISlider, _ event: UIEvent) {
+        if event.allTouches?.first?.phase == .began {
+            pauseContent()
+        }else if event.allTouches?.first?.phase == .ended {
+            if let duration = totalDuration {
+                let time = duration*Double(progressbar.value)
+                player?.seek(to: CMTimeMakeWithSeconds(time, preferredTimescale: 1), completionHandler: { bool in
+                    self.playContent()
+                })
+            }
+        }
+    }
+    
     @objc func tapGesterRecognized(_ sender: UITapGestureRecognizer ) {
         
         controlsview.isHidden = !controlsview.isHidden
