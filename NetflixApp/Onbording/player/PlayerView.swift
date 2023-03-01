@@ -25,6 +25,7 @@ class PlayerView: UIView {
     var delegate: PlayerViewDelegate?
     var player: AVPlayer?
     var playerLayer: AVPlayerLayer?
+    var timeobserver: Any?
     
     var currentTime: Double? {
         return player?.currentItem?.currentTime().seconds
@@ -80,7 +81,8 @@ class PlayerView: UIView {
             self.playerView.layer.addSublayer(playerLayer)
             player.play()
             
-            player.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: .main) { time in
+            self.timeobserver = player.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: .main) { [weak self] time in
+                guard let self = self else { return }
                 self.currentTimeLabel.text = self.getFormattedTime(time: Int(time.seconds))
                 self.totalDurationLabel.text = self.getFormattedTime(time: Int(self.totalDuration ?? 0))
                 self.progressbar.value = Float(self.currentTime ?? 0) / Float(self.totalDuration ?? 0)
@@ -89,6 +91,15 @@ class PlayerView: UIView {
         }
 
     }
+    
+    func cleanPlayer() {
+        if let timeobserver = timeobserver {
+            player?.removeTimeObserver(timeobserver)
+        }
+        player = nil
+        playerLayer?.removeFromSuperlayer()
+        playerLayer = nil
+}
     
     func addTapGester() {
         let tapGester = UITapGestureRecognizer(target: self, action: #selector(tapGesterRecognized(_:)))

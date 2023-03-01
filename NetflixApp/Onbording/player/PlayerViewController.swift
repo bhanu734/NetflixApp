@@ -21,6 +21,10 @@ class PlayerViewController: BaseViewController {
         playerviewmodel.getVideoUrl()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        playerview.cleanPlayer()
+    }
 }
 
 extension PlayerViewController: PlayerViewModelDelegate {
